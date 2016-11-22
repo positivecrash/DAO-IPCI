@@ -1,0 +1,24 @@
+$icons: (
+    sprite: (width: 106.016px, height: 123px, pngPath: '../i/sprite.png', svgPath: '../i/sprite.svg'),
+    alarm: (width: 106.016px, height: 122.585px, backgroundX: 0px, backgroundY: 0px),
+);
+
+$sprite: map-get($icons, sprite);
+
+
+@mixin get-sprite($spritename){
+    $spritename: map-get($icons, $spritename);
+    
+    display: inline-block;
+    width: map-get($spritename, width);
+    height: map-get($spritename, height);
+    background-image: url(map-get($sprite, svgPath));
+    background-position: map-get($spritename, backgroundX) map-get($spritename, backgroundY);
+    background-repeat: no-repeat;
+
+    #{$modernizr-nosvg} & { background-image: url(map-get($sprite, pngPath)); }
+}
+
+.sprite-alarm{
+	@include get-sprite(alarm);
+}

@@ -1,0 +1,9 @@
+extends extends/layout.jade
+include includes/mixins.jade
+
+block head
+	- var pageTitle = 'О программе'
+
+block content
+	main(role="main").marginBotFix
+		+OldBrowserMsg()

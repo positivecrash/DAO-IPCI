@@ -1,0 +1,29 @@
+/*======== KEYFRAMES =========*/
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+#{$modernizr-cssanimations}{
+
+  @include min_tablet(){
+    // animation:  .5s fadeIn ease-out forwards;
+  }
+}

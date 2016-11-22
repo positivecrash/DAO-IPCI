@@ -1,0 +1,281 @@
+@charset "UTF-8";
+@import "compass";
+
+@import "utilities/my_reset";
+@import "utilities/variables";
+@import "utilities/media";
+@import "utilities/extends";
+@import "utilities/mixins";
+
+@import "utilities/sprite";
+@import "utilities/icons";
+
+@import "utilities/text";
+@import "utilities/plugins";
+
+@import "blocks/animations";
+@import "blocks/forms";
+@import "blocks/header";
+@import "blocks/footer";
+
+
+/*======== MAIN SCSS VARIABLES & MIXINS & EXTENDS =========*/
+
+
+
+
+
+/*======== BASIC STYLES =========*/
+
+#oldiebrowser{
+  padding: 30px;
+  text-align: center;
+  background-color: rgb(255, 103, 74);
+  font-size: 16px;
+
+  h1{
+    margin-bottom: 30px;
+  }
+
+  &, h1{
+    color: #fff;
+  }
+}
+
+body {
+  background-color: #fff;
+}
+
+main[role="main"]{
+
+  position: relative;
+  background-color: #fff;
+}
+
+// .p-text{
+//   body{
+//     //for footer at bottom
+//     display: flex;
+//     min-height: 100vh;
+//     flex-direction: column;
+
+//     height: auto;
+
+//   }
+
+//   main[role="main"]{
+//     padding-bottom: $vertical-rythm * 5;
+
+//     //for footer at bottom
+//     flex: 1;
+//   }
+// }
+
+
+/*------- BASIC STYLES - blocks display --------*/
+
+/* Slides on page (see clear example here -> http://codepen.io/positivecrash/pen/QGywGv) */
+html, body, .screen{
+  position: relative;
+}
+
+html, body{
+  height: 100%;
+}
+
+.screen{
+  box-sizing: border-box;
+  @include rem('padding-top', $vertical-rythm*2);
+  @include rem('padding-bottom', $vertical-rythm);
+  min-height: 100%;
+
+
+  /* align content vertically */
+  display: flex;
+  align-items: center;
+
+}
+
+
+/*inside elements in line*/
+.b-inline{ @extend %flex_line; }
+.setw{ @extend %width_base; }
+
+// .fullw { width: 100%; }
+
+// .f-zoom{ @extend %floating-fix; }
+// .f-left { float: left; }
+// .f-right { float: right; }
+// .f-clearfix { @extend %clearfix; }
+
+// .clearfix{
+//   &:after{
+//     content: "";
+//     display: block;
+//     clear: both;
+//   }
+// }
+
+// .d-b{ 
+//   display: block;
+
+//   img{
+//     @extend %inline-block;
+//     max-width: 100%;
+//   }
+// }
+
+// .d-ib{ @extend %inline-block; }
+
+// .d-t{
+//   display: table;
+//   display: table !important;
+// }
+// .d-t_cell, .d-t_cell_t, .d-t_cell_m{ display: table-cell; }
+// .d-t_cell_t{ vertical-align: top; }
+// .d-t_cell_m{ vertical-align: middle; }
+
+
+// .grid{
+//   @extend %inlineBlock-fix;
+//   margin-left: -4%;
+
+//   @include max_tablet(){
+//     margin-left: 0;
+//   }
+// }
+
+// .grid-4, .grid-3, .grid-2{
+//   @extend %inline-block;
+//   @extend %font_base;
+//   width: floor(100%/3) - 4;
+//   vertical-align: top;
+//   box-sizing: border-box;
+//   margin-left: 4%;
+
+
+//   @include mobile(){
+//     width: 100%;
+//     margin-left: 0;
+//     margin-bottom: $vertical-rythm * 2;
+//   }
+// }
+
+// .grid-2{
+//     width: floor(100%/2) - 4;
+
+//     @include mobile(){
+//       width: 100%;
+//     }
+// }
+
+// .grid-4{
+//     width: floor(100%/4) - 4;
+
+//     @include mobile(){
+//       width: 100%;
+//     }
+// }
+
+
+.section{
+  @include rem('margin-bottom', $vertical-rythm * 4);
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+
+  @include mobile(){
+    @include rem('margin-bottom', $vertical-rythm * 2);
+  }
+}
+
+
+
+/*------- BASIC STYLES - margins --------*/
+.m-t-x2 { @include rem('margin-top', $vertical-rythm*2); }
+
+
+
+/*======== END BASIC STYLES =========*/
+
+
+
+
+
+/*======== ELEMENTS =========*/
+
+
+/*------- ELEMENTS - TABLES --------*/
+table{
+  margin: $vertical-rythm*2 0;
+
+  td, th {
+    color: $color-table-text;
+    padding: 10px 5px 10px 20px;
+    vertical-align: top;
+    border-style: solid;
+  }
+
+  tfoot td, th {
+    font: bold 16px/1 $font-family-second;
+    text-align: left;
+  }
+
+  th {
+    border-width: 0 0 1px;
+    border-color: $color-table-head-border;
+    color: $color-table-head-text;
+    background-color: $color-table-head-back;
+  }
+
+  tfoot td{
+    font-size: $font-base-size;
+    border-width: 1px 0 0;
+    color: $color-table-foot-text;
+    border-color: $color-table-foot-border;
+    background-color: $color-table-foot-back;
+  }
+
+
+  tbody{
+    td{
+      border-width: 0 0 1px;
+      color: $color-table-text;
+      border-color: $color-table-border;
+    }
+
+    tr:hover td {
+      color: darken($color-table-text, 40%);
+    }
+  }
+
+}
+
+
+
+/*--- FANCYBOX ---*/
+
+
+/*======== END OF ELEMENTS =========*/
+
+
+
+
+
+/*======== PAGE INDEX =========*/
+
+/*======== END OF PAGE INDEX =========*/
+
+
+/*======== RESPONSIVE =========*/
+@include min_mobile(){
+  .q-mobile { display: none; }
+  .q-min_tablet { display: block; }
+}
+
+@include mobile(){
+  .q-mobile { display: block; }
+  .q-min_tablet { display: none; }
+}
+/*======== end of RESPONSIVE =========*/

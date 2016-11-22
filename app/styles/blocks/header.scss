@@ -1,0 +1,193 @@
+/*======== HEADER VARIABLES & MIXINS & EXTENDS =========*/
+
+
+/*======== HEADER BASIC =========*/
+header[role=banner]{
+	background-color: #002E64;
+
+	&, a {
+		color: #fff;
+	}
+}
+
+#header-top{
+	/* align content vertically + structure: logo on left, other on right */
+	@extend %flex_line;
+
+	@include rem('padding', $padding-side/2, $padding-side, $padding-side, $padding-side);
+
+  	@include font-size(18, 1.2);
+
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	right: 0;
+
+  	.b-inline > div{
+		@include rem('margin-left', 35);
+
+		&:first-child{
+			margin-left: 0;
+		}
+  	}
+}
+
+
+
+
+
+/* Menu with links (in header now) */
+.nav-links{
+  a{
+      @extend %link_noline;
+      display: block;
+      @include rem('padding', 10, 0);
+      border-top: 1px solid $color-blue-2;
+
+      &:first-child{
+        border-top: 0;
+      }
+
+      &.active{
+        color: $color-orange;
+      }
+    }
+}
+
+
+
+/* CSS Dropdowns */
+.dropdown{
+  position: relative;
+
+  &:focus {
+    .dropdown__toggle{
+      pointer-events: auto;  /*Close while clicking*/
+    }
+
+    .dropdown__content{
+      opacity: 1;
+      visibility: visible;
+    }
+
+  }
+}
+
+.dropdown__content {
+  transition: 100ms ease-in visibility, 100ms ease-in opacity;
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;
+  @include rem('top', 50);
+  z-index: 10;
+}
+
+.dropdown__toggle{
+  display: block;
+  pointer-events: none;  /*for WebKit*/
+  white-space: nowrap;
+}
+
+
+/* CSS select */
+.dropdown-select_light{
+
+  .dropdown__content, .dropdown__toggle{
+    border-radius: 3px;
+  }
+
+  .dropdown__toggle{
+    @extend %link_noline;
+    border: 1px solid #fff;
+    @include rem('padding', 5, 10);
+
+    &:after{
+      content:"";
+      @include icon(arrow);
+    }
+  }
+
+  &:focus .dropdown__toggle{
+    background-color: $color-blue;
+    border-color: $color-orange;
+    color: $color-orange;
+  }
+
+  .dropdown__content{
+    background-color: $color-blue;
+    @include rem('padding', 0, 15);
+  }
+  
+}
+
+
+/*Hamburger menu*/
+.hamburger{
+  cursor: pointer;
+
+  .line{
+    width: 40px;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+    margin: 8px auto;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.dropdown-menu{
+  &:focus .hamburger{
+    position: relative;
+    z-index: 20;
+
+    .line{
+      background-color: $color-orange;
+
+      &:nth-child(2){
+        opacity: 0;
+      }
+
+      &:nth-child(1){
+        transform: translateY(11px) rotate(45deg);
+      }
+
+      &:nth-child(3){
+        transform: translateY(-11px) rotate(-45deg);
+      }
+    }
+  }
+
+
+  .dropdown__content{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    box-sizing: border-box;
+    width: 320px;
+    @include rem('padding', $padding-side*2, $padding-side, $padding-side);
+    background-color: $color-blue;
+    overflow-y: auto;
+  }
+}
+
+
+
+
+/*link "more", used when fullscreen header mode*/
+header a.header-more{
+	color: $color-orange;
+	font-weight: bold;
+	text-transform: uppercase;
+
+	@extend %link_noline;
+	border-bottom: 2px solid $color-orange;
+	padding-bottom: 4px;
+}
+
+
+
+/*======== RESPONSIVE QUERIES =========*/

@@ -1,0 +1,132 @@
+@include font-face("Scada", font-files("Scada-Regular.woff","Scada-Regular.ttf"), "Scada-Regular.eot", normal);
+@include font-face("Scada", font-files("Scada-Bold.woff","Scada-Bold.ttf"), "Scada-Bold.eot", bold);
+@include font-face("Scada", font-files("Scada-Italic.woff","Scada-Italic.ttf"), "Scada-Italic.eot", normal, italic);
+@include font-face("Roboto Slab", font-files("RobotoSlab-Bold.woff","RobotoSlab-Bold.ttf"), "RobotoSlab-Bold.eot", bold);
+
+
+@mixin font-size($font-size, $line-height: 1.5){
+  @include rem('font-size', $font-size);
+  // font-size: #{$font-size}px;
+  line-height: $line-height;
+}
+
+
+%font_base {
+  @include font-size(24);
+  font-family: $font-family-base;
+
+	word-spacing: normal;
+	letter-spacing: 0;
+}
+
+
+
+/*==========*/
+
+html {
+  font-size: 100%;
+
+  @include mobile(){
+    font-size: 75%;
+  }
+
+  @include tablet(){
+    font-size: 85%;
+  }
+
+  @include desktop_b(){
+    font-size: 110%;
+  }
+}
+
+body { 
+	@extend %font_base;
+	color: $color-text; 
+}
+
+
+a { 
+  @include hover-link;
+  color: $color-lk;
+
+  &:hover{
+    color: $color-lk_hover;
+  }
+}
+
+
+#{headings()} {
+  margin-bottom: $vertical-rythm * 2;
+  margin-top: $vertical-rythm * 4;
+
+  font-family: $font-family-second;
+  font-weight: bold;
+  line-height: $scale-small;
+  text-align: center;
+
+  &:first-child{
+    margin-top: 0;
+  }
+
+  a{
+    @extend %link_noline;
+  }
+}
+
+
+h1 { @include font-size(34, 1.2); }
+h2 { font-size: 26px; }
+h3 { font-size: 22px; }
+
+
+
+ul, ol {
+  margin-left: 15px;
+}
+
+hr{
+  border: 0;
+  background-color: #333; //tmp
+  height: 1px;
+  margin: $vertical-rythm 0;
+}
+
+blockquote, p, li, .textSection {
+  margin-bottom: $vertical-rythm;
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+
+
+.t-left{ text-align: left; }
+.t-right{ text-align: right; }
+.t-center{ text-align: center; }
+.t-through { text-decoration: line-through; }
+.t-uppercase{ text-transform: uppercase; }
+
+.nowrap { white-space: nowrap; }
+
+
+.t-bold { font-weight: bold; }
+
+.t-red, a.t-red { color: $color-red; color: $color-red !important; }
+
+.t-small { font-size: 9px; }
+
+
+.t-title__l{
+  font-size: 16px;
+  font-weight: bold;
+  color: $color-gray-0;
+  border-bottom: 2px solid $color-gray-0;
+
+  width: 160px;
+  margin-bottom: $vertical-rythm;
+}
+
+.l-noline{
+  @extend %link_noline;
+}

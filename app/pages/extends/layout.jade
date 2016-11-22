@@ -1,0 +1,34 @@
+doctype html
+
+html
+	head
+		meta(http-equiv="Content-Type" content="text/html;charset=UTF-8")
+		meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
+		
+		block head
+
+		if pageTitle
+			title #{pageTitle} | ДАО "Программа интеграции климатических инициатив"
+		else
+			title ДАО "Программа интеграции климатических инициатив"
+
+
+		
+		meta(name='description' content=pageDescription || '')
+		meta(name='keywords' content=pageKeywords || '')
+
+		link(href='assets/css/ipci.min.css?v=1' rel='stylesheet' media="all")
+		script(src='assets/js/jquery-1.9.1.min.js')
+		script(src='assets/js/ipci.min.js?v=1')
+
+		link(rel="icon" href="favicon.ico" type="image/x-icon")
+		link(rel="shortcut icon" href="favicon.ico" type="image/x-icon")
+		link(rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png")
+		link(rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png")
+	body
+		block header
+		include  ../includes/header.jade
+		
+		block content
+
+		include ../includes/footer.jade
