@@ -12,7 +12,7 @@
 
 
 %font_base {
-  @include font-size(24);
+  @include font-size($font-base-size);
   font-family: $font-family-base;
 
 	word-spacing: normal;
@@ -65,6 +65,8 @@ a {
   line-height: $scale-small;
   text-align: center;
 
+  color: $color-gray-0;
+
   &:first-child{
     margin-top: 0;
   }
@@ -75,7 +77,13 @@ a {
 }
 
 
-h1 { @include font-size(34, 1.2); }
+h1 {
+  @include font-size(34, 1.2);
+
+  @include mobile(){
+    @include font-size(28, 1.2);
+  }
+}
 h2 { font-size: 26px; }
 h3 { font-size: 22px; }
 
@@ -93,7 +101,7 @@ hr{
 }
 
 blockquote, p, li, .textSection {
-  margin-bottom: $vertical-rythm;
+  @include rem('margin-bottom', $vertical-rythm);
 
   &:last-child{
     margin-bottom: 0;

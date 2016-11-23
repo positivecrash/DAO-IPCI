@@ -1,6 +1,7 @@
 %width_base
 {
   box-sizing: border-box;
+  width:100%;
   max-width: $width-base-max - $padding-side*2;
   margin: 0 auto;
 

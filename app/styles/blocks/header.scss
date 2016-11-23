@@ -4,36 +4,52 @@
 header[role=banner]{
 	background-color: #002E64;
 	background-image: image_url('bannerBack.svg');
-	background-size: cover;
+	background-size: 130%;
 	background-position: 50% 50%;
 
+  transition: .5s background-size ease-in-out;
+
 	position: relative;
+  padding-bottom: 52px;
 
 	&, a {
 		color: #fff;
 	}
+
+  h1{
+    color: #fff;
+  }
 }
 
 #header-top{
 	/* align content vertically + structure: logo on left, other on right */
 	@extend %flex_line;
 
-	@include rem('padding', $padding-side/2, $padding-side, $padding-side, $padding-side);
+	@include rem('padding', $padding-side/2, $padding-side);
 
-  	@include font-size(18, 1.2);
+	@include font-size(18, 1.2);
 
-  	position: absolute;
-  	top: 0;
-  	left: 0;
-  	right: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+  z-index: 10;
 
-  	.b-inline > div{
+  transition: .2s all linear;
+
+	.b-inline > div{
 		@include rem('margin-left', 35);
 
 		&:first-child{
 			margin-left: 0;
 		}
-  	}
+	}
+
+  &.fixed{
+    @include rem('padding', 3, $padding-side);
+    position: fixed;
+    background-color: $color-blue;
+  }
 }
 
 

@@ -1,5 +1,6 @@
 doctype html
 
+block html
 html
 	head
 		meta(http-equiv="Content-Type" content="text/html;charset=UTF-8")
@@ -29,6 +30,10 @@ html
 		block header
 		include  ../includes/header.jade
 		
-		block content
+		if (pagetype == 'inside')
+				main(role="main")
+					block content
+		else
+			block content
 
 		include ../includes/footer.jade

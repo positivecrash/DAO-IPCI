@@ -29,8 +29,6 @@ document.addEventListener('readystatechange', function() {
 		  });
 		}
 
-		console.log( stars[0] );
-
 		// Draw the scene
 
 		function draw() {
@@ -4896,7 +4894,7 @@ jQuery(document).ready(function($){
     var $main = $('main[role="main"]');  //container for main content, sets paddings and margins for parallax effects
     var $menu = $('#header-nav_menu_mobile');  //mobile menu
 
-    var $nav = $('#header-nav__container');
+    var $nav = $('#header-top');
     var fixNav = 'fixed'; //class for fixed navigation
 
     var mainPadTop = 84; // padding-top for main, for summ while fixing menu
@@ -4928,39 +4926,6 @@ jQuery(document).ready(function($){
 
 
 
-    /*===  Index animation while scrolling ===*/
-
-    var ac = 'a-show'; //class for animations
-
-    function IndexAnimation(){
-
-        var showPos = 400;
-
-        if( $w.scrollTop() > showPos){
-
-            $('#nav-logo').addClass(ac);
-            $('#nav-toggles').addClass(ac);
-        }
-
-        if ($w.scrollTop() > ($('#solutions').offset().top - showPos))
-            $('#solutions').addClass(ac);
-
-        if ($w.scrollTop() > ($('#services').offset().top - showPos)){
-            $('#services').addClass(ac);
-
-            $w.unbind('scroll', IndexAnimation); //end tracking scroll event
-        }
-            
-    }
-
-
-    if($('.p-index').length > 0) //detect if there is index page
-        $w.bind('scroll', IndexAnimation);
-
-    /*===  end of Index animation while scrolling ===*/
-
-
-
 
     /*===  Header interactions ===*/
 
@@ -4968,19 +4933,19 @@ jQuery(document).ready(function($){
 
     /*---  Fix navigation on top ---*/
 
-    // var navPos = $nav.offset().top + 3;
+    var navPos = $w.height() - 20;
 
-    // if( $w.scrollTop() >= navPos )
-    //     $nav.addClass(fixNav);
+    if( $w.scrollTop() >=  navPos)
+        $nav.addClass(fixNav);
 
-    // function FixNav(){
+    function FixNav(){
 
-    //     if( $w.scrollTop() >= navPos)
-    //         $nav.addClass(fixNav, 2000);
-    //     else
-    //         $nav.removeClass(fixNav, 2000);
-    // }
-    // $w.bind('scroll', FixNav);
+        if( $w.scrollTop() >= navPos)
+            $nav.addClass(fixNav, 2000);
+        else
+            $nav.removeClass(fixNav, 2000);
+    }
+    $w.bind('scroll', FixNav);
 
 
 
@@ -4990,6 +4955,12 @@ jQuery(document).ready(function($){
 
 
     /*===  SOME RANDOM THIGS ===*/
+
+    $('.header-more').on('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        $('html, body').animate({scrollTop: $('header').outerHeight() }, 1000);
+    });
 
 
     /*--- Disable hover on touchscreens (works not for all screens) ---*/

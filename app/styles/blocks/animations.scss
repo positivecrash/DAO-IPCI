@@ -1,5 +1,8 @@
 /*======== KEYFRAMES =========*/
 
+$CanvasGrowDelay: 2s;
+$CanvasGrowDuration: 0.5s;
+
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -19,12 +22,37 @@
 }
 
 
+@keyframes CanvasGrow {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 52px;
+  }
+}
+
+
+@keyframes BackResize {
+  0% {
+    background-size: 130%;
+  }
+  100% {
+    background-size: 110%;
+  }
+}
+
 
 
 
 #{$modernizr-cssanimations}{
 
-  @include min_tablet(){
-    // animation:  .5s fadeIn ease-out forwards;
+  #header-canvas{
+    height: 0;
+    animation: CanvasGrow $CanvasGrowDuration $CanvasGrowDelay ease-in-out forwards;
   }
+
+  header[role=banner]{
+    animation:  BackResize $CanvasGrowDuration $CanvasGrowDelay ease-in-out forwards;
+  }
+  
 }

@@ -52,25 +52,6 @@ main[role="main"]{
   background-color: #fff;
 }
 
-// .p-text{
-//   body{
-//     //for footer at bottom
-//     display: flex;
-//     min-height: 100vh;
-//     flex-direction: column;
-
-//     height: auto;
-
-//   }
-
-//   main[role="main"]{
-//     padding-bottom: $vertical-rythm * 5;
-
-//     //for footer at bottom
-//     flex: 1;
-//   }
-// }
-
 
 /*------- BASIC STYLES - blocks display --------*/
 
@@ -85,8 +66,8 @@ html, body{
 
 .screen{
   box-sizing: border-box;
-  @include rem('padding-top', $vertical-rythm*2);
-  @include rem('padding-bottom', $vertical-rythm);
+  @include rem('padding-top', $vertical-rythm*3);
+  @include rem('padding-bottom', $vertical-rythm*3);
   min-height: 100%;
 
 
@@ -101,92 +82,11 @@ html, body{
 .b-inline{ @extend %flex_line; }
 .setw{ @extend %width_base; }
 
-// .fullw { width: 100%; }
-
-// .f-zoom{ @extend %floating-fix; }
-// .f-left { float: left; }
-// .f-right { float: right; }
-// .f-clearfix { @extend %clearfix; }
-
-// .clearfix{
-//   &:after{
-//     content: "";
-//     display: block;
-//     clear: both;
-//   }
-// }
-
-// .d-b{ 
-//   display: block;
-
-//   img{
-//     @extend %inline-block;
-//     max-width: 100%;
-//   }
-// }
-
-// .d-ib{ @extend %inline-block; }
-
-// .d-t{
-//   display: table;
-//   display: table !important;
-// }
-// .d-t_cell, .d-t_cell_t, .d-t_cell_m{ display: table-cell; }
-// .d-t_cell_t{ vertical-align: top; }
-// .d-t_cell_m{ vertical-align: middle; }
-
-
-// .grid{
-//   @extend %inlineBlock-fix;
-//   margin-left: -4%;
-
-//   @include max_tablet(){
-//     margin-left: 0;
-//   }
-// }
-
-// .grid-4, .grid-3, .grid-2{
-//   @extend %inline-block;
-//   @extend %font_base;
-//   width: floor(100%/3) - 4;
-//   vertical-align: top;
-//   box-sizing: border-box;
-//   margin-left: 4%;
-
-
-//   @include mobile(){
-//     width: 100%;
-//     margin-left: 0;
-//     margin-bottom: $vertical-rythm * 2;
-//   }
-// }
-
-// .grid-2{
-//     width: floor(100%/2) - 4;
-
-//     @include mobile(){
-//       width: 100%;
-//     }
-// }
-
-// .grid-4{
-//     width: floor(100%/4) - 4;
-
-//     @include mobile(){
-//       width: 100%;
-//     }
-// }
-
-
 .section{
-  @include rem('margin-bottom', $vertical-rythm * 4);
+  @include rem('margin-bottom', $vertical-rythm * 2);
 
   &:last-child{
     margin-bottom: 0;
-  }
-
-  @include mobile(){
-    @include rem('margin-bottom', $vertical-rythm * 2);
   }
 }
 
@@ -264,6 +164,64 @@ table{
 
 
 /*======== PAGE INDEX =========*/
+
+#scrn-2{
+
+  .in{ 
+    @extend %flex_line;
+    padding-bottom: 80px;
+  }
+
+  h2{
+    flex: 1;
+    @include rem('padding-right', 30);
+    text-align: left;
+
+    &:after{
+      content:"";
+      @include rem('height', 2);
+      @include rem('width', 70);
+      background-color: $color-brick;
+      display: block;
+      @include rem('margin-top', $font-base-size);
+    }
+  }
+
+  aside{
+    flex: 3;
+  }
+
+  @include mobile(){
+    .setw { display: block; }
+    h2 { @include rem('margin-bottom', $vertical-rythm); }
+  }
+}
+
+.climateInfo{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80px;
+  background-color: #FF8240;
+  color: #fff;
+
+  @extend %flex_line;
+
+  .cell{
+    @extend %link_noline;
+    color: #fff;
+    align-self: stretch;
+    padding: 10px;
+    text-align: left;
+    flex: 5;
+
+    &:nth-child(2){ background-color: #FF6514; }
+    &:nth-child(3){ background-color: #DD5208; }
+    &:nth-child(4){ background-color: #C33704; }
+    &:nth-child(5){ background-color: #9B3009; }
+  }
+}
 
 /*======== END OF PAGE INDEX =========*/
 

@@ -29,8 +29,6 @@ document.addEventListener('readystatechange', function() {
 		  });
 		}
 
-		console.log( stars[0] );
-
 		// Draw the scene
 
 		function draw() {

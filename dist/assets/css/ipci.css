@@ -37,6 +37,7 @@ input, select {
 /*=====*/
 .setw {
   box-sizing: border-box;
+  width: 100%;
   max-width: 1360px;
   margin: 0 auto;
   padding-left: 40px;
@@ -53,12 +54,12 @@ input, textarea, select, .btn-primary, input[type='submit'] {
   *display: inline;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .l-noline, .fbx-close, input, textarea, select, .btn-primary, input[type='submit'], .nav-links a, .dropdown-select_light .dropdown__toggle, header a.header-more, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, .l-noline:hover, .fbx-close:hover, input:hover, textarea:hover, select:hover, .btn-primary:hover, .nav-links a:hover, .dropdown-select_light .dropdown__toggle:hover, header a.header-more:hover, h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus, .l-noline:focus, .fbx-close:focus, input:focus, textarea:focus, select:focus, .btn-primary:focus, .nav-links a:focus, .dropdown-select_light .dropdown__toggle:focus, header a.header-more:focus, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited, .l-noline:visited, .fbx-close:visited, input:visited, textarea:visited, select:visited, .btn-primary:visited, .nav-links a:visited, .dropdown-select_light .dropdown__toggle:visited, header a.header-more:visited {
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .l-noline, .fbx-close, input, textarea, select, .btn-primary, input[type='submit'], .nav-links a, .dropdown-select_light .dropdown__toggle, header a.header-more, .climateInfo .cell, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, .l-noline:hover, .fbx-close:hover, input:hover, textarea:hover, select:hover, .btn-primary:hover, .nav-links a:hover, .dropdown-select_light .dropdown__toggle:hover, header a.header-more:hover, .climateInfo .cell:hover, h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus, .l-noline:focus, .fbx-close:focus, input:focus, textarea:focus, select:focus, .btn-primary:focus, .nav-links a:focus, .dropdown-select_light .dropdown__toggle:focus, header a.header-more:focus, .climateInfo .cell:focus, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited, .l-noline:visited, .fbx-close:visited, input:visited, textarea:visited, select:visited, .btn-primary:visited, .nav-links a:visited, .dropdown-select_light .dropdown__toggle:visited, header a.header-more:visited, .climateInfo .cell:visited {
   text-decoration: none;
   text-decoration: none !important;
 }
 
-#header-top, .b-inline {
+#header-top, .b-inline, #scrn-2 .in, .climateInfo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,27 +115,27 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .l-noline, .fbx-close, input, textarea, sele
 
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Regular.eot?1479892309');
-  src: url('../fonts/Scada-Regular.eot?&1479892309#iefix') format('embedded-opentype'), url('../fonts/Scada-Regular.woff?1479892309') format('woff'), url('../fonts/Scada-Regular.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Regular.eot?1479905969');
+  src: url('../fonts/Scada-Regular.eot?&1479905969#iefix') format('embedded-opentype'), url('../fonts/Scada-Regular.woff?1479905969') format('woff'), url('../fonts/Scada-Regular.ttf?1415701385') format('truetype');
   font-weight: normal;
 }
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Bold.eot?1479892309');
-  src: url('../fonts/Scada-Bold.eot?&1479892309#iefix') format('embedded-opentype'), url('../fonts/Scada-Bold.woff?1479892309') format('woff'), url('../fonts/Scada-Bold.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Bold.eot?1479905969');
+  src: url('../fonts/Scada-Bold.eot?&1479905969#iefix') format('embedded-opentype'), url('../fonts/Scada-Bold.woff?1479905969') format('woff'), url('../fonts/Scada-Bold.ttf?1415701385') format('truetype');
   font-weight: bold;
 }
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Italic.eot?1479892309');
-  src: url('../fonts/Scada-Italic.eot?&1479892309#iefix') format('embedded-opentype'), url('../fonts/Scada-Italic.woff?1479892309') format('woff'), url('../fonts/Scada-Italic.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Italic.eot?1479905969');
+  src: url('../fonts/Scada-Italic.eot?&1479905969#iefix') format('embedded-opentype'), url('../fonts/Scada-Italic.woff?1479905969') format('woff'), url('../fonts/Scada-Italic.ttf?1415701385') format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: "Roboto Slab";
-  src: url('../fonts/RobotoSlab-Bold.eot?1479892309');
-  src: url('../fonts/RobotoSlab-Bold.eot?&1479892309#iefix') format('embedded-opentype'), url('../fonts/RobotoSlab-Bold.woff?1479892309') format('woff'), url('../fonts/RobotoSlab-Bold.ttf?1373969180') format('truetype');
+  src: url('../fonts/RobotoSlab-Bold.eot?1479905969');
+  src: url('../fonts/RobotoSlab-Bold.eot?&1479905969#iefix') format('embedded-opentype'), url('../fonts/RobotoSlab-Bold.woff?1479905969') format('woff'), url('../fonts/RobotoSlab-Bold.ttf?1373969180') format('truetype');
   font-weight: bold;
 }
 body {
@@ -168,7 +169,7 @@ html {
 }
 
 body {
-  color: #5C5C5C;
+  color: #414141;
 }
 
 a {
@@ -183,12 +184,13 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 42;
-  margin-top: 84;
+  margin-bottom: 72;
+  margin-top: 144;
   font-family: "Roboto Slab", serif;
   font-weight: bold;
   line-height: 1.2;
   text-align: center;
+  color: #333;
 }
 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
   margin-top: 0;
@@ -198,6 +200,13 @@ h1 {
   font-size: 34px;
   font-size: 2.125rem;
   line-height: 1.2;
+}
+@media screen and (max-width: 680px) {
+  h1 {
+    font-size: 28px;
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
 }
 
 h2 {
@@ -216,11 +225,12 @@ hr {
   border: 0;
   background-color: #333;
   height: 1px;
-  margin: 21 0;
+  margin: 36 0;
 }
 
 blockquote, p, li, .textSection {
-  margin-bottom: 21;
+  margin-bottom: 36px;
+  margin-bottom: 2.25rem;
 }
 blockquote:last-child, p:last-child, li:last-child, .textSection:last-child {
   margin-bottom: 0;
@@ -269,7 +279,7 @@ blockquote:last-child, p:last-child, li:last-child, .textSection:last-child {
   color: #333;
   border-bottom: 2px solid #333;
   width: 160px;
-  margin-bottom: 21;
+  margin-bottom: 36;
 }
 
 /*======== FANCYBOX =========*/
@@ -499,7 +509,7 @@ blockquote:last-child, p:last-child, li:last-child, .textSection:last-child {
 
 /*------- FANCYBOX SIZES --------*/
 .fancybox-wrap h3 {
-  margin-bottom: 21;
+  margin-bottom: 36;
 }
 
 .fbx-w {
@@ -547,6 +557,48 @@ blockquote:last-child, p:last-child, li:last-child, .textSection:last-child {
     opacity: 1;
   }
 }
+@-webkit-keyframes CanvasGrow {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 52px;
+  }
+}
+@keyframes CanvasGrow {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 52px;
+  }
+}
+@-webkit-keyframes BackResize {
+  0% {
+    background-size: 130%;
+  }
+  100% {
+    background-size: 110%;
+  }
+}
+@keyframes BackResize {
+  0% {
+    background-size: 130%;
+  }
+  100% {
+    background-size: 110%;
+  }
+}
+.cssanimations #header-canvas {
+  height: 0;
+  -webkit-animation: CanvasGrow 0.5s 2s ease-in-out forwards;
+          animation: CanvasGrow 0.5s 2s ease-in-out forwards;
+}
+.cssanimations header[role=banner] {
+  -webkit-animation: BackResize 0.5s 2s ease-in-out forwards;
+          animation: BackResize 0.5s 2s ease-in-out forwards;
+}
+
 input, textarea, select, .btn-primary, input[type='submit'] {
   box-sizing: border-box;
   font: 14px/1 "Roboto Slab", serif;
@@ -557,19 +609,19 @@ input, textarea, select, .btn-primary, input[type='submit'] {
   color: #333;
 }
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, select::-webkit-input-placeholder, .btn-primary::-webkit-input-placeholder, input[type='submit']::-webkit-input-placeholder {
-  color: #5C5C5C;
+  color: #414141;
 }
 input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder, .btn-primary::-moz-placeholder, input[type='submit']::-moz-placeholder {
-  color: #5C5C5C;
+  color: #414141;
 }
 input:-ms-input-placeholder, textarea:-ms-input-placeholder, select:-ms-input-placeholder, .btn-primary:-ms-input-placeholder, input[type='submit']:-ms-input-placeholder {
-  color: #5C5C5C;
+  color: #414141;
 }
 input::placeholder, textarea::placeholder, select::placeholder, .btn-primary::placeholder, input[type='submit']::placeholder {
-  color: #5C5C5C;
+  color: #414141;
 }
 input:focus, textarea:focus, select:focus, .btn-primary:focus {
-  border-color: #5C5C5C;
+  border-color: #414141;
 }
 input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder, select:focus::-webkit-input-placeholder, .btn-primary:focus::-webkit-input-placeholder {
   color: #95989A;
@@ -588,7 +640,7 @@ input:focus::placeholder, textarea:focus::placeholder, select:focus::placeholder
   display: block;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 10.5;
+  margin-bottom: 18;
 }
 
 input.err, textarea.err, select.err {
@@ -621,7 +673,7 @@ textarea {
 
 .wrap__inp_block {
   display: block;
-  margin-bottom: 21;
+  margin-bottom: 36;
 }
 .wrap__inp_block .inp-block {
   margin-bottom: 5px;
@@ -644,18 +696,24 @@ textarea {
 header[role=banner] {
   background-color: #002E64;
   background-image: url('../i/bannerBack.svg?1479817580');
-  background-size: cover;
+  background-size: 130%;
   background-position: 50% 50%;
+  -webkit-transition: .5s background-size ease-in-out;
+          transition: .5s background-size ease-in-out;
   position: relative;
+  padding-bottom: 52px;
 }
 header[role=banner], header[role=banner] a {
+  color: #fff;
+}
+header[role=banner] h1 {
   color: #fff;
 }
 
 #header-top {
   /* align content vertically + structure: logo on left, other on right */
-  padding: 20px 40px 40px 40px;
-  padding: 1.25rem 2.5rem 2.5rem 2.5rem;
+  padding: 20px 40px;
+  padding: 1.25rem 2.5rem;
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.2;
@@ -663,6 +721,9 @@ header[role=banner], header[role=banner] a {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 10;
+  -webkit-transition: .2s all linear;
+          transition: .2s all linear;
 }
 #header-top .b-inline > div {
   margin-left: 35px;
@@ -670,6 +731,12 @@ header[role=banner], header[role=banner] a {
 }
 #header-top .b-inline > div:first-child {
   margin-left: 0;
+}
+#header-top.fixed {
+  padding: 3px 40px;
+  padding: 0.1875rem 2.5rem;
+  position: fixed;
+  background-color: #0C284A;
 }
 
 /* Menu with links (in header now) */
@@ -859,10 +926,10 @@ html, body {
 
 .screen {
   box-sizing: border-box;
-  padding-top: 42px;
-  padding-top: 2.625rem;
-  padding-bottom: 21px;
-  padding-bottom: 1.3125rem;
+  padding-top: 108px;
+  padding-top: 6.75rem;
+  padding-bottom: 108px;
+  padding-bottom: 6.75rem;
   min-height: 100%;
   /* align content vertically */
   display: -webkit-box;
@@ -875,33 +942,27 @@ html, body {
 
 /*inside elements in line*/
 .section {
-  margin-bottom: 84px;
-  margin-bottom: 5.25rem;
+  margin-bottom: 72px;
+  margin-bottom: 4.5rem;
 }
 .section:last-child {
   margin-bottom: 0;
 }
-@media screen and (max-width: 680px) {
-  .section {
-    margin-bottom: 42px;
-    margin-bottom: 2.625rem;
-  }
-}
 
 /*------- BASIC STYLES - margins --------*/
 .m-t-x2 {
-  margin-top: 42px;
-  margin-top: 2.625rem;
+  margin-top: 72px;
+  margin-top: 4.5rem;
 }
 
 /*======== END BASIC STYLES =========*/
 /*======== ELEMENTS =========*/
 /*------- ELEMENTS - TABLES --------*/
 table {
-  margin: 42 0;
+  margin: 72 0;
 }
 table td, table th {
-  color: #5C5C5C;
+  color: #414141;
   padding: 10px 5px 10px 20px;
   vertical-align: top;
   border-style: solid;
@@ -912,20 +973,20 @@ table tfoot td, table th {
 }
 table th {
   border-width: 0 0 1px;
-  border-color: #5C5C5C;
+  border-color: #414141;
   color: #333;
-  background-color: #e8e8e8;
+  background-color: #cdcdcd;
 }
 table tfoot td {
-  font-size: 14;
+  font-size: 24;
   border-width: 1px 0 0;
-  color: #5C5C5C;
+  color: #414141;
   border-color: #95989A;
   background-color: #F8F8F8;
 }
 table tbody td {
   border-width: 0 0 1px;
-  color: #5C5C5C;
+  color: #414141;
   border-color: #95989A;
 }
 table tbody tr:hover td {
@@ -935,6 +996,75 @@ table tbody tr:hover td {
 /*--- FANCYBOX ---*/
 /*======== END OF ELEMENTS =========*/
 /*======== PAGE INDEX =========*/
+#scrn-2 .in {
+  padding-bottom: 80px;
+}
+#scrn-2 h2 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-right: 30px;
+  padding-right: 1.875rem;
+  text-align: left;
+}
+#scrn-2 h2:after {
+  content: "";
+  height: 2px;
+  height: 0.125rem;
+  width: 70px;
+  width: 4.375rem;
+  background-color: #B7674A;
+  display: block;
+  margin-top: 24px;
+  margin-top: 1.5rem;
+}
+#scrn-2 aside {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+@media screen and (max-width: 680px) {
+  #scrn-2 .setw {
+    display: block;
+  }
+  #scrn-2 h2 {
+    margin-bottom: 36px;
+    margin-bottom: 2.25rem;
+  }
+}
+
+.climateInfo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80px;
+  background-color: #FF8240;
+  color: #fff;
+}
+.climateInfo .cell {
+  color: #fff;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  padding: 10px;
+  text-align: left;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+.climateInfo .cell:nth-child(2) {
+  background-color: #FF6514;
+}
+.climateInfo .cell:nth-child(3) {
+  background-color: #DD5208;
+}
+.climateInfo .cell:nth-child(4) {
+  background-color: #C33704;
+}
+.climateInfo .cell:nth-child(5) {
+  background-color: #9B3009;
+}
+
 /*======== END OF PAGE INDEX =========*/
 /*======== RESPONSIVE =========*/
 @media screen and (min-width: 680px) {
