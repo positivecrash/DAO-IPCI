@@ -3,15 +3,15 @@ document.addEventListener('readystatechange', function() {
       	var canvas = document.getElementById("canvasDots"),
     	ctx = canvas.getContext('2d');
 
-		var width = canvas.width = window.innerWidth;
-		var height = canvas.height = 52;
-
-		var colorDots = "#804732";
-		var colorConnects = "#804732";
+		var 
+			width = canvas.width = window.innerWidth,
+			height = canvas.height = 52,
+			colorDots = "#804732",
+			colorConnects = "#804732";
 
 		var stars = [], // Array that contains the stars
 		    FPS = 80, // Frames per second
-		    x = 60, // Number of stars
+		    x = width/24, // Number of stars
 		    mouse = {
 		      x: 0,
 		      y: 0
@@ -110,6 +110,7 @@ document.addEventListener('readystatechange', function() {
 
 		  	width = canvas.width = window.innerWidth;
 			stars.length = 0;
+			x = width/24;
 
 			for (var i = 0; i < x; i++) {
 			  stars.push({
