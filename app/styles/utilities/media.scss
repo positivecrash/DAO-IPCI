@@ -63,7 +63,7 @@
 
 @mixin desktop_b
 {
-	@media screen and (min-width: #{$point-desktop-m})
+	@media screen and (min-width: #{$point-desktop-b})
 	{
 		@content;
 	}

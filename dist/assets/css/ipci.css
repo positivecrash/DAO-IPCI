@@ -114,27 +114,27 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .l-noline, .fbx-close, input, textarea, sele
 
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Regular.eot?1479816322');
-  src: url('../fonts/Scada-Regular.eot?&1479816322#iefix') format('embedded-opentype'), url('../fonts/Scada-Regular.woff?1479816322') format('woff'), url('../fonts/Scada-Regular.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Regular.eot?1479892309');
+  src: url('../fonts/Scada-Regular.eot?&1479892309#iefix') format('embedded-opentype'), url('../fonts/Scada-Regular.woff?1479892309') format('woff'), url('../fonts/Scada-Regular.ttf?1415701385') format('truetype');
   font-weight: normal;
 }
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Bold.eot?1479816322');
-  src: url('../fonts/Scada-Bold.eot?&1479816322#iefix') format('embedded-opentype'), url('../fonts/Scada-Bold.woff?1479816322') format('woff'), url('../fonts/Scada-Bold.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Bold.eot?1479892309');
+  src: url('../fonts/Scada-Bold.eot?&1479892309#iefix') format('embedded-opentype'), url('../fonts/Scada-Bold.woff?1479892309') format('woff'), url('../fonts/Scada-Bold.ttf?1415701385') format('truetype');
   font-weight: bold;
 }
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Italic.eot?1479816322');
-  src: url('../fonts/Scada-Italic.eot?&1479816322#iefix') format('embedded-opentype'), url('../fonts/Scada-Italic.woff?1479816322') format('woff'), url('../fonts/Scada-Italic.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Italic.eot?1479892309');
+  src: url('../fonts/Scada-Italic.eot?&1479892309#iefix') format('embedded-opentype'), url('../fonts/Scada-Italic.woff?1479892309') format('woff'), url('../fonts/Scada-Italic.ttf?1415701385') format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: "Roboto Slab";
-  src: url('../fonts/RobotoSlab-Bold.eot?1479816322');
-  src: url('../fonts/RobotoSlab-Bold.eot?&1479816322#iefix') format('embedded-opentype'), url('../fonts/RobotoSlab-Bold.woff?1479816322') format('woff'), url('../fonts/RobotoSlab-Bold.ttf?1373969180') format('truetype');
+  src: url('../fonts/RobotoSlab-Bold.eot?1479892309');
+  src: url('../fonts/RobotoSlab-Bold.eot?&1479892309#iefix') format('embedded-opentype'), url('../fonts/RobotoSlab-Bold.woff?1479892309') format('woff'), url('../fonts/RobotoSlab-Bold.ttf?1373969180') format('truetype');
   font-weight: bold;
 }
 body {
@@ -148,21 +148,22 @@ body {
 
 /*==========*/
 html {
+  -webkit-text-size-adjust: none;
   font-size: 100%;
 }
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 680px) {
   html {
     font-size: 75%;
   }
 }
-@media screen and (min-width: 660px) and (max-width: 780px) {
+@media screen and (min-width: 680px) and (max-width: 780px) {
   html {
     font-size: 85%;
   }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1620px) {
   html {
-    font-size: 110%;
+    font-size: 120%;
   }
 }
 
@@ -506,7 +507,7 @@ blockquote:last-child, p:last-child, li:last-child, .textSection:last-child {
   padding: 20px;
   min-width: 360px;
 }
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 680px) {
   .fbx-w {
     min-width: 310px;
   }
@@ -642,6 +643,10 @@ textarea {
 /*======== HEADER BASIC =========*/
 header[role=banner] {
   background-color: #002E64;
+  background-image: url('../i/bannerBack.svg?1479817580');
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
 }
 header[role=banner], header[role=banner] a {
   color: #fff;
@@ -777,11 +782,17 @@ header[role=banner], header[role=banner] a {
   right: 0;
   bottom: 0;
   box-sizing: border-box;
-  width: 320px;
   padding: 80px 40px 40px;
   padding: 5rem 2.5rem 2.5rem;
   background-color: #0C284A;
   overflow-y: auto;
+  width: 320px;
+  width: 20rem;
+}
+@media screen and (max-width: 680px) {
+  .dropdown-menu .dropdown__content {
+    width: 320px;
+  }
 }
 
 /*link "more", used when fullscreen header mode*/
@@ -791,6 +802,22 @@ header a.header-more {
   text-transform: uppercase;
   border-bottom: 2px solid #FFA62C;
   padding-bottom: 4px;
+}
+
+/*canvas down the header*/
+#header-canvas {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 52px;
+  background-color: #B7674A;
+  box-shadow: inset #763F2B 0 4px 25px;
+  overflow: hidden;
+}
+#header-canvas canvas {
+  margin: 0 auto;
+  display: block;
 }
 
 /*======== RESPONSIVE QUERIES =========*/
@@ -854,7 +881,7 @@ html, body {
 .section:last-child {
   margin-bottom: 0;
 }
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 680px) {
   .section {
     margin-bottom: 42px;
     margin-bottom: 2.625rem;
@@ -910,7 +937,7 @@ table tbody tr:hover td {
 /*======== PAGE INDEX =========*/
 /*======== END OF PAGE INDEX =========*/
 /*======== RESPONSIVE =========*/
-@media screen and (min-width: 660px) {
+@media screen and (min-width: 680px) {
   .q-mobile {
     display: none;
   }
@@ -919,7 +946,7 @@ table tbody tr:hover td {
     display: block;
   }
 }
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 680px) {
   .q-mobile {
     display: block;
   }

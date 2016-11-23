@@ -1,3 +1,128 @@
+document.addEventListener('readystatechange', function() {
+    if (document.readyState === "complete") {
+      	var canvas = document.getElementById("canvasDots"),
+    	ctx = canvas.getContext('2d');
+
+		var width = canvas.width = window.innerWidth;
+		var height = canvas.height = 52;
+
+		var colorDots = "#804732";
+		var colorConnects = "#804732";
+
+		var stars = [], // Array that contains the stars
+		    FPS = 80, // Frames per second
+		    x = 60, // Number of stars
+		    mouse = {
+		      x: 0,
+		      y: 0
+		    };  // mouse location
+
+		// Push stars to array
+
+		for (var i = 0; i < x; i++) {
+		  stars.push({
+		    x: Math.random() * width,
+		    y: Math.random() * height,
+		    radius: Math.random() * 5 + 2,
+		    vx: Math.floor(Math.random() * 100) - 50,
+		    vy: Math.floor(Math.random() * 100) - 50
+		  });
+		}
+
+		console.log( stars[0] );
+
+		// Draw the scene
+
+		function draw() {
+		  ctx.clearRect(0,0,width,height);
+		  
+		  for (var i = 0, x = stars.length; i < x; i++) {
+		    var s = stars[i];
+		  
+		    ctx.fillStyle = colorDots;
+		    ctx.beginPath();
+		    ctx.arc(s.x, s.y, s.radius, 0, 2 * Math.PI);
+		    ctx.fill();
+		    ctx.fillStyle = 'black';
+		  }
+		  
+		  ctx.beginPath();
+		  for (var i = 0, x = stars.length; i < x; i++) {
+		    var starI = stars[i];
+		    ctx.moveTo(starI.x,starI.y); 
+		    for (var j = 0, x = stars.length; j < x; j++) {
+		      var starII = stars[j];
+		      if(distance(starI, starII) < 100 ){
+		        ctx.lineTo(starII.x,starII.y);
+		      }
+		      
+		    }
+		  }
+		  ctx.lineWidth = 0.1;
+		  ctx.strokeStyle = colorConnects;
+		  ctx.stroke();
+		}
+
+		function distance( point1, point2 ){
+		  var xs = 0;
+		  var ys = 0;
+		 
+		  xs = point2.x - point1.x;
+		  xs = xs * xs;
+		 
+		  ys = point2.y - point1.y;
+		  ys = ys * ys;
+		 
+		  return Math.sqrt( xs + ys );
+		}
+
+		// Update star locations
+
+		function update() {
+		  for (var i = 0, x = stars.length; i < x; i++) {
+		    var s = stars[i];
+		  
+		    s.x += s.vx / FPS;
+		    s.y += s.vy / FPS;
+		    
+		    if (s.x < 0 || s.x > width) s.vx = -s.vx;
+		    if (s.y < 0 || s.y > height) s.vy = -s.vy;
+		  }
+		}
+
+		canvas.addEventListener('mousemove', function(e){
+		  mouse.x = e.clientX;
+		  mouse.y = e.clientY;
+		});
+
+		// Update and draw
+
+		function tick() {
+	  		draw();
+		  	update();
+		  	requestAnimationFrame(tick);
+		}
+
+		tick();
+		addEventListener('resize', resize, false);
+
+		function resize() {
+
+		  	width = canvas.width = window.innerWidth;
+			stars.length = 0;
+
+			for (var i = 0; i < x; i++) {
+			  stars.push({
+			    x: Math.random() * width,
+			    y: Math.random() * height,
+			    radius: Math.random() * 5 + 2,
+			    vx: Math.floor(Math.random() * 100) - 50,
+			    vy: Math.floor(Math.random() * 100) - 50
+			  });
+			}
+		}
+    }
+});
 if(typeof Object.create!=="function"){
 Object.create=function(o){
 function F(){
@@ -2798,179 +2923,6 @@ catch(e){
 	});
 
 }(window, document, jQuery));
-(function ($) {
-
-  var pluginName = 'placeholderEnhanced',
-    // if browser supports placeholder attribute, use native events to show/hide placeholder
-    hasNativeSupport = 'placeholder' in document.createElement('input') && 'placeholder' in document.createElement('textarea'),
-    // events namespaces
-    event = {
-      focus: 'focus.placeholder',
-      blur: 'blur.placeholder',
-      submit: 'submit.placeholder'
-    },
-    // placeholder css class
-    placeholderCssClass = 'placeholder',
-    $val;
-
-  // if placeholder is not supported, the jQuery val function returns the placeholder
-  // wrap the val function to fix this
-  if (!hasNativeSupport) {
-    $val = $.fn.val;
-    $.fn.val = function () {
-      var el = this[0];
-      if (!this.length) {
-        return;
-      }
-      if (!arguments.length && (el.nodeName === 'INPUT' || el.nodeName === 'TEXTAREA')) {
-        return el.value === this.attr('placeholder') ? '' : el.value;
-
-      } else {
-        if (this.hasClass(placeholderCssClass)) {
-          this.removeClass(placeholderCssClass);
-        }
-        return $val.apply(this, arguments);
-      }
-    };
-  }
-
-  $.fn[pluginName] = function () {
-
-    // don't do anything with an empty collection
-    if (!this.length) {
-      return;
-    }
-
-    // ensure not sending placeholder value when placeholder is not supported
-    if (!hasNativeSupport) {
-      // filter forms to leave only the ones that submit event was not added yet
-      $('form')
-        // only grab forms that are not prepared
-        .filter(function () {
-          return !$.data(this, pluginName);
-        })
-        .each(function () {
-          // bind submit event
-          $(this).bind(event.submit, function () {
-            // empty input value if it's the same as the placeholder attribute
-            $(this).find('input[placeholder], textarea[placeholder]').each(function () {
-              if (!$(this).val() && !this.disabled) {
-                this.value = '';
-              }
-            });
-          });
-          // mark as prepared
-          $.data(this, pluginName, true);
-        });
-    }
-
-    // copy attributes from a DOM node to a plain object to use later
-    function copyAttrs(element) {
-      var attrs = {}, exclude = ['placeholder', 'name', 'id'];
-      $.each(element.attributes, function (i, attr) {
-        if (attr.specified && $.inArray(attr.name, exclude) < 0) {
-          attrs[attr.name] = attr.value;
-        }
-      });
-      return attrs;
-    }
-
-    // hides specified input
-    function hideInput($input) {
-      $input.css({position: 'absolute', left: '-9999em'});
-    }
-
-    // shows specified input
-    function showInput($input) {
-      $input.css({position: '', left: ''});
-    }
-
-
-    return this.each(function () {
-
-      // check if plugin already initialized
-      if ($.data(this, pluginName)) {
-        return;
-      }
-
-      var el = this,
-        $el = $(el),
-        placeholderTxt = $el.attr('placeholder'),
-        isPassword = (el.type === 'password'),
-        fakePassw,
-        setPlaceholder,
-        removePlaceholder;
-
-      // on blur set placeholder
-      setPlaceholder = function () {
-        // if there is no initial value
-        // or initial value is equal to placeholder (done in the fn.val wrapper)
-        // init the placeholder
-        if (!$el.val()) {
-          if (!hasNativeSupport) {
-            if (!isPassword) {
-              $el.val(placeholderTxt).addClass(placeholderCssClass);
-            } else {
-              showInput(fakePassw);
-              hideInput($el);
-            }
-          } else {
-            $el.addClass(placeholderCssClass);
-          }
-        }
-      };
-
-      // on focus remove placeholder
-      if (!isPassword || hasNativeSupport) {
-        // for non-password inputs and textareas
-        removePlaceholder = function () {
-          if ($el.hasClass(placeholderCssClass)) {
-            if (!hasNativeSupport) {
-              el.value = '';
-            }
-            $el.removeClass(placeholderCssClass);
-          }
-        };
-
-      // for password inputs
-      } else if (!hasNativeSupport) {
-        removePlaceholder = function () {
-          showInput($el);
-          hideInput(fakePassw);
-        };
-
-        // create a fake password input
-        fakePassw = $('<input>', $.extend(copyAttrs(el), {
-          'type': 'text',
-          value: placeholderTxt,
-          tabindex: -1 // skip tabbing
-        }))
-          // add placeholder class
-          .addClass(placeholderCssClass)
-          // when fake input has focus, trigger real input focus
-          .bind(event.focus, function () {
-            $el.trigger(event.focus);
-          })
-          // insert fake input
-          .insertBefore($el);
-      }
-
-      // bind events and trigger blur the first time
-      $el
-        .bind(event.blur, setPlaceholder)
-        .bind(event.focus, removePlaceholder)
-        .trigger(event.blur);
-
-      // mark plugin as initialized for current element
-      $.data(el, pluginName, true);
-    });
-  };
-
-  // auto-initialize the plugin
-  $(function () {
-    $('input[placeholder], textarea[placeholder]')[pluginName]();
-  });
-}(jQuery));
 /*!
  * modernizr v3.3.1
  * Build https://modernizr.com/download?-backdropfilter-cssanimations-csscolumns-flexbox-svg-touchevents-setclasses-shiv-dontmin
@@ -4950,58 +4902,6 @@ jQuery(document).ready(function($){
     var mobile = 670; //media query
     var tablet = 820; //media query
 
-	/*===  TABS ===*/
-
-	$.fn.tabs = function (options) {
-
-        var settings = $.extend({
-            cTog:               '.tab_tog', //tab toogler
-            cText:              '.tab_text', //tab content
-            cCont:              '.tab-content', //desktop block
-            elCur:              '.grid-4', //current tab element
-            cCur:               'current' //current tab class
-        }, options);
-
-
-        return this.each(function () {
-            $el = $(this);
-            $tog = $el.find(settings.cTog);
-        	$cont = $el.find(settings.cCont);
-
-            if($el.find('.'+settings.cCur).length > 0 ){  //detecting if current tab has been set already
-                $cont.html($el.find('.'+settings.cCur).find(settings.cText).html()); //copy tab content to desktop block
-            }
-            else{
-                $cont.html($el.find(settings.cText).first().html()); //copy tab content to desktop block
-                $el.find(settings.elCur).first().addClass(settings.cCur); //set current class for tab
-            }
-
-            $tog.on('click', function(e){
-                e.preventDefault();
-                e.stopPropagation();
-
-                $cont.html($(this).parent().find(settings.cText).html()); //copy tab content to desktop block
-                
-                //set class for current tab
-                $tog = $(this).parents(settings.elCur);
-
-                if ($tog.hasClass(settings.cCur))
-                    $tog.removeClass(settings.cCur);
-                else{
-                    $(settings.elCur).removeClass(settings.cCur);
-                    $tog.addClass(settings.cCur);
-                }
-            });
-        });
-    };
-
-
-	if ($('.tabs').length > 0) {
-		$('.tabs').tabs();
-	}
-	/*===  END TABS ===*/
-
-
 
 	/*===  FANCYBOX ===*/
 	if (typeof ($.fn.fancybox) != 'undefined') {
@@ -5025,16 +4925,6 @@ jQuery(document).ready(function($){
 
 	/*===  end of FANCYBOX ===*/
 
-
-   
-
-    /*===  Scroll 1 screen away ===*/
-    $('#banner_arrow').on('click', function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        $('html, body').animate({scrollTop: $('#scrn-1').height() }, 1000);
-    });
-    /*===  end of Scroll 1 screen away ===*/
 
 
     /*===  Index animation while scrolling ===*/
@@ -5070,39 +4960,6 @@ jQuery(document).ready(function($){
 
 
 
-    /*===  Footer interactions ===*/
-
-    var t = true;  //timer switch
-
-    function FixFooter(){
-
-        if(t == true){
-
-            /*---  Fix footer for pages with welcome screen ---*/
-
-            if($('#scrn-1').length > 0){
-                if( $w.scrollTop() > $('#scrn-1').height()){
-                    $footer.addClass('fixed');
-                    $main.css('margin-bottom', $footer.height() - 1);
-                }
-                else{
-                    $footer.removeClass('fixed');
-                    $main.css('margin-bottom', 0);
-                }
-            }
-
-
-            t = false;
-            setTimeout(function(){t = true}, 50);
-        }
-    }
-
-    $w.bind('scroll', FixFooter);
-
-    /*===  end of Footer interactions ===*/
-
-
-
 
     /*===  Header interactions ===*/
 
@@ -5132,7 +4989,6 @@ jQuery(document).ready(function($){
 
 
     /*===  SOME RANDOM THIGS ===*/
-    $('input[placeholder], textarea[placeholder]').placeholderEnhanced();
 
 
     /*--- Disable hover on touchscreens (works not for all screens) ---*/

@@ -13,58 +13,6 @@ jQuery(document).ready(function($){
     var mobile = 670; //media query
     var tablet = 820; //media query
 
-	/*===  TABS ===*/
-
-	$.fn.tabs = function (options) {
-
-        var settings = $.extend({
-            cTog:               '.tab_tog', //tab toogler
-            cText:              '.tab_text', //tab content
-            cCont:              '.tab-content', //desktop block
-            elCur:              '.grid-4', //current tab element
-            cCur:               'current' //current tab class
-        }, options);
-
-
-        return this.each(function () {
-            $el = $(this);
-            $tog = $el.find(settings.cTog);
-        	$cont = $el.find(settings.cCont);
-
-            if($el.find('.'+settings.cCur).length > 0 ){  //detecting if current tab has been set already
-                $cont.html($el.find('.'+settings.cCur).find(settings.cText).html()); //copy tab content to desktop block
-            }
-            else{
-                $cont.html($el.find(settings.cText).first().html()); //copy tab content to desktop block
-                $el.find(settings.elCur).first().addClass(settings.cCur); //set current class for tab
-            }
-
-            $tog.on('click', function(e){
-                e.preventDefault();
-                e.stopPropagation();
-
-                $cont.html($(this).parent().find(settings.cText).html()); //copy tab content to desktop block
-                
-                //set class for current tab
-                $tog = $(this).parents(settings.elCur);
-
-                if ($tog.hasClass(settings.cCur))
-                    $tog.removeClass(settings.cCur);
-                else{
-                    $(settings.elCur).removeClass(settings.cCur);
-                    $tog.addClass(settings.cCur);
-                }
-            });
-        });
-    };
-
-
-	if ($('.tabs').length > 0) {
-		$('.tabs').tabs();
-	}
-	/*===  END TABS ===*/
-
-
 
 	/*===  FANCYBOX ===*/
 	if (typeof ($.fn.fancybox) != 'undefined') {
@@ -88,16 +36,6 @@ jQuery(document).ready(function($){
 
 	/*===  end of FANCYBOX ===*/
 
-
-   
-
-    /*===  Scroll 1 screen away ===*/
-    $('#banner_arrow').on('click', function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        $('html, body').animate({scrollTop: $('#scrn-1').height() }, 1000);
-    });
-    /*===  end of Scroll 1 screen away ===*/
 
 
     /*===  Index animation while scrolling ===*/
@@ -133,39 +71,6 @@ jQuery(document).ready(function($){
 
 
 
-    /*===  Footer interactions ===*/
-
-    var t = true;  //timer switch
-
-    function FixFooter(){
-
-        if(t == true){
-
-            /*---  Fix footer for pages with welcome screen ---*/
-
-            if($('#scrn-1').length > 0){
-                if( $w.scrollTop() > $('#scrn-1').height()){
-                    $footer.addClass('fixed');
-                    $main.css('margin-bottom', $footer.height() - 1);
-                }
-                else{
-                    $footer.removeClass('fixed');
-                    $main.css('margin-bottom', 0);
-                }
-            }
-
-
-            t = false;
-            setTimeout(function(){t = true}, 50);
-        }
-    }
-
-    $w.bind('scroll', FixFooter);
-
-    /*===  end of Footer interactions ===*/
-
-
-
 
     /*===  Header interactions ===*/
 
@@ -195,7 +100,6 @@ jQuery(document).ready(function($){
 
 
     /*===  SOME RANDOM THIGS ===*/
-    $('input[placeholder], textarea[placeholder]').placeholderEnhanced();
 
 
     /*--- Disable hover on touchscreens (works not for all screens) ---*/

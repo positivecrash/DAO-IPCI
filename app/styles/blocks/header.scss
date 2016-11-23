@@ -1,9 +1,13 @@
 /*======== HEADER VARIABLES & MIXINS & EXTENDS =========*/
 
-
 /*======== HEADER BASIC =========*/
 header[role=banner]{
 	background-color: #002E64;
+	background-image: image_url('bannerBack.svg');
+	background-size: cover;
+	background-position: 50% 50%;
+
+	position: relative;
 
 	&, a {
 		color: #fff;
@@ -167,10 +171,15 @@ header[role=banner]{
     bottom: 0;
 
     box-sizing: border-box;
-    width: 320px;
     @include rem('padding', $padding-side*2, $padding-side, $padding-side);
     background-color: $color-blue;
     overflow-y: auto;
+
+    @include rem('width', 320);
+
+    @include mobile(){
+    	width: 320px;
+    }
   }
 }
 
@@ -188,6 +197,25 @@ header a.header-more{
 	padding-bottom: 4px;
 }
 
+
+/*canvas down the header*/
+#header-canvas{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	height: 52px;
+
+	background-color: $color-brick;
+  box-shadow: inset #763F2B 0 4px 25px;
+  overflow: hidden;
+
+  canvas{
+    margin: 0 auto;
+    display: block;
+  }
+}
 
 
 /*======== RESPONSIVE QUERIES =========*/
