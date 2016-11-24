@@ -1,6 +1,8 @@
 $icons: (
-    sprite: (width: 106.016px, height: 123px, pngPath: '../i/sprite.png', svgPath: '../i/sprite.svg'),
-    alarm: (width: 106.016px, height: 122.585px, backgroundX: 0px, backgroundY: 0px),
+    sprite: (width: 192px, height: 474px, pngPath: '../i/sprite.png', svgPath: '../i/sprite.svg'),
+    systemOne: (width: 179.5px, height: 141.531px, backgroundX: 0px, backgroundY: 0px),
+    systemThree: (width: 179.5px, height: 141.531px, backgroundX: 0px, backgroundY: -142px),
+    systemTwo: (width: 192px, height: 190px, backgroundX: 0px, backgroundY: -284px),
 );
 
 $sprite: map-get($icons, sprite);
@@ -19,6 +21,12 @@ $sprite: map-get($icons, sprite);
     #{$modernizr-nosvg} & { background-image: url(map-get($sprite, pngPath)); }
 }
 
-.sprite-alarm{
-	@include get-sprite(alarm);
+.sprite-systemOne{
+	@include get-sprite(systemOne);
+}
+.sprite-systemThree{
+	@include get-sprite(systemThree);
+}
+.sprite-systemTwo{
+	@include get-sprite(systemTwo);
 }

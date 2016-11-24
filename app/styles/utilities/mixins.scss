@@ -73,39 +73,10 @@
 }
 
 
-@mixin vertical-center($width: '', $height: '', $el-align: 'img', $el-help: '')
-{
-  overflow: hidden;
-  text-align: center;
-  white-space: nowrap;
-
-  @if ( $width != ''){ width: $width; }
-  @if ( $height != ''){ height: $height; }
-
-  &, #{$el-align} {@extend %inline-block;}
-  #{$el-align} { max-width: 100%; max-height: 100%; }
-
-  @if ($el-help == '')
-  {
-    &:after
-    {
-      content:"";
-      height: 100%;
-      @extend %inline-block;
-    }
-  }
-  @else
-  {
-    #{$el-help}
-    {
-      @extend %inline-block;
-      height: 100%;
-    }
-  }
-}
-
-@mixin draw_circle($diametr, $border: 0){
-  border-radius: ($diametr + $border + 1)/2;
-  width: $diametr;
-  height: $diametr;
+@mixin sprite-background-recalc($spritefile, $spritename, $percent){
+  $sprite: map-get($icons, $spritename);
+  width: ( map-get($sprite, width)/100 ) * $percent;
+  height: ( map-get($sprite, height)/100 ) * $percent;
+  background-size: (image-width($spritefile)/100 ) * $percent  (image-height($spritefile)/100 ) * $percent;
+  background-position: (map-get($sprite, backgroundX)/100 ) * $percent  (map-get($sprite, backgroundY)/100 ) * $percent;
 }

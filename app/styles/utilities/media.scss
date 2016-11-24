@@ -53,6 +53,13 @@
 	}
 }
 
+@mixin min_desktop_s{
+	@media screen and (min-width: #{$point-desktop-s + 1})
+	{
+		@content;
+	}
+}
+
 @mixin desktop_m
 {
 	@media screen and (min-width: #{$point-desktop-s}) and (max-width: #{$point-desktop-m})

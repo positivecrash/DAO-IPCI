@@ -2922,6 +2922,148 @@ catch(e){
 	});
 
 }(window, document, jQuery));
+/**
+ * author Christopher Blum
+ *    - based on the idea of Remy Sharp, http://remysharp.com/2009/01/26/element-in-view-event-plugin/
+ *    - forked from http://github.com/zuk/jquery.inview/
+ */
+(function (factory) {
+  if (typeof define == 'function' && define.amd) {
+    // AMD
+    define(['jquery'], factory);
+  } else if (typeof exports === 'object') {
+    // Node, CommonJS
+    module.exports = factory(require('jquery'));
+  } else {
+      // Browser globals
+    factory(jQuery);
+  }
+}(function ($) {
+
+  var inviewObjects = [], viewportSize, viewportOffset,
+      d = document, w = window, documentElement = d.documentElement, timer;
+
+  $.event.special.inview = {
+    add: function(data) {
+      inviewObjects.push({ data: data, $element: $(this), element: this });
+      // Use setInterval in order to also make sure this captures elements within
+      // "overflow:scroll" elements or elements that appeared in the dom tree due to
+      // dom manipulation and reflow
+      // old: $(window).scroll(checkInView);
+      //
+      // By the way, iOS (iPad, iPhone, ...) seems to not execute, or at least delays
+      // intervals while the user scrolls. Therefore the inview event might fire a bit late there
+      //
+      // Don't waste cycles with an interval until we get at least one element that
+      // has bound to the inview event.
+      if (!timer && inviewObjects.length) {
+         timer = setInterval(checkInView, 250);
+      }
+    },
+
+    remove: function(data) {
+      for (var i=0; i<inviewObjects.length; i++) {
+        var inviewObject = inviewObjects[i];
+        if (inviewObject.element === this && inviewObject.data.guid === data.guid) {
+          inviewObjects.splice(i, 1);
+          break;
+        }
+      }
+
+      // Clear interval when we no longer have any elements listening
+      if (!inviewObjects.length) {
+         clearInterval(timer);
+         timer = null;
+      }
+    }
+  };
+
+  function getViewportSize() {
+    var mode, domObject, size = { height: w.innerHeight, width: w.innerWidth };
+
+    // if this is correct then return it. iPad has compat Mode, so will
+    // go into check clientHeight/clientWidth (which has the wrong value).
+    if (!size.height) {
+      mode = d.compatMode;
+      if (mode || !$.support.boxModel) { // IE, Gecko
+        domObject = mode === 'CSS1Compat' ?
+          documentElement : // Standards
+          d.body; // Quirks
+        size = {
+          height: domObject.clientHeight,
+          width:  domObject.clientWidth
+        };
+      }
+    }
+
+    return size;
+  }
+
+  function getViewportOffset() {
+    return {
+      top:  w.pageYOffset || documentElement.scrollTop   || d.body.scrollTop,
+      left: w.pageXOffset || documentElement.scrollLeft  || d.body.scrollLeft
+    };
+  }
+
+  function checkInView() {
+    if (!inviewObjects.length) {
+      return;
+    }
+
+    var i = 0, $elements = $.map(inviewObjects, function(inviewObject) {
+      var selector  = inviewObject.data.selector,
+          $element  = inviewObject.$element;
+      return selector ? $element.find(selector) : $element;
+    });
+
+    viewportSize   = viewportSize   || getViewportSize();
+    viewportOffset = viewportOffset || getViewportOffset();
+
+    for (; i<inviewObjects.length; i++) {
+      // Ignore elements that are not in the DOM tree
+      if (!$.contains(documentElement, $elements[i][0])) {
+        continue;
+      }
+
+      var $element      = $($elements[i]),
+          elementSize   = { height: $element[0].offsetHeight, width: $element[0].offsetWidth },
+          elementOffset = $element.offset(),
+          inView        = $element.data('inview');
+
+      // Don't ask me why because I haven't figured out yet:
+      // viewportOffset and viewportSize are sometimes suddenly null in Firefox 5.
+      // Even though it sounds weird:
+      // It seems that the execution of this function is interferred by the onresize/onscroll event
+      // where viewportOffset and viewportSize are unset
+      if (!viewportOffset || !viewportSize) {
+        return;
+      }
+
+      if (elementOffset.top + elementSize.height > viewportOffset.top &&
+          elementOffset.top < viewportOffset.top + viewportSize.height &&
+          elementOffset.left + elementSize.width > viewportOffset.left &&
+          elementOffset.left < viewportOffset.left + viewportSize.width) {
+        if (!inView) {
+          $element.data('inview', true).trigger('inview', [true]);
+        }
+      } else if (inView) {
+        $element.data('inview', false).trigger('inview', [false]);
+      }
+    }
+  }
+
+  $(w).on("scroll resize scrollstop", function() {
+    viewportSize = viewportOffset = null;
+  });
+
+  // IE < 9 scrolls to focused elements without firing the "scroll" event
+  if (!documentElement.addEventListener && documentElement.attachEvent) {
+    documentElement.attachEvent("onfocusin", function() {
+      viewportOffset = null;
+    });
+  }
+}));
 /*!
  * modernizr v3.3.1
  * Build https://modernizr.com/download?-backdropfilter-cssanimations-csscolumns-flexbox-svg-touchevents-setclasses-shiv-dontmin
@@ -4890,16 +5032,25 @@ jQuery(document).ready(function($){
 
 	var $w = $(window);
 	var $d = $(document);
-    var $footer = $('footer[role="contentinfo"]');
-    var $main = $('main[role="main"]');  //container for main content, sets paddings and margins for parallax effects
-    var $menu = $('#header-nav_menu_mobile');  //mobile menu
 
     var $nav = $('#header-top');
-    var fixNav = 'fixed'; //class for fixed navigation
+    var cfixed = 'fixed'; //class for fixed navigation
 
-    var mainPadTop = 84; // padding-top for main, for summ while fixing menu
-    var mobile = 670; //media query
-    var tablet = 820; //media query
+    var crevealed = 'revealed';
+
+
+    /*===  CHECK IF ELEMENT IS VISIBLE ===*/
+    function reveal(element){
+        $(element).one('inview', function(event, isInView){
+            if (isInView)
+                $(this).addClass(crevealed);
+        });
+    }
+
+    reveal('#scrn-3 .cell');
+    reveal('#scrn-2 .climateInfo');
+    /*===  end CHECK IF ELEMENT IS VISIBLE ===*/
+
 
 
 	/*===  FANCYBOX ===*/
@@ -4936,14 +5087,14 @@ jQuery(document).ready(function($){
     var navPos = $w.height() - 20;
 
     if( $w.scrollTop() >=  navPos)
-        $nav.addClass(fixNav);
+        $nav.addClass(cfixed);
 
     function FixNav(){
 
         if( $w.scrollTop() >= navPos)
-            $nav.addClass(fixNav, 2000);
+            $nav.addClass(cfixed, 2000);
         else
-            $nav.removeClass(fixNav, 2000);
+            $nav.removeClass(cfixed, 2000);
     }
     $w.bind('scroll', FixNav);
 

@@ -10,7 +10,7 @@ header[role=banner]{
   transition: .5s background-size ease-in-out;
 
 	position: relative;
-  padding-bottom: 52px;
+  // padding-bottom: 52px;
 
 	&, a {
 		color: #fff;
@@ -24,6 +24,7 @@ header[role=banner]{
 #header-top{
 	/* align content vertically + structure: logo on left, other on right */
 	@extend %flex_line;
+  align-items: center;
 
 	@include rem('padding', $padding-side/2, $padding-side);
 
@@ -33,7 +34,7 @@ header[role=banner]{
 	top: 0;
 	left: 0;
 	right: 0;
-  z-index: 10;
+  z-index: 100;
 
   transition: .2s all linear;
 
@@ -48,7 +49,7 @@ header[role=banner]{
   &.fixed{
     @include rem('padding', 3, $padding-side);
     position: fixed;
-    background-color: $color-blue;
+    background-color: $color-blue-3;
   }
 }
 
@@ -122,20 +123,20 @@ header[role=banner]{
     border: 1px solid #fff;
     @include rem('padding', 5, 10);
 
-    &:after{
-      content:"";
-      @include icon(arrow);
+    .i-arrow{
+      @include font-size(10, 1);
+      margin-left: 6px;
     }
   }
 
   &:focus .dropdown__toggle{
-    background-color: $color-blue;
+    background-color: $color-blue-3;
     border-color: $color-orange;
     color: $color-orange;
   }
 
   .dropdown__content{
-    background-color: $color-blue;
+    background-color: $color-blue-3;
     @include rem('padding', 0, 15);
   }
   
@@ -188,7 +189,7 @@ header[role=banner]{
 
     box-sizing: border-box;
     @include rem('padding', $padding-side*2, $padding-side, $padding-side);
-    background-color: $color-blue;
+    background-color: $color-blue-3;
     overflow-y: auto;
 
     @include rem('width', 320);

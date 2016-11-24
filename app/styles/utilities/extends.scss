@@ -9,15 +9,6 @@
   @include rem('padding-right', $padding-side);
 }
 
-%inline-block 
-{
-  display: -moz-inline-stack;
-  display: inline-block;
-  vertical-align: middle;
-  zoom: 1;
-  *display: inline;
-}
-
 %inlineBlock-fix
 {
   /*delete spaces between inline-block*/
@@ -80,7 +71,6 @@
 
 %flex_line{
   display: flex;
-  align-items: center;
   justify-content: space-between;
   flex-direction: row;
 }
@@ -90,4 +80,9 @@
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+%display_table_cell{
+  display: table-cell;
+  vertical-align: middle;
 }

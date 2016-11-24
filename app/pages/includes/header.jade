@@ -6,7 +6,9 @@ header(role="banner", class=type)
 		a.l-noline.q-mobile(href="#") ДАО «ПИКИ»
 		.b-inline
 			.dropdown.dropdown-select_light(tabindex="1")
-				a(href="javascript:;").dropdown__toggle Русский
+				a(href="javascript:;").dropdown__toggle 
+					| Русский
+					span.i-arrow
 				.dropdown__content.nav-links
 					a.active(href="#") Русский
 					a(href="#") English
@@ -32,7 +34,7 @@ header(role="banner", class=type)
 	.setw
 		h1 #{text}
 		if (type == 'screen')
-			.t-center.m-t-x2.q-min_tablet
+			.t-center.q-min_tablet
 				a.header-more(href="#{more}") Подробнее
 
 	if (canvas == 'true')

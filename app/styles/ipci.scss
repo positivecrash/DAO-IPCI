@@ -79,7 +79,7 @@ html, body{
 
 
 /*inside elements in line*/
-.b-inline{ @extend %flex_line; }
+.b-inline{ @extend %flex_line; align-items: center; }
 .setw{ @extend %width_base; }
 
 .section{
@@ -88,6 +88,13 @@ html, body{
   &:last-child{
     margin-bottom: 0;
   }
+}
+
+
+.cells{
+  @extend %flex_line;
+  align-items: top;
+  align-self: stretch;
 }
 
 
@@ -168,31 +175,30 @@ table{
 #scrn-2{
 
   .in{ 
-    @extend %flex_line;
+    display: table;
     padding-bottom: 80px;
-  }
 
-  h2{
-    flex: 1;
-    @include rem('padding-right', 30);
-    text-align: left;
+    h2, aside{
+      @extend %display_table_cell;
+    }
 
-    &:after{
-      content:"";
-      @include rem('height', 2);
-      @include rem('width', 70);
-      background-color: $color-brick;
-      display: block;
-      @include rem('margin-top', $font-base-size);
+    h2{
+      @include rem('padding-right', 30);
+      text-align: left;
     }
   }
 
-  aside{
-    flex: 3;
-  }
+  
 
   @include mobile(){
-    .setw { display: block; }
+    display: block;
+    padding-bottom: 0;
+
+    .in{
+
+      &, h2, aside { display: block; }
+      h2, aside { width: 100%; }
+    }
     h2 { @include rem('margin-bottom', $vertical-rythm); }
   }
 }
@@ -206,21 +212,211 @@ table{
   background-color: #FF8240;
   color: #fff;
 
-  @extend %flex_line;
+
+  display: table;
+  table-layout: fixed;
+  width: 100%;
 
   .cell{
+    @extend %display_table_cell;
     @extend %link_noline;
     color: #fff;
-    align-self: stretch;
     padding: 10px;
     text-align: left;
-    flex: 5;
 
     &:nth-child(2){ background-color: #FF6514; }
     &:nth-child(3){ background-color: #DD5208; }
     &:nth-child(4){ background-color: #C33704; }
     &:nth-child(5){ background-color: #9B3009; }
+
+
+    .climateInfo-content, .i-arrowBig{
+      @extend %display_table_cell;
+    }
+
+    .climateInfo-content{
+      @include rem('padding-left', 10);
+      @include font-size(14, 1);
+
+      .t-big{
+        @include font-size(28, 1);
+        @include rem('margin-right', 4);
+      }
+
+      p {
+        @include rem('margin-bottom', 2);
+      }
+    }
+
+    .i-arrowBig{
+      @include font-size(42, 1);
+
+      &.up{
+        transform: rotate(-180deg);
+      }
+    }
   }
+
+
+  @include mobile(){
+    position: static;
+    display: block;
+    height: auto;
+
+    .cell { display: block; }
+  }
+}
+
+
+#scrn-3{
+  background-color: $color-gray-5;
+  @include font-size(14);
+
+  .tag{
+    display: inline-block;
+    @include font-size(16, 1);
+    font-weight: bold;
+    color: $color-blue;
+    border-bottom: 2px solid $color-blue;
+    padding-bottom: 2px;
+
+    @include rem('margin-bottom', 30);
+  }
+
+  .t-center{
+    height: 190px;
+    @include rem('margin-bottom', 30);
+    @extend %flex_center;
+  }
+
+  .title{
+    @include font-size(22, 1.2);
+    font-weight: bold;
+    @include rem('height', 70);
+  }
+
+  .cell{
+    background-color: #fff;
+    border: 1px solid $color-blue;
+    border-radius: 4px;
+
+    box-sizing: border-box;
+    width: 30%;
+    @include rem('padding', 18);
+
+    &:last-child{
+      &, .tag{
+        border-color: $color-green;
+      }
+
+      .tag{
+        color: $color-green;
+      }
+    }
+  }
+
+  @include max_tablet(){
+    .cells { display: block; }
+    .cell{
+      width: 100%;
+      // margin-bottom: $vertical-rythm*2;
+      @include rem('margin-bottom', $vertical-rythm*2);
+    }
+
+    .title, .t-center{
+      height: auto;
+    }
+
+    .title{
+      @include rem('margin-bottom', 10);
+    }
+  }
+}
+
+
+#scrn-4{
+  background-color: $color-blue;
+  color: #fff;
+
+  h2{
+    text-align: left;
+    color: #fff;
+
+    &:after{
+      background-color: $color-orange;
+    }
+  }
+
+  .text{
+    @include rem('max-width', 420);
+  }
+
+  figure{
+    text-align: center;
+    width: 70%;
+
+    img{
+      display: inline-block;
+      max-width: 100%;
+    }
+  }
+
+  .text, figure{
+    display: table-cell;
+    vertical-align: bottom;
+
+    @include max_desktop_s(){
+      display: block;
+      width: 100%;
+      max-width: 100%;
+
+      @include rem('margin-bottom', $vertical-rythm);
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+
+}
+
+#daoscheme{
+  display: inline-block;
+  position: relative;
+  font-family: $font-family-second;
+  color: #BECFFC;
+  line-height: 1;
+
+  #e1, #e2, .parts{
+    position: absolute;
+  }
+
+  #e1, #e2{
+    left: 8px;
+    right: 0;
+    text-align: center;
+  }
+
+  #e1{
+    font-size: 64px;
+    top: 46px;
+  }
+
+  #e2{
+    font-size: 28px;
+    top: 205px;
+  }
+
+  .parts{
+    font-size: 20px;
+    color: $color-orange;
+  }
+
+  #e3{ top: 16px; left: 386px; }
+  #e4{ top: 298px; left: 456px; }
+  #e5{ top: 460px; left: 98px; }
+  #e6{ top: 263px; left: -92px; }
+  #e7{ top: 106px; left: -206px; }
 }
 
 /*======== END OF PAGE INDEX =========*/
@@ -235,5 +431,15 @@ table{
 @include mobile(){
   .q-mobile { display: block; }
   .q-min_tablet { display: none; }
+}
+
+@include max_desktop_s(){
+  .q-max_d_s { display: block; }
+  .q-min_d_s { display: none; }
+}
+
+@include min_desktop_s(){
+  .q-max_d_s { display: none; }
+  .q-min_d_s { display: block; }
 }
 /*======== end of RESPONSIVE =========*/

@@ -2,16 +2,25 @@ jQuery(document).ready(function($){
 
 	var $w = $(window);
 	var $d = $(document);
-    var $footer = $('footer[role="contentinfo"]');
-    var $main = $('main[role="main"]');  //container for main content, sets paddings and margins for parallax effects
-    var $menu = $('#header-nav_menu_mobile');  //mobile menu
 
     var $nav = $('#header-top');
-    var fixNav = 'fixed'; //class for fixed navigation
+    var cfixed = 'fixed'; //class for fixed navigation
 
-    var mainPadTop = 84; // padding-top for main, for summ while fixing menu
-    var mobile = 670; //media query
-    var tablet = 820; //media query
+    var crevealed = 'revealed';
+
+
+    /*===  CHECK IF ELEMENT IS VISIBLE ===*/
+    function reveal(element){
+        $(element).one('inview', function(event, isInView){
+            if (isInView)
+                $(this).addClass(crevealed);
+        });
+    }
+
+    reveal('#scrn-3 .cell');
+    reveal('#scrn-2 .climateInfo');
+    /*===  end CHECK IF ELEMENT IS VISIBLE ===*/
+
 
 
 	/*===  FANCYBOX ===*/
@@ -48,14 +57,14 @@ jQuery(document).ready(function($){
     var navPos = $w.height() - 20;
 
     if( $w.scrollTop() >=  navPos)
-        $nav.addClass(fixNav);
+        $nav.addClass(cfixed);
 
     function FixNav(){
 
         if( $w.scrollTop() >= navPos)
-            $nav.addClass(fixNav, 2000);
+            $nav.addClass(cfixed, 2000);
         else
-            $nav.removeClass(fixNav, 2000);
+            $nav.removeClass(cfixed, 2000);
     }
     $w.bind('scroll', FixNav);
 
