@@ -5,5 +5,72 @@
 /*======== FOOTER BASIC =========*/
 
 footer[role='contentinfo']{
-	
+
+}
+
+.b-promo{
+	background-color: $color-blue;
+	color: #fff;
+	@include rem('padding-top', $vertical-rythm*2);
+  	@include rem('padding-bottom', $vertical-rythm*2);
+
+  	h2 { color: #fff; }
+
+	.btn-lined{
+		transition: .2s ease background-color;
+		border-color: #fff;
+		color: #fff;
+
+		&:hover{
+			background-color: darken($color-blue, 15%);
+			color: $color-orange;
+			border-color: $color-orange;
+		}
+	}
+
+	.t-center{
+		@include font-size(100, 1);
+		@include rem('height', 100);
+		@include rem('margin-bottom', $vertical-rythm/2);
+	}
+
+	@include max_desktop_s(){
+		.cells{
+			display: block;
+			text-align: center;
+		}
+
+		.cell{
+			@include rem('margin-top', $vertical-rythm*2);
+
+			&:first-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.footer-light{
+	@include font-size(20, 1.2);
+	color: $color-gray-3;
+	@include rem('padding-top', $vertical-rythm/2);
+	@include rem('padding-bottom', $vertical-rythm/2);
+
+	.cell{
+		@include rem('padding-left', 20);
+
+		&:first-child { padding-left: 0; }
+	}
+
+	@include mobile(){
+		.cells { display: block; }
+		.cell{
+			padding-left: 0;
+			@include rem('margin-top', $vertical-rythm/2);
+
+			&:first-child{
+				margin-top: 0;
+			}
+		}
+	}
 }

@@ -28,11 +28,20 @@
 @function icon-char($filename) {
 	$char: "";
 
-	@if $filename == arrow {
+	@if $filename == app {
 		$char: "\E001";
 	}
-	@if $filename == arrowBig {
+	@if $filename == arrow {
 		$char: "\E002";
+	}
+	@if $filename == arrowBig {
+		$char: "\E003";
+	}
+	@if $filename == consult {
+		$char: "\E004";
+	}
+	@if $filename == git {
+		$char: "\E005";
 	}
 
 	@return $char;
@@ -46,9 +55,18 @@
 	}
 }
 
+.i-app {
+	@include icon(app);
+}
 .i-arrow {
 	@include icon(arrow);
 }
 .i-arrowBig {
 	@include icon(arrowBig);
+}
+.i-consult {
+	@include icon(consult);
+}
+.i-git {
+	@include icon(git);
 }

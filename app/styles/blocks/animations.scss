@@ -59,6 +59,27 @@ $CanvasGrowDuration: 0.5s;
 }
 
 
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes daoCodeAppear {
+  0% {
+    top: 257px;
+    left: -74px;
+  }
+  100% {
+    top: 157px;
+    left: -24px;
+  }
+}
+
+
 
 
 #{$modernizr-cssanimations}{
@@ -82,12 +103,45 @@ $CanvasGrowDuration: 0.5s;
     }
   }
 
-  #scrn-2 .climateInfo{
+  #scrn-2 .climateInfo, #scrn-5 .sprite-daoOperator{
 
     opacity: 0;
 
     &.revealed{
       animation: fadeIn .4s ease-in-out forwards, BotUp .4s ease-in-out forwards;
+    }
+  }
+
+  #daoscheme_dots{
+    opacity: 0;
+
+    div{ transform: scale(0); }
+
+    
+    &.revealed{
+      animation: fadeIn .2s ease-in-out forwards;
+
+      #e8{ animation: .2s scaleIn .2s cubic-bezier(.1, -1.5, .1, 2.5) forwards; }
+      #e9{ animation: .2s scaleIn .4s cubic-bezier(.1, -1.5, .1, 2.5) forwards; }
+      #e10{ animation: .2s scaleIn .6s cubic-bezier(.1, -1.5, .1, 2.5) forwards; }
+      #e11{ animation: .2s scaleIn 1.2s cubic-bezier(.1, -1.5, .1, 2.5) forwards; }
+      #e12{ animation: .2s scaleIn 1.3s cubic-bezier(.1, -1.5, .1, 2.5) forwards; }
+      #e13{ animation: .2s scaleIn 1.6s cubic-bezier(.1, -1.5, .1, 2.5) forwards; }
+      #e14{ animation: .2s scaleIn 1s cubic-bezier(.1, -1.5, .1, 2.5) forwards; }
+      #e15{ animation: .2s scaleIn 1.4s cubic-bezier(.1, -1.5, .1, 2.5) forwards; }
+      #e16{ animation: .2s scaleIn .7s cubic-bezier(.1, -1.5, .1, 2.5) forwards; }
+    }
+  }
+
+
+  #scrn-6 .sprite-daoCodeTwo{
+    opacity: 0;
+    top: 257px;
+    left: -74px;
+    transform-origin: left top;
+
+    &.revealed{
+      animation: fadeIn .2s linear forwards, daoCodeAppear .3s linear forwards;
     }
   }
   

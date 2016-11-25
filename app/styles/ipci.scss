@@ -18,6 +18,8 @@
 @import "blocks/header";
 @import "blocks/footer";
 
+@import "blocks/index";
+
 
 /*======== MAIN SCSS VARIABLES & MIXINS & EXTENDS =========*/
 
@@ -97,6 +99,9 @@ html, body{
   align-self: stretch;
 }
 
+.d-t { display: table; }
+.d-t_cell { @extend %display_table_cell; }
+
 
 
 /*------- BASIC STYLES - margins --------*/
@@ -114,50 +119,50 @@ html, body{
 
 
 /*------- ELEMENTS - TABLES --------*/
-table{
-  margin: $vertical-rythm*2 0;
+// table{
+//   margin: $vertical-rythm*2 0;
 
-  td, th {
-    color: $color-table-text;
-    padding: 10px 5px 10px 20px;
-    vertical-align: top;
-    border-style: solid;
-  }
+//   td, th {
+//     color: $color-table-text;
+//     padding: 10px 5px 10px 20px;
+//     vertical-align: top;
+//     border-style: solid;
+//   }
 
-  tfoot td, th {
-    font: bold 16px/1 $font-family-second;
-    text-align: left;
-  }
+//   tfoot td, th {
+//     font: bold 16px/1 $font-family-second;
+//     text-align: left;
+//   }
 
-  th {
-    border-width: 0 0 1px;
-    border-color: $color-table-head-border;
-    color: $color-table-head-text;
-    background-color: $color-table-head-back;
-  }
+//   th {
+//     border-width: 0 0 1px;
+//     border-color: $color-table-head-border;
+//     color: $color-table-head-text;
+//     background-color: $color-table-head-back;
+//   }
 
-  tfoot td{
-    font-size: $font-base-size;
-    border-width: 1px 0 0;
-    color: $color-table-foot-text;
-    border-color: $color-table-foot-border;
-    background-color: $color-table-foot-back;
-  }
+//   tfoot td{
+//     font-size: $font-base-size;
+//     border-width: 1px 0 0;
+//     color: $color-table-foot-text;
+//     border-color: $color-table-foot-border;
+//     background-color: $color-table-foot-back;
+//   }
 
 
-  tbody{
-    td{
-      border-width: 0 0 1px;
-      color: $color-table-text;
-      border-color: $color-table-border;
-    }
+//   tbody{
+//     td{
+//       border-width: 0 0 1px;
+//       color: $color-table-text;
+//       border-color: $color-table-border;
+//     }
 
-    tr:hover td {
-      color: darken($color-table-text, 40%);
-    }
-  }
+//     tr:hover td {
+//       color: darken($color-table-text, 40%);
+//     }
+//   }
 
-}
+// }
 
 
 
@@ -166,260 +171,6 @@ table{
 
 /*======== END OF ELEMENTS =========*/
 
-
-
-
-
-/*======== PAGE INDEX =========*/
-
-#scrn-2{
-
-  .in{ 
-    display: table;
-    padding-bottom: 80px;
-
-    h2, aside{
-      @extend %display_table_cell;
-    }
-
-    h2{
-      @include rem('padding-right', 30);
-      text-align: left;
-    }
-  }
-
-  
-
-  @include mobile(){
-    display: block;
-    padding-bottom: 0;
-
-    .in{
-
-      &, h2, aside { display: block; }
-      h2, aside { width: 100%; }
-    }
-    h2 { @include rem('margin-bottom', $vertical-rythm); }
-  }
-}
-
-.climateInfo{
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 80px;
-  background-color: #FF8240;
-  color: #fff;
-
-
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-
-  .cell{
-    @extend %display_table_cell;
-    @extend %link_noline;
-    color: #fff;
-    padding: 10px;
-    text-align: left;
-
-    &:nth-child(2){ background-color: #FF6514; }
-    &:nth-child(3){ background-color: #DD5208; }
-    &:nth-child(4){ background-color: #C33704; }
-    &:nth-child(5){ background-color: #9B3009; }
-
-
-    .climateInfo-content, .i-arrowBig{
-      @extend %display_table_cell;
-    }
-
-    .climateInfo-content{
-      @include rem('padding-left', 10);
-      @include font-size(14, 1);
-
-      .t-big{
-        @include font-size(28, 1);
-        @include rem('margin-right', 4);
-      }
-
-      p {
-        @include rem('margin-bottom', 2);
-      }
-    }
-
-    .i-arrowBig{
-      @include font-size(42, 1);
-
-      &.up{
-        transform: rotate(-180deg);
-      }
-    }
-  }
-
-
-  @include mobile(){
-    position: static;
-    display: block;
-    height: auto;
-
-    .cell { display: block; }
-  }
-}
-
-
-#scrn-3{
-  background-color: $color-gray-5;
-  @include font-size(14);
-
-  .tag{
-    display: inline-block;
-    @include font-size(16, 1);
-    font-weight: bold;
-    color: $color-blue;
-    border-bottom: 2px solid $color-blue;
-    padding-bottom: 2px;
-
-    @include rem('margin-bottom', 30);
-  }
-
-  .t-center{
-    height: 190px;
-    @include rem('margin-bottom', 30);
-    @extend %flex_center;
-  }
-
-  .title{
-    @include font-size(22, 1.2);
-    font-weight: bold;
-    @include rem('height', 70);
-  }
-
-  .cell{
-    background-color: #fff;
-    border: 1px solid $color-blue;
-    border-radius: 4px;
-
-    box-sizing: border-box;
-    width: 30%;
-    @include rem('padding', 18);
-
-    &:last-child{
-      &, .tag{
-        border-color: $color-green;
-      }
-
-      .tag{
-        color: $color-green;
-      }
-    }
-  }
-
-  @include max_tablet(){
-    .cells { display: block; }
-    .cell{
-      width: 100%;
-      // margin-bottom: $vertical-rythm*2;
-      @include rem('margin-bottom', $vertical-rythm*2);
-    }
-
-    .title, .t-center{
-      height: auto;
-    }
-
-    .title{
-      @include rem('margin-bottom', 10);
-    }
-  }
-}
-
-
-#scrn-4{
-  background-color: $color-blue;
-  color: #fff;
-
-  h2{
-    text-align: left;
-    color: #fff;
-
-    &:after{
-      background-color: $color-orange;
-    }
-  }
-
-  .text{
-    @include rem('max-width', 420);
-  }
-
-  figure{
-    text-align: center;
-    width: 70%;
-
-    img{
-      display: inline-block;
-      max-width: 100%;
-    }
-  }
-
-  .text, figure{
-    display: table-cell;
-    vertical-align: bottom;
-
-    @include max_desktop_s(){
-      display: block;
-      width: 100%;
-      max-width: 100%;
-
-      @include rem('margin-bottom', $vertical-rythm);
-
-      &:last-child{
-        margin-bottom: 0;
-      }
-    }
-  }
-
-}
-
-#daoscheme{
-  display: inline-block;
-  position: relative;
-  font-family: $font-family-second;
-  color: #BECFFC;
-  line-height: 1;
-
-  #e1, #e2, .parts{
-    position: absolute;
-  }
-
-  #e1, #e2{
-    left: 8px;
-    right: 0;
-    text-align: center;
-  }
-
-  #e1{
-    font-size: 64px;
-    top: 46px;
-  }
-
-  #e2{
-    font-size: 28px;
-    top: 205px;
-  }
-
-  .parts{
-    font-size: 20px;
-    color: $color-orange;
-  }
-
-  #e3{ top: 16px; left: 386px; }
-  #e4{ top: 298px; left: 456px; }
-  #e5{ top: 460px; left: 98px; }
-  #e6{ top: 263px; left: -92px; }
-  #e7{ top: 106px; left: -206px; }
-}
-
-/*======== END OF PAGE INDEX =========*/
 
 
 /*======== RESPONSIVE =========*/
@@ -441,5 +192,15 @@ table{
 @include min_desktop_s(){
   .q-max_d_s { display: none; }
   .q-min_d_s { display: block; }
+}
+
+@include max_desktop_m(){
+  .q-max_d_m { display: block; }
+  .q-min_d_m { display: none; }
+}
+
+@include min_desktop_m(){
+  .q-min_d_m { display: block; }
+  .q-max_d_m { display: none; }
 }
 /*======== end of RESPONSIVE =========*/

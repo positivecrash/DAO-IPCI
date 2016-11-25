@@ -100,7 +100,7 @@ hr{
   margin: $vertical-rythm 0;
 }
 
-blockquote, p, li, .textSection {
+blockquote, p, li, ul, ol {
   @include rem('margin-bottom', $vertical-rythm);
 
   &:last-child{
@@ -122,8 +122,10 @@ blockquote, p, li, .textSection {
 .t-bold { font-weight: bold; }
 
 .t-red, a.t-red { color: $color-red; color: $color-red !important; }
+.t-gray, a.t-gray  { color: $color-gray-6; color: $color-gray-6 !important; }
 
-.t-small { font-size: 9px; }
+.t-mid { @include font-size(18, 1.2); }
+.t-small { @include font-size(14, 1.2); }
 
 
 .t-title__l{

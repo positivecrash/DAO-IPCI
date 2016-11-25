@@ -1,0 +1,403 @@
+#scrn-2{
+
+  .in{ 
+    display: table;
+    padding-bottom: 80px;
+
+    h2, aside{
+      @extend %display_table_cell;
+    }
+
+    h2{
+      @include rem('padding-right', 30);
+      text-align: left;
+    }
+  }
+
+  
+
+  @include mobile(){
+    display: block;
+    padding-bottom: 0;
+
+    .in{
+
+      &, h2, aside { display: block; }
+      h2, aside { width: 100%; }
+    }
+    h2 { @include rem('margin-bottom', $vertical-rythm); }
+  }
+}
+
+.climateInfo{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80px;
+  background-color: #FF8240;
+  color: #fff;
+
+
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+
+  .cell{
+    @extend %display_table_cell;
+    @extend %link_noline;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+
+    &:nth-child(2){ background-color: #FF6514; }
+    &:nth-child(3){ background-color: #DD5208; }
+    &:nth-child(4){ background-color: #C33704; }
+    &:nth-child(5){ background-color: #9B3009; }
+
+
+    .climateInfo-content, .i-arrowBig{
+      @extend %display_table_cell;
+    }
+
+    .climateInfo-content{
+      @include rem('padding-left', 10);
+      @include font-size(14, 1);
+
+      .t-big{
+        @include font-size(28, 1);
+        @include rem('margin-right', 4);
+      }
+
+      p {
+        @include rem('margin-bottom', 2);
+      }
+    }
+
+    .i-arrowBig{
+      @include font-size(42, 1);
+
+      &.up{
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+
+  @include mobile(){
+    position: static;
+    display: block;
+    height: auto;
+
+    .cell { display: block; }
+  }
+}
+
+
+#scrn-3{
+  background-color: $color-gray-5;
+  @include font-size(14);
+
+  .tag{
+    display: inline-block;
+    @include font-size(16, 1);
+    font-weight: bold;
+    color: $color-blue;
+    border-bottom: 2px solid $color-blue;
+    padding-bottom: 2px;
+
+    @include rem('margin-bottom', 30);
+  }
+
+  .t-center{
+    height: 190px;
+    @include rem('margin-bottom', 30);
+    @extend %flex_center;
+  }
+
+  .title{
+    @include font-size(22, 1.2);
+    font-weight: bold;
+    @include rem('height', 70);
+  }
+
+  .cell{
+    background-color: #fff;
+    border: 1px solid $color-blue;
+    border-radius: 4px;
+
+    box-sizing: border-box;
+    width: 30%;
+    @include rem('padding', 18);
+
+    &:last-child{
+      &, .tag{
+        border-color: $color-green;
+      }
+
+      .tag{
+        color: $color-green;
+      }
+    }
+  }
+
+  @include max_tablet(){
+    .cells { display: block; }
+    .cell{
+      width: 100%;
+      // margin-bottom: $vertical-rythm*2;
+      @include rem('margin-bottom', $vertical-rythm*2);
+    }
+
+    .title, .t-center{
+      height: auto;
+    }
+
+    .title{
+      @include rem('margin-bottom', 10);
+    }
+  }
+}
+
+
+#scrn-4{
+  background-color: $color-blue;
+  color: #fff;
+
+  h2{
+    text-align: left;
+    color: #fff;
+
+    &:after{
+      background-color: $color-orange;
+    }
+  }
+
+  figure{
+    text-align: center;
+    width: 70%;
+
+    img{
+      display: inline-block;
+      max-width: 100%;
+    }
+  }
+
+  .text, figure{
+    display: table-cell;
+    vertical-align: bottom;
+
+    @include max_desktop_m(){
+      display: block;
+      width: 100%;
+      max-width: 100%;
+
+      @include rem('margin-bottom', $vertical-rythm*3);
+      &:last-child{ margin-bottom: 0; }
+    }
+  }
+
+}
+
+#daoscheme{
+  display: inline-block;
+  position: relative;
+  font-family: $font-family-second;
+  color: #BECFFC;
+  line-height: 1;
+
+  #e1, #e2, .parts{
+    position: absolute;
+    z-index: 2;
+  }
+
+  #e1, #e2{
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  #e1{
+    font-size: 64px;
+    top: 46px;
+  }
+
+  #e2{
+    font-size: 28px;
+    // top: 205px;
+    top: 50%;
+    margin-top: -14px;
+  }
+
+  .parts{
+    font-size: 20px;
+    color: $color-orange;
+    transition: .4s all linear;
+  }
+
+  #e3{ top: 35px; left: 386px; }
+  #e4{ top: 313px; left: 449px; }
+  #e5{ top: 470px; left: 95px; }
+  #e6{ top: 278px; left: -96px; }
+  #e7{ top: 102px; left: -203px; }
+
+  img{
+    // transform: rotate(-10deg);
+    transition: .4s transform linear;
+    transform-origin: center center; 
+  }
+
+  
+  &.m0{
+    img { transform: rotate(4deg); }
+    #e3{ top: 35px; left: 386px; }
+    #e4{ top: 313px; left: 449px; }
+    #e5{ top: 470px; left: 95px; }
+    #e6{ top: 278px; left: -96px; }
+    #e7{ top: 102px; left: -203px; }
+  }
+
+  &.m1{
+    img { transform: rotate(10deg); }
+    #e3{ top: 65px; left: 420px; }
+    #e4{ top: 346px; left: 433px; }
+    #e5{ top: 460px; left: 52px; }
+    #e6{ top: 239px; left: -102px; }
+    #e7{ top: 75px; left: -184px; }
+  }
+
+  &.m2{
+    img { transform: rotate(15deg); }
+    #e3{ top: 75px; left: 427px; }
+    #e4{ top: 362px; left: 420px; }
+    #e5{ top: 458px; left: 32px; }
+    #e6{ top: 221px; left: -102px; }
+    #e7{ top: 54px; left: -170px; }
+  }
+
+  &.m3{
+    img { transform: rotate(25deg); }
+    #e3{ top: 106px; left: 438px; }
+    #e4{ top: 388px; left: 392px; }
+    #e5{ top: 444px; left: 2px; }
+    #e6{ top: 183px; left: -98px; }
+    #e7{ top: 25px; left: -140px; }
+  }
+
+  &.m4{
+    img { transform: rotate(35deg); }
+    #e3{ top: 169px; left: 464px; }
+    #e4{ top: 410px; left: 362px; }
+    #e5{ top: 422px; left: -27px; }
+    #e6{ top: 145px; left: -90px; }
+    #e7{ top: 4px; left: -103px; }
+  }
+
+  &.m5{
+    img { transform: rotate(60deg); }
+    #e3{ top: 265px; left: 464px; }
+    #e4{ top: 439px; left: 272px; }
+    #e5{ top: 346px; left: -86px; }
+    #e6{ top: 66px; left: -40px; }
+    #e7{ top: -22px; left: -13px; }
+  }
+}
+
+
+#daoscheme_dots{
+  position: absolute;
+  width: 162px;
+  height: 162px;
+  top: 50%;
+  left: 50%;
+  margin-top: -81px;
+  margin-left: -81px;
+  z-index: 1;
+
+  div {
+    position: absolute;
+    @include draw_circle(12px, 1px);
+    background-color: $color-orange;
+    border: 1px solid $color-brick;
+  }
+
+  #e8 { top: 45px; left: 18px; }
+  #e9 { @include draw_circle(28px, 1px); top: 30px; left: 47px; }
+  #e10 { @include draw_circle(15px, 1px); top: 20px; left: 92px; }
+  #e11 { @include draw_circle(18px, 1px); top: 40px; left: 82px; }
+  #e12 { @include draw_circle(9px, 1px); top: 40px; left: 126px; }
+  #e13 { @include draw_circle(34px, 1px); top: 102px; left: 104px; }
+  #e14 { @include draw_circle(24px, 1px); top: 125px; left: 76px; }
+  #e15 { @include draw_circle(11px, 1px); top: 106px; left: 72px; }
+  #e16 { @include draw_circle(16px, 1px); top: 118px; left: 38px; }
+}
+
+
+
+
+#scrn-5, #scrn-6{
+
+  .d-t > aside{ text-align: center; }
+
+  .d-t{
+    & > .text, & > aside{
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    @include max_desktop_s(){
+        &, & > .text, & > aside { display: block; }
+
+        & > .text, & > aside{
+          @include rem('margin-bottom', $vertical-rythm*3);
+          &:last-child{ margin-bottom: 0; }
+        }
+    }
+  }
+
+  .d-t > .text{
+    @include rem('padding-right', 50);
+  }
+}
+
+#scrn-5{
+  .sprite-daoOperator { 
+    box-shadow: 1px 1px 3px rgba(#B2B5B7, .5);
+    @include rem('margin-bottom', $vertical-rythm);
+  }
+
+  aside{
+    .t-gray { @include rem('margin-top', 10); }
+  }
+
+  @media screen and (max-width: 600px) 
+  {
+    .sprite-daoOperator{
+      @include sprite-background-recalc('sprite.png', 'daoOperator', 50);
+    }
+  }
+}
+
+#scrn-6{
+  background-color: $color-gray-5;
+
+  aside {
+    padding-left: 87px;
+    overflow: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .sprite-daoCodeTwo {
+    position: absolute;
+    top: 157px;
+    left: -24px;
+  }
+
+  @include max_desktop_s(){
+    aside{
+      height: 406px;
+    }
+  }
+}

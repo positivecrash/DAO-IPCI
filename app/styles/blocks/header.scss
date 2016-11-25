@@ -126,6 +126,7 @@ header[role=banner]{
     .i-arrow{
       @include font-size(10, 1);
       margin-left: 6px;
+      transition: .2s all ease-in-out;
     }
   }
 
@@ -133,6 +134,10 @@ header[role=banner]{
     background-color: $color-blue-3;
     border-color: $color-orange;
     color: $color-orange;
+
+    .i-arrow{
+      transform: scaleY(-1) scale(.75);
+    }
   }
 
   .dropdown__content{
@@ -146,6 +151,7 @@ header[role=banner]{
 /*Hamburger menu*/
 .hamburger{
   cursor: pointer;
+  transition: all .2s ease-in-out;
 
   .line{
     width: 40px;
@@ -162,6 +168,9 @@ header[role=banner]{
   &:focus .hamburger{
     position: relative;
     z-index: 20;
+
+    transform: scale(.75);
+    
 
     .line{
       background-color: $color-orange;

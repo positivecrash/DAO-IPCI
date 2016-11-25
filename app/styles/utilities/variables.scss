@@ -1,11 +1,11 @@
 $point-mobile: 680px;
 $point-tablet: 780px;
 $point-desktop-s: 1024px;
-$point-desktop-m: 1440px;
+$point-desktop-m: 1280px;
 $point-desktop-b: 1620px;
 
-$width-base-max: 1440px;
-$width-base-min: $point-desktop-s;
+$width-base-max: $point-desktop-m;
+// $width-base-min: $point-desktop-s;
 
 $padding-side: 40;
 
@@ -15,9 +15,9 @@ $padding-side: 40;
 $color-gray-0: #333;
 $color-gray-1: #414141;
 $color-gray-2: #95989A;
-$color-gray-3: #EFEFEF;
-$color-gray-4: #F8F8F8;
+$color-gray-3: #626262;
 $color-gray-5: #FAFAFA;
+$color-gray-6: #A6A8AA;
 
 $color-blue: #0B58B1;
 $color-blue-2: #001C3C;
@@ -35,16 +35,16 @@ $color-lk: $color-blue;
 $color-lk_hover: darken($color-lk, 5%);
 
 
-$color-table-head-text: $color-gray-0;
-$color-table-head-back: lighten($color-text, 55%);
-$color-table-head-border: $color-gray-1;
+// $color-table-head-text: $color-gray-0;
+// $color-table-head-back: lighten($color-text, 55%);
+// $color-table-head-border: $color-gray-1;
 
-$color-table-foot-text: $color-text;
-$color-table-foot-back: $color-gray-4;
-$color-table-foot-border: $color-gray-2;
+// $color-table-foot-text: $color-text;
+// $color-table-foot-back: $color-gray-4;
+// $color-table-foot-border: $color-gray-2;
 
-$color-table-text: $color-text;
-$color-table-border: $color-gray-2;
+// $color-table-text: $color-text;
+// $color-table-border: $color-gray-2;
 
 
 
