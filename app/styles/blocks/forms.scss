@@ -10,14 +10,14 @@
   background-color: #fff;
   border: 1px solid $color-gray-2;
 
-  color: $color-gray-0;
+  color: $color-text;
 
   @extend %link_noline;
   display: inline-block;
 
 
   &::placeholder {
-    color: $color-gray-1;
+    color: $color-gray-2;
   }
 
   &:focus{
@@ -123,13 +123,18 @@ label.requiered{
 
 		display: inline-block;
 		vertical-align: middle;
+		vertical-align: -webkit-baseline-middle;
 	}
 
 	input{
 		border-color: $color-brick;
 
-		&, &::placeholder {
+		&::placeholder {
 		    color: $color-brick;
+	  	}
+
+	  	&:focus{
+	  		border-color: $color-brick-2;
 	  	}
 	}
 }

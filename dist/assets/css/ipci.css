@@ -210,27 +210,27 @@ header[role=banner], .screen {
 
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Regular.eot?1480432068');
-  src: url('../fonts/Scada-Regular.eot?&1480432068#iefix') format('embedded-opentype'), url('../fonts/Scada-Regular.woff?1480432068') format('woff'), url('../fonts/Scada-Regular.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Regular.eot?1480440824');
+  src: url('../fonts/Scada-Regular.eot?&1480440824#iefix') format('embedded-opentype'), url('../fonts/Scada-Regular.woff?1480440824') format('woff'), url('../fonts/Scada-Regular.ttf?1415701385') format('truetype');
   font-weight: normal;
 }
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Bold.eot?1480432068');
-  src: url('../fonts/Scada-Bold.eot?&1480432068#iefix') format('embedded-opentype'), url('../fonts/Scada-Bold.woff?1480432068') format('woff'), url('../fonts/Scada-Bold.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Bold.eot?1480440824');
+  src: url('../fonts/Scada-Bold.eot?&1480440824#iefix') format('embedded-opentype'), url('../fonts/Scada-Bold.woff?1480440824') format('woff'), url('../fonts/Scada-Bold.ttf?1415701385') format('truetype');
   font-weight: bold;
 }
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Italic.eot?1480432068');
-  src: url('../fonts/Scada-Italic.eot?&1480432068#iefix') format('embedded-opentype'), url('../fonts/Scada-Italic.woff?1480432068') format('woff'), url('../fonts/Scada-Italic.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Italic.eot?1480440824');
+  src: url('../fonts/Scada-Italic.eot?&1480440824#iefix') format('embedded-opentype'), url('../fonts/Scada-Italic.woff?1480440824') format('woff'), url('../fonts/Scada-Italic.ttf?1415701385') format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: "Roboto Slab";
-  src: url('../fonts/RobotoSlab-Bold.eot?1480432068');
-  src: url('../fonts/RobotoSlab-Bold.eot?&1480432068#iefix') format('embedded-opentype'), url('../fonts/RobotoSlab-Bold.woff?1480432068') format('woff'), url('../fonts/RobotoSlab-Bold.ttf?1373969180') format('truetype');
+  src: url('../fonts/RobotoSlab-Bold.eot?1480440824');
+  src: url('../fonts/RobotoSlab-Bold.eot?&1480440824#iefix') format('embedded-opentype'), url('../fonts/RobotoSlab-Bold.woff?1480440824') format('woff'), url('../fonts/RobotoSlab-Bold.ttf?1373969180') format('truetype');
   font-weight: bold;
 }
 body {
@@ -894,20 +894,20 @@ input, textarea, select, .btn-primary, input[type='submit'], .btn-lined {
   border-radius: 4px;
   background-color: #fff;
   border: 1px solid #95989A;
-  color: #333;
+  color: #414141;
   display: inline-block;
 }
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, select::-webkit-input-placeholder, .btn-primary::-webkit-input-placeholder, input[type='submit']::-webkit-input-placeholder, .btn-lined::-webkit-input-placeholder {
-  color: #414141;
+  color: #95989A;
 }
 input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder, .btn-primary::-moz-placeholder, input[type='submit']::-moz-placeholder, .btn-lined::-moz-placeholder {
-  color: #414141;
+  color: #95989A;
 }
 input:-ms-input-placeholder, textarea:-ms-input-placeholder, select:-ms-input-placeholder, .btn-primary:-ms-input-placeholder, input[type='submit']:-ms-input-placeholder, .btn-lined:-ms-input-placeholder {
-  color: #414141;
+  color: #95989A;
 }
 input::placeholder, textarea::placeholder, select::placeholder, .btn-primary::placeholder, input[type='submit']::placeholder, .btn-lined::placeholder {
-  color: #414141;
+  color: #95989A;
 }
 input:focus, textarea:focus, select:focus, .btn-primary:focus, .btn-lined:focus {
   border-color: #414141;
@@ -1002,21 +1002,25 @@ label.requiered:after {
   line-height: 1;
   display: inline-block;
   vertical-align: middle;
+  vertical-align: -webkit-baseline-middle;
 }
 label.requiered input {
   border-color: #B7674A;
 }
-label.requiered input, label.requiered input::-webkit-input-placeholder {
+label.requiered input::-webkit-input-placeholder {
   color: #B7674A;
 }
-label.requiered input, label.requiered input::-moz-placeholder {
+label.requiered input::-moz-placeholder {
   color: #B7674A;
 }
-label.requiered input, label.requiered input:-ms-input-placeholder {
+label.requiered input:-ms-input-placeholder {
   color: #B7674A;
 }
-label.requiered input, label.requiered input::placeholder {
+label.requiered input::placeholder {
   color: #B7674A;
+}
+label.requiered input:focus {
+  border-color: #804732;
 }
 
 .btn-lined {
