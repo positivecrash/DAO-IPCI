@@ -89,9 +89,9 @@ $CanvasGrowDuration: 0.5s;
     animation: CanvasGrow $CanvasGrowDuration $CanvasGrowDelay ease-in-out forwards;
   }
 
-  header[role=banner]{
-    animation:  BackResize $CanvasGrowDuration $CanvasGrowDelay ease-in-out forwards;
-  }
+  // header[role=banner].screen:before{
+  //   animation:  BackResize $CanvasGrowDuration $CanvasGrowDelay ease-in-out forwards;
+  // }
 
 
   #scrn-3 .cell{

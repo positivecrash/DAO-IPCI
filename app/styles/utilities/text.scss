@@ -58,12 +58,12 @@ a {
 
 #{headings()} {
   @include rem('margin-bottom', $vertical-rythm * 1.5);
-  @include rem('margin-top', $vertical-rythm * 4);
+  @include rem('margin-top', $vertical-rythm * 3);
 
   font-family: $font-family-second;
   font-weight: bold;
   line-height: $scale-small;
-  text-align: center;
+  // text-align: center;
 
   color: $color-gray-0;
 
@@ -78,19 +78,20 @@ a {
 
 
 h1 {
-  @include font-size(34, 1.2);
+  @include font-size(38, 1.2);
 
   @include mobile(){
     @include font-size(28, 1.2);
   }
 }
-h2 { @include font-size(30, 1.2); }
-h3 { font-size: 22px; }
+h2 { @include font-size(32, 1.2); }
+h3 { @include font-size(26, 1.2); }
 
 
 
 ul, ol {
-  margin-left: 15px;
+  // margin-left: 15px;
+  list-style-position: inside;
 }
 
 hr{
@@ -106,6 +107,10 @@ blockquote, p, li, ul, ol {
   &:last-child{
     margin-bottom: 0;
   }
+}
+
+li{
+  @include rem('margin-bottom', $vertical-rythm/2);
 }
 
 
@@ -151,4 +156,25 @@ blockquote, p, li, ul, ol {
       display: block;
       @include rem('margin-top', $font-base-size);
     }
+}
+
+
+.wp-caption{
+  @include rem('margin', $vertical-rythm*2);
+  text-align: center;
+  color: $color-gray-3;
+  @include font-size(18, 1.2);
+
+  img{
+    display: inline-block;
+    max-width: 100%;
+    @include rem('margin-bottom', $vertical-rythm);
+  }
+
+  @include min_desktop_s(){
+    &.alignleft{
+      float: left;
+      @include rem('margin', $vertical-rythm, $vertical-rythm, $vertical-rythm, 0);
+    }
+  }
 }

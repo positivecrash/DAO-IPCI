@@ -4,7 +4,7 @@ $point-desktop-s: 1024px;
 $point-desktop-m: 1280px;
 $point-desktop-b: 1620px;
 
-$width-base-max: $point-desktop-m;
+$width-base-max: $point-desktop-b;
 // $width-base-min: $point-desktop-s;
 
 $padding-side: 40;
@@ -29,6 +29,7 @@ $color-green: #1FC384;
 
 $color-brick: #B7674A;
 $color-brick-2: #804732;
+$color-brick-3: #693928;
 
 $color-text: $color-gray-1;
 $color-lk: $color-blue;
@@ -55,7 +56,7 @@ $font-family-second: 'Roboto Slab', serif;
 
 $scale: 1.5; //для вычисления интерлиньяжа
 $scale-small: 1.2; //например, для вычисления интерлиньяжа заголовков
-$font-base-size: 24;
+$font-base-size: 20;
 $vertical-rythm: $font-base-size * $scale;
 
 

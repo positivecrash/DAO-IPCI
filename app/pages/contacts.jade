@@ -1,0 +1,37 @@
+extends extends/layout.jade
+include includes/mixins.jade
+
+block head
+	- var pageTitle = 'Контакты'
+
+block header
+	- var text = 'Контакты'
+
+
+block content
+	.breadcrumbs
+		a(href="#") Главная
+		| /
+		span Контакты
+
+	main(role="main")
+		+OldBrowserMsg()
+
+		.inside.setw
+			h2.t-center Бесплатная консультация специалиста
+			p Если у вас возникли какие-либо вопросы по использованию ДАО «Программа интеграции климатических инициатив» или предложения к сотрудничеству, закажите консультацию, заполнив данные в форме ниже.
+
+			form.form-mid
+				label.inp-block.requiered
+					input(type="text", placeholder="Ваше имя и/или название организации", requiered)
+				label.inp-block.requiered
+					input(type="email", placeholder="Контактный email", requiered)
+				label.inp-block.requiered
+					input(type="text", placeholder="Контактный телефон", requiered)
+				label.inp-block
+					input(type="text", placeholder="Удобное для связи время (по МСК, UTC+3)")
+				label.inp-block
+					textarea(placeholder="Комментарий (здесь, например, можно кратко описать свой вопрос)")
+
+				.t-center
+					input(type="submit", value="Отправить запрос")

@@ -52,6 +52,12 @@ main[role="main"]{
 
   position: relative;
   background-color: #fff;
+
+  & > .inside{
+    @include rem('padding-top', $vertical-rythm*3);
+    @include rem('padding-bottom', $vertical-rythm*4);
+    @extend %floating-fix;
+  }
 }
 
 
@@ -71,11 +77,7 @@ html, body{
   @include rem('padding-top', $vertical-rythm*3);
   @include rem('padding-bottom', $vertical-rythm*3);
   min-height: 100%;
-
-
-  /* align content vertically */
-  display: flex;
-  align-items: center;
+  @extend %flex_align_v;
 
 }
 
@@ -102,6 +104,8 @@ html, body{
 .d-t { display: table; }
 .d-t_cell { @extend %display_table_cell; }
 
+.d-ib{ display: inline-block; }
+img.d-ib{ max-width: 100%; @include rem('margin-bottom', $vertical-rythm); }
 
 
 /*------- BASIC STYLES - margins --------*/

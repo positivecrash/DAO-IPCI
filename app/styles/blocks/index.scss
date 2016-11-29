@@ -94,9 +94,51 @@
 }
 
 
+.b-climateData{
+  .cell{
+    box-sizing: border-box;
+    width: 50%;
+    @include rem('padding', 0, $padding-side/2);
+    border-left: 2px solid $color-brick;
+
+    @include font-size(16);
+
+    &:first-child{
+      border-left: 0;
+    }
+  }
+
+  h3{
+    text-align: left;
+    // color: $color-brick;
+  }
+
+  @include max_tablet(){
+    display: block;
+
+    .cell{
+      width: 100%;
+      @include rem('margin-top', $vertical-rythm*2);
+      @include rem('padding-top', $vertical-rythm*2);
+      padding-left: 0;
+      border-left: 0;
+      border-top: 2px solid $color-brick;
+
+      &:first-child{
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+      }
+    }
+  }
+}
+
+
 #scrn-3{
   background-color: $color-gray-5;
   @include font-size(14);
+
+  h2 { text-align: center; }
 
   .tag{
     display: inline-block;
@@ -165,7 +207,6 @@
   color: #fff;
 
   h2{
-    text-align: left;
     color: #fff;
 
     &:after{
@@ -175,7 +216,7 @@
 
   figure{
     text-align: center;
-    width: 70%;
+    width: 62%;
 
     img{
       display: inline-block;
@@ -185,7 +226,7 @@
 
   .text, figure{
     display: table-cell;
-    vertical-align: bottom;
+    vertical-align: middle;
 
     @include max_desktop_m(){
       display: block;
@@ -337,6 +378,8 @@
 
 #scrn-5, #scrn-6{
 
+  h2 { text-align: center; }
+
   .d-t > aside{ text-align: center; }
 
   .d-t{
@@ -383,7 +426,7 @@
 
   aside {
     padding-left: 87px;
-    overflow: hidden;
+    // overflow: hidden;
     max-width: 100%;
     box-sizing: border-box;
     position: relative;

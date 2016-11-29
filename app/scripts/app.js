@@ -9,6 +9,30 @@ jQuery(document).ready(function($){
     var crevealed = 'revealed';
 
 
+    /*===  HEADER BACKGROUND SCALE ===*/
+    var prev = 0;
+    var timer_h = true;
+
+    function header_back_scale(){
+
+        if(timer_h == true){
+           var scrollTop = $w.scrollTop();
+            $('header[role="banner"]').toggleClass('scaled', scrollTop > prev);
+            prev = scrollTop;
+        }
+
+        timer_h = false;
+        setTimeout(function(){timer_h = true}, 30);
+
+    }
+
+    if($('header[role="banner"]').length > 0){
+        $w.bind('scroll', header_back_scale);
+    }
+
+    /*===  END HEADER BACKGROUND SCALE ===*/
+
+
     /*===  CHECK IF ELEMENT IS VISIBLE ===*/
     function reveal(element){
         $(element).one('inview', function(event, isInView){
@@ -35,18 +59,14 @@ jQuery(document).ready(function($){
 
     
     /*INDEX, DAO SCHEME ANIMATION*/
-    var timer = true;
+    var timer_s = true;
 
     function moveSheme(){
 
-        if(timer == true){
+        if(timer_s == true){
             $o = $('#daoscheme');
             ofst = $w.scrollTop() - $o.offset().top;
             p = ofst / ($w.height()/100);
-
-            console.log('scrolltop ' + $w.scrollTop());
-            console.log('ofst ' + ofst);
-            console.log('p ' + p);
 
 
             if ( 30 < p )
@@ -63,8 +83,8 @@ jQuery(document).ready(function($){
                 $o.removeClass('m1 m2 m3 m4 m5 m6').addClass('m0');
         }
 
-        timer = false;
-        setTimeout(function(){timer = true}, 150);
+        timer_s = false;
+        setTimeout(function(){timer_s = true}, 150);
 
     }
 
@@ -72,10 +92,6 @@ jQuery(document).ready(function($){
         $w.bind('scroll', moveSheme);
     }
     /*end of INDEX, DAO SCHEME ANIMATION*/
-
-
-
-
 
     /*===  end CHECK IF ELEMENT IS VISIBLE ===*/
 
@@ -86,11 +102,10 @@ jQuery(document).ready(function($){
 		var fancyBoxDefaults = {
             padding: 0,
 			margin: 10,
-            helpers: {
-                overlay: {
-                  locked: false
-                }
-              },
+            autoSize : false,
+            width:  '95%',
+            minHeight:  '85%',
+            maxWidth: 1200,
 			tpl: {
 				closeBtn : '<a title="Закрыть" class="fancybox-item fbx-close" href="javascript:;">Закрыть окно</a>',
 				next     : '<a title="Следующий" class="fancybox-nav fancybox-next" href="javascript:;"><span class="icon icon-arrDarkRight"></span></a>',
@@ -108,6 +123,11 @@ jQuery(document).ready(function($){
 
     /*===  Header interactions ===*/
 
+    $('.header-more').on('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        $('html, body').animate({scrollTop: $('header').outerHeight() }, 1000);
+    });
 
 
     /*---  Fix navigation on top ---*/
@@ -134,12 +154,6 @@ jQuery(document).ready(function($){
 
 
     /*===  SOME RANDOM THIGS ===*/
-
-    $('.header-more').on('click', function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        $('html, body').animate({scrollTop: $('header').outerHeight() }, 1000);
-    });
 
 
     /*--- Disable hover on touchscreens (works not for all screens) ---*/

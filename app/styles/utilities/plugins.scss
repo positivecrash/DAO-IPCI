@@ -134,7 +134,7 @@ $background-window: #fff;
 /* Overlay helper */
 
 .fancybox-lock {
-    overflow: hidden !important;
+    // overflow: hidden !important;
     width: auto;
 }
 
@@ -224,7 +224,8 @@ $background-window: #fff;
 .fbx-close{
 	@extend %link_noline;
 	display: block;
-	background-color: $color-lk;
+	background-color: #FF6514;
+	// background-color: $color-lk;
 	text-align: center;
 	font-family: $font-family-second;
 	font-weight: bold;
@@ -238,20 +239,16 @@ $background-window: #fff;
 
 /*------- FANCYBOX SIZES --------*/
 
-.fancybox-wrap{
-	h3{
-		margin-bottom: $vertical-rythm;
-	}
-}
+// .fancybox-wrap{
+// 	h3{
+// 		margin-bottom: $vertical-rythm;
+// 	}
+// }
 
 .fbx-w{
+	display: none;
 	box-sizing: border-box;
 	padding: 20px;
-	min-width: 360px;
-
-	@include mobile(){
-		min-width: 310px;
-	}
 }
 
 /*======== END FANCYBOX =========*/
