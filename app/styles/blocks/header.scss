@@ -8,9 +8,7 @@ header[role=banner]{
 
   background-color: #002E64;
 
-	&:before{
-    content:"";
-
+	.header_back{
     position: absolute;
     top: 0;
     left: 0;
@@ -24,9 +22,24 @@ header[role=banner]{
     background-attachment: fixed;
 
     transition: .4s all ease-in;
+
+    &.header_back-custom{
+
+      background-position: 50% 0;
+
+      &:after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(#001C3C, .5);
+      }
+    }
  }
 
-  &.scaled:before{
+  &.scaled .header_back{
     background-size: 100%;
   }
  
@@ -52,12 +65,12 @@ header[role=banner]{
 
   &.screen{
 
-    &:before{
+    .header_back{
       background-size: 130%;
       transition-duration: .6s;
     }
 
-    &.scaled:before{
+    &.scaled .header_back{
       background-size: 100%;
     }
   }

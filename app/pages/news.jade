@@ -1,0 +1,121 @@
+extends extends/layout.jade
+include includes/mixins.jade
+
+block head
+	- var pageTitle = 'Новости и статьи'
+
+block header
+	- var text = 'Новости и статьи'
+
+
+block content
+	.breadcrumbs
+		a(href="#") Главная
+		| /
+		span Новости и статьи
+
+	main(role="main")
+
+		.inside.setw
+			.grid
+				.grid-i-2
+					.news-grid-i
+						h2.underlined
+							a(href="news_item.html") От Парижа до Москвы: что делает бизнес в России, чтобы сдержать изменение климата?
+						.t-overflow
+							p 25 октября в Ассоциации европейского бизнеса пройдет заседание, посвященное конкуренции компаний  по углеродному следу и механизмам внедрения стоимости выбросов парниковых газов. В интервью порталу «Климат России» глава рабочей группы по климатической политике АЕБ Антон Галенович рассказывает, как изменится мир после вступления в силу Парижского климатического соглашения, какова роль бизнеса в его реализации и что уже делает российское деловое сообщество для того, чтобы сдержать глобальное потепление.
+
+						.news-grid-i_date.t-small.t-gray
+							| 18 октября 2016  /  
+							a(href="#") Политика
+
+				.grid-i
+					.news-grid-i.news-i_tumbed
+						a.news-i_tumbed__tumb(href="#", style="background-image: url('assets/i/tmp/tractor_301.jpg');")
+
+						h2
+							a(href="#") Мусорная реформа: под землей не спрятать
+
+						.news-grid-i_date.t-small.t-gray
+							| 18 октября 2016  /  
+							a(href="#") Политика
+
+				.grid-i
+					.news-grid-i.news-i_tumbed
+						a.news-i_tumbed__tumb(href="#", style="background-image: url('assets/i/tmp/zas_135.jpg');")
+
+						h2
+							a(href="#") Как устойчивое развитие помогло компаниям приумножить успех
+
+						.news-grid-i_date.t-small.t-gray
+							| 18 октября 2016  /  
+							a(href="#") Политика
+
+				.grid-i
+					.news-grid-i.news-i_tumbed
+						a.news-i_tumbed__tumb(href="#", style="background-image: url('assets/i/tmp/1_301.jpg');")
+
+						h2
+							a(href="#") Как заработать на выбросах CO2
+
+						.news-grid-i_date.t-small.t-gray
+							| 18 октября 2016  /  
+							a(href="#") Финансы
+
+
+				.grid-i
+					.news-grid-i.news-i_tumbed
+						a.news-i_tumbed__tumb(href="#", style="background-image: url('assets/i/tmp/solnce_301.jpg');")
+
+						h2
+							a(href="#") Потепление к изменению климата
+
+						.news-grid-i_date.t-small.t-gray
+							| 18 октября 2016  /  
+							a(href="#") Финансы
+
+
+
+				.grid-i
+					.news-grid-i.news-i_tumbed
+						a.news-i_tumbed__tumb(href="#", style="background-image: url('assets/i/tmp/amur_301.jpg');")
+
+						h2
+							a(href="#") Плавучая Россия
+
+						.news-grid-i_date.t-small.t-gray
+							| 18 октября 2016  /  
+							a(href="#") Климат
+
+				.grid-i
+					.news-grid-i
+						h2.underlined
+							a(href="#") Семинар-тренинг «Построение программируемых корпораций на Ethereum» в Сколково
+
+						.news-grid-i_date.t-small.t-gray
+							| 18 октября 2016  /  
+							a(href="#") События
+
+
+				.grid-i
+					.news-grid-i.news-i_tumbed
+						a.news-i_tumbed__tumb(href="#", style="background-image: url('assets/i/tmp/climatechangeg.jpg');")
+
+						h2
+							a(href="#") Изменение климата уже здесь
+
+						.news-grid-i_date.t-small.t-gray
+							| 18 октября 2016  /  
+							a(href="#") Климат
+
+
+			.paging
+				a(href="#").na 
+					i.i-arrowLeft
+					span.paging-text предыдущая
+				select
+					option 1
+					option 2
+				a(href="#")
+					span.paging-text следующая
+					i.i-arrowRight

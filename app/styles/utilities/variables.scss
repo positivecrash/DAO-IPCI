@@ -4,7 +4,7 @@ $point-desktop-s: 1024px;
 $point-desktop-m: 1280px;
 $point-desktop-b: 1620px;
 
-$width-base-max: $point-desktop-b;
+$width-base-max: 1440px;
 // $width-base-min: $point-desktop-s;
 
 $padding-side: 40;
@@ -22,6 +22,7 @@ $color-gray-6: #A6A8AA;
 $color-blue: #0B58B1;
 $color-blue-2: #001C3C;
 $color-blue-3: #0C284A;
+$color-blue-4: #93A5D6;
 
 $color-orange: #FFA62C;
 $color-red: #E61334;
@@ -33,19 +34,21 @@ $color-brick-3: #693928;
 
 $color-text: $color-gray-1;
 $color-lk: $color-blue;
-$color-lk_hover: darken($color-lk, 5%);
+$color-lk_hover: $color-brick;
 
 
-// $color-table-head-text: $color-gray-0;
-// $color-table-head-back: lighten($color-text, 55%);
-// $color-table-head-border: $color-gray-1;
+$color-table-head-text: $color-text;
+$color-table-head-back: lighten($color-blue-4, 18%);
+$color-table-head-border: $color-blue-4;
 
-// $color-table-foot-text: $color-text;
-// $color-table-foot-back: $color-gray-4;
-// $color-table-foot-border: $color-gray-2;
+$color-table-foot-text: $color-text;
+$color-table-foot-back: lighten($color-blue-4, 22%);
+$color-table-foot-border: $color-blue-4;
 
-// $color-table-text: $color-text;
-// $color-table-border: $color-gray-2;
+$color-table-text: $color-text;
+$color-table-border: $color-blue-4;
+$color-table-back-tr: lighten($color-blue-4, 28%);
+$color-table-back-oddtr: $color-table-back-tr;
 
 
 

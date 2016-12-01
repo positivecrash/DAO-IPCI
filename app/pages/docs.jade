@@ -1,0 +1,34 @@
+extends extends/layout.jade
+include includes/mixins.jade
+
+block head
+	- var pageTitle = 'Документы'
+
+block header
+	- var text = 'Документы'
+
+
+block content
+	.breadcrumbs
+		a(href="#") Главная
+		| /
+		span Документы
+
+	main(role="main")
+
+		.inside.setw
+
+			.label-pageselect
+				label Показать документы: 
+				select
+					option На всех языках
+					option in English
+					option на Русском
+
+			.widget-pannel
+				a(href="#").widget.widget-doc
+					span Программа круглого стола «Гармонизация подходов к 22-й конференции Сторон РКИК ООН. Конкуренция по углеродному следу, механизм внедрения статьи шесть Парижского соглашения и другие глобальные механизмы «цены на углерод»
+					span.t-small Скачать файл (pdf, 129 Кб)
+				a(href="#").widget.widget-doc
+					span Программа круглого стола «Гармонизация подходов к 22-й конференции Сторон РКИК ООН. Конкуренция по углеродному следу, механизм внедрения статьи шесть Парижского соглашения и другие глобальные механизмы «цены на углерод»
+					span.t-small Скачать файл (pdf, 129 Кб)

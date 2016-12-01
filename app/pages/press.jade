@@ -1,0 +1,34 @@
+extends extends/layout.jade
+include includes/mixins.jade
+
+block head
+	- var pageTitle = 'Пресса о нас'
+
+block header
+	- var text = 'Пресса о нас'
+
+
+block content
+	.breadcrumbs
+		a(href="#") Главная
+		| /
+		span Пресса о нас
+
+	main(role="main")
+
+		.inside.setw
+
+			.label-pageselect
+				label Показать статьи:
+				select
+					option На всех языках
+					option in English
+					option на Русском
+
+			.widget-pannel
+				a(href="#", target="_blank").widget
+					span Параллельные климатические вселенные. В РФ создается негосударственный реестр выбросов парниковых газов
+					span.t-small.l-away kommersant.ru
+				a(href="#", target="_blank").widget
+					span Углеродные единицы на скрижалях блокчейна
+					span.t-small.l-away climaterussia.ru

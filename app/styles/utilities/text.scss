@@ -49,6 +49,7 @@ body {
 a { 
   @include hover-link;
   color: $color-lk;
+  transition: color .1s linear;
 
   &:hover{
     color: $color-lk_hover;
@@ -86,6 +87,8 @@ h1 {
 }
 h2 { @include font-size(32, 1.2); }
 h3 { @include font-size(26, 1.2); }
+h4 { @include font-size(24, 1.2); }
+h5 { @include font-size(20, 1.2); }
 
 
 
@@ -96,9 +99,9 @@ ul, ol {
 
 hr{
   border: 0;
-  background-color: #333; //tmp
-  height: 1px;
-  margin: $vertical-rythm 0;
+  background-color: $color-brick;
+  height: 2px;
+  @include rem('margin', $vertical-rythm*2, 0);
 }
 
 blockquote, p, li, ul, ol {
@@ -113,6 +116,12 @@ li{
   @include rem('margin-bottom', $vertical-rythm/2);
 }
 
+
+blockquote{
+  font-weight: bold;
+  border-left: 2px solid $color-brick;
+  @include rem('padding-left', 20);
+}
 
 
 .t-left{ text-align: left; }
@@ -133,18 +142,28 @@ li{
 .t-small { @include font-size(14, 1.2); }
 
 
-.t-title__l{
-  font-size: 16px;
-  font-weight: bold;
-  color: $color-gray-0;
-  border-bottom: 2px solid $color-gray-0;
-
-  width: 160px;
-  margin-bottom: $vertical-rythm;
+.t-overflow{
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 
 .l-noline{
   @extend %link_noline;
+}
+
+.l-away{
+  @include icon(away, after);
+
+  &:after{
+    @include rem('margin-left', 5);
+    vertical-align: middle;
+    @include font-size(14, 1.2);
+  }
 }
 
 .underlined{
@@ -175,6 +194,35 @@ li{
     &.alignleft{
       float: left;
       @include rem('margin', $vertical-rythm, $vertical-rythm, $vertical-rythm, 0);
+    }
+
+     &.alignright{
+      float: right;
+      @include rem('margin', $vertical-rythm, 0, $vertical-rythm, $vertical-rythm);
+    }
+  }
+}
+
+
+.inside{
+  img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    @include rem('margin-bottom', $vertical-rythm);
+    
+
+    @include min_desktop_s(){
+      &.alignleft{
+        float: left;
+        @include rem('margin', $vertical-rythm, $vertical-rythm, $vertical-rythm, 0);
+      }
+
+      &.alignright{
+        float: right;
+        @include rem('margin', $vertical-rythm, 0, $vertical-rythm, $vertical-rythm);
+      }
     }
   }
 }

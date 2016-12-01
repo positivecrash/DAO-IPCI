@@ -45,13 +45,15 @@ input, textarea, select{
 	@extend %form_el_base;
 
 	&.err{
-		border-color: $color-red;
+		border-color: $color-red !important;
+		border-width: 2px;
 	}
 }
 
 textarea{
 	height: 150px;
 }
+
 
 .btn-primary, input[type='submit']{
 	@extend %form_el_base;
@@ -85,9 +87,11 @@ textarea{
 
 
 .msg{
-	font: 12px/1 $font-family-second;
-	padding-left: 30px;
-	padding-right: 30px;
+	font-family: $font-family-second;
+	text-align: center;
+
+	display: block;
+	@include rem('margin', $vertical-rythm/2, 0);
 
 	&.err{
 		color: $color-red;
@@ -101,7 +105,7 @@ textarea{
 
 .form-mid{
 	@include rem('max-width', 550);
-	@include rem('margin', $vertical-rythm*3, 'auto');
+	@include rem('margin', $vertical-rythm*2, 'auto');
 
 	&:last-child{
 		margin-bottom: 0;

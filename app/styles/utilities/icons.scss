@@ -37,11 +37,20 @@
 	@if $filename == arrowBig {
 		$char: "\E003";
 	}
-	@if $filename == consult {
+	@if $filename == arrowLeft {
 		$char: "\E004";
 	}
-	@if $filename == git {
+	@if $filename == arrowRight {
 		$char: "\E005";
+	}
+	@if $filename == away {
+		$char: "\E006";
+	}
+	@if $filename == consult {
+		$char: "\E007";
+	}
+	@if $filename == git {
+		$char: "\E008";
 	}
 
 	@return $char;
@@ -63,6 +72,15 @@
 }
 .i-arrowBig {
 	@include icon(arrowBig);
+}
+.i-arrowLeft {
+	@include icon(arrowLeft);
+}
+.i-arrowRight {
+	@include icon(arrowRight);
+}
+.i-away {
+	@include icon(away);
 }
 .i-consult {
 	@include icon(consult);

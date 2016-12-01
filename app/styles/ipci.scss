@@ -94,13 +94,6 @@ html, body{
   }
 }
 
-
-.cells{
-  @extend %flex_line;
-  align-items: top;
-  align-self: stretch;
-}
-
 .d-t { display: table; }
 .d-t_cell { @extend %display_table_cell; }
 
@@ -108,9 +101,64 @@ html, body{
 img.d-ib{ max-width: 100%; @include rem('margin-bottom', $vertical-rythm); }
 
 
+
+.cells{
+  @extend %flex_line;
+  align-items: top;
+  align-self: stretch;
+}
+
+.grid{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: first-start;
+
+  .grid-i, .grid-i-2{
+    display: flex;
+    flex: 1 0 (100%/3);
+    box-sizing: border-box;
+    min-width: 1%;
+    overflow: hidden;
+
+    @include rem('padding', 15);
+  }
+
+  .grid-i{
+    max-width: (100%/3);
+  }
+
+  .grid-i-2{
+    flex: 2 0 (100%/2);
+  }
+
+  @include max_desktop_m(){
+    .grid-i{
+      flex: 1 0 (100%/2);
+      max-width: (100%/2);
+    }
+
+    .grid-i-2{
+      flex: 2 0 100%;
+    }
+  }
+
+  @include mobile(){
+    display: block;
+
+    .grid-i, .grid-i-2{
+      max-width: 100%;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+}
+
+
+
 /*------- BASIC STYLES - margins --------*/
 .m-t-x2 { @include rem('margin-top', $vertical-rythm*2); }
-
 
 
 /*======== END BASIC STYLES =========*/
@@ -123,50 +171,60 @@ img.d-ib{ max-width: 100%; @include rem('margin-bottom', $vertical-rythm); }
 
 
 /*------- ELEMENTS - TABLES --------*/
-// table{
-//   margin: $vertical-rythm*2 0;
+table{
+  @include rem('margin', $vertical-rythm*2, 0);
 
-//   td, th {
-//     color: $color-table-text;
-//     padding: 10px 5px 10px 20px;
-//     vertical-align: top;
-//     border-style: solid;
-//   }
+  td, th {
+    color: $color-table-text;
+    @include rem('padding', 20, 15);
+    vertical-align: top;
+    border-style: solid;
+  }
 
-//   tfoot td, th {
-//     font: bold 16px/1 $font-family-second;
-//     text-align: left;
-//   }
+  tfoot td, th {
+    font-weight: bold ;
+    @include font-size(20, 1.2);
+    font-family: $font-family-second;
+    text-align: left;
+  }
 
-//   th {
-//     border-width: 0 0 1px;
-//     border-color: $color-table-head-border;
-//     color: $color-table-head-text;
-//     background-color: $color-table-head-back;
-//   }
+  th {
+    border-width: 0 0 1px;
+    border-color: $color-table-head-border;
+    color: $color-table-head-text;
+    background-color: $color-table-head-back;
+  }
 
-//   tfoot td{
-//     font-size: $font-base-size;
-//     border-width: 1px 0 0;
-//     color: $color-table-foot-text;
-//     border-color: $color-table-foot-border;
-//     background-color: $color-table-foot-back;
-//   }
+  tfoot td{
+    font-size: $font-base-size;
+    border-width: 1px 0 0;
+    color: $color-table-foot-text;
+    border-color: $color-table-foot-border;
+    background-color: $color-table-foot-back;
+  }
 
 
-//   tbody{
-//     td{
-//       border-width: 0 0 1px;
-//       color: $color-table-text;
-//       border-color: $color-table-border;
-//     }
+  tbody{
+    td{
+      border-width: 0 0 1px;
+      color: $color-table-text;
+      border-color: $color-table-border;
+    }
 
-//     tr:hover td {
-//       color: darken($color-table-text, 40%);
-//     }
-//   }
+    tr{
+      background-color: $color-table-back-tr;
 
-// }
+      &:hover td {
+        color: darken($color-table-text, 40%);
+      }
+
+      &:nth-child(2n){
+        background-color: $color-table-back-oddtr;
+      }
+    }
+  }
+
+}
 
 
 
@@ -174,6 +232,282 @@ img.d-ib{ max-width: 100%; @include rem('margin-bottom', $vertical-rythm); }
 
 
 /*======== END OF ELEMENTS =========*/
+
+
+#contact-form{
+  padding-top: 1px;
+}
+
+
+
+/*======== NEWS =========*/
+.news-grid-i {
+    border: 1px solid $color-blue-4;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+
+    @include rem('padding', 15);
+    @include rem('padding-bottom', $vertical-rythm + 25);
+
+
+    h2{
+      @include rem('margin-bottom', $vertical-rythm);
+
+      a{
+        color: $color-text;
+
+        &:hover{
+          color: $color-lk;
+        }
+      }
+    }
+
+    .t-overflow{
+      @include rem('max-height', 150);
+    }
+
+}
+
+.news-grid-i_date{
+  position: absolute;
+  @include rem('bottom', 15); 
+  @include rem('left', 15); 
+}
+
+.news-i_tumbed{
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+    h2{
+      @include rem('padding', 15);
+      margin: 0;
+      font-family: $font-family-base;
+      @include font-size($font-base-size, 1.2);
+      font-weight: normal;
+    }
+
+    &:hover .news-i_tumbed__tumb{
+      &:after{
+        background: rgba(#001C3C, .2);
+      }
+    }
+}
+
+.news-i_tumbed__tumb{
+  display: block;
+  width: 100%;
+  @include rem('height', 200);
+  overflow: hidden;
+  position: relative;
+
+  background-position: 50% 50%;
+  background-size: cover;
+  transition: .2s all ease;
+
+  &:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(#001C3C, .3);
+    transition: .2s all ease;
+  }
+}
+
+.paging{
+  @include rem('margin', $vertical-rythm*2, 0, $vertical-rythm);
+  text-align: center;
+  font-family: $font-family-second;
+  font-weight: bold;
+
+  span, a, select, i{
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  span, a, select{
+    @include rem('margin-left', 40);
+
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+
+  a{
+    @extend %link_noline;
+
+    &.na{
+      color: $color-gray-2;
+      pointer-events: none;
+    }
+  }
+
+  .paging-text{
+    &:first-child{
+      @include rem('margin-right', 15);
+    }
+
+     &:last-child{
+      @include rem('margin-left', 15);
+    }
+  }
+
+  @include mobile(){
+      .paging-text{
+        display: none;
+      }
+
+      i{
+        font-size: 32px;
+      }
+  }
+  
+}
+
+
+
+#news-item_abstract{
+  @include rem('margin-bottom', $vertical-rythm*3);
+  font-weight: bold;
+
+  &:after{
+    @include rem('margin-top', 10);
+  }
+}
+
+.widget-post{
+  @extend %floating-fix;
+  border: 1px solid $color-blue-4;
+  position: relative;
+  @include rem('margin', $vertical-rythm, 0);
+
+  .news-i_tumbed__tumb{
+    float: left;
+    @include rem('width', 300);
+    @include rem('height', 152);
+  }
+
+  .widget-post_content{
+    @include rem('margin-left', 320);
+    @include rem('padding', 20, 20, 20, 0);
+  }
+
+  .news-grid-i_date{
+    @include rem('left', 320);
+  }
+
+  @include mobile(){
+    .news-i_tumbed__tumb{
+      float: none;
+      display: block;
+      width: 100%;
+    }
+
+    .widget-post_content{
+      margin-left: 0;
+      @include rem('padding-left', 20);
+    }
+
+    .news-grid-i_date{
+      position: static;
+      @include rem('margin-top', $vertical-rythm);
+    }
+  }
+}
+
+.tags{
+  @include rem('margin', $vertical-rythm*2, 0);
+
+  a{
+    display: inline-block;
+    @include rem('margin', 0, 30, 15, 0);
+    @include rem('padding', 8, 20);
+    @extend %link_noline;
+    color: #93A5D6;
+    border: 1px solid #BECFFC;
+    border-radius: 4px;
+    font-weight: bold;
+    white-space: nowrap;
+    @include font-size(18, 1.2);
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+    &:hover{
+      color: darken(#93A5D6, 10%);
+      border-color: darken(#BECFFC, 10%);
+    }
+  }
+}
+/*======== end of NEWS =========*/
+
+
+/*======== DOCS and PRESS =========*/
+.widget-pannel{
+  @include rem('margin', $vertical-rythm*2, 0);
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+.widget{
+  display: block;
+  border: 1px solid $color-blue-4;
+  color: $color-text;
+  @extend %link_noline;
+  @include rem('padding', 20);
+  line-height: 1.2;
+
+  @include rem('margin-bottom', $vertical-rythm);
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+
+  .t-small{
+    color: $color-lk;
+    display: block;
+    @include rem('margin-top', 15);
+  }
+}
+
+.widget-doc{
+
+  $doc: map-get($icons, doc);
+  padding-left: map-get($doc, width) + 40;
+  position: relative;
+
+  &:before{
+    content:"";
+    @include get-sprite(doc);
+    position: absolute;
+    @include rem('top', 20);
+    @include rem('left', 20);
+  }
+}
+
+.label-pageselect{
+  font-weight: bold;
+  font-family: $font-family-second;
+
+  select, label{
+    display: inline-block;
+  }
+
+  label{
+    @include rem('margin-right', 20);
+  }
+}
+/*======== end of DOCS and PRESS =========*/
+
+
+
 
 
 

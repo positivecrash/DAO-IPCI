@@ -1,6 +1,7 @@
 include mixins.jade
 
 header(role="banner", class=type)
+
 	#header-top
 		a.l-noline.q-min_tablet(href="index.html") ДАО «Программа интеграции климатических инициатив»
 		a.l-noline.q-mobile(href="index.html") ДАО «ПИКИ»
@@ -21,15 +22,15 @@ header(role="banner", class=type)
 				.dropdown__content
 					.nav-links.section
 						a(href="about.html") О программе
-						a(href="#") Новости и статьи
-						a(href="#") Документы
-						a(href="#") Пресса о нас
-						a(href="#") Контакты
+						a(href="news.html") Новости и статьи
+						a(href="docs.html") Документы
+						a(href="press.html") Пресса о нас
+						a(href="contacts.html") Контакты
 
 					.nav-links.section
-						a(href="#") Консультация специалиста
-						a(href="#") Попробовать DAO IPCI
-						a(href="#") Репозиторий на GitHub
+						a(href="contacts.html#contact-form") Консультация специалиста
+						a(href="#").l-away Попробовать DAO IPCI
+						a(href="#").l-away Репозиторий на GitHub
 
 	.setw
 		h1 #{text}
@@ -40,6 +41,11 @@ header(role="banner", class=type)
 	if (canvas == 'true')
 		#header-canvas
 			canvas#canvasDots
+
+	if (back)
+		.header_back.header_back-custom(style="background-image:url(#{back});")
+	else
+		.header_back
 
 
 
