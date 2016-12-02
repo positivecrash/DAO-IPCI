@@ -29,8 +29,8 @@ header(role="banner", class=type)
 
 					.nav-links.section
 						a(href="contacts.html#contact-form") Консультация специалиста
-						a(href="#").l-away Попробовать DAO IPCI
-						a(href="#").l-away Репозиторий на GitHub
+						a(href="#") Попробовать DAO IPCI
+						a(href="#") Репозиторий на GitHub
 
 	.setw
 		h1 #{text}
@@ -39,6 +39,7 @@ header(role="banner", class=type)
 				a.header-more(href="#{more}") Подробнее
 
 	if (canvas == 'true')
+		script(src='assets/js/canvas.min.js?v=1')
 		#header-canvas
 			canvas#canvasDots
 

@@ -1,4 +1,6 @@
 //общее для всех инпутов, кнопок, селектов и textarea
+$color-inp-back: #fff;
+
 %form_el_base{
   box-sizing: border-box;
   font-family: $font-family-base;
@@ -7,7 +9,7 @@
 
   border-radius: 4px;
 
-  background-color: #fff;
+  background-color: $color-inp-back;
   border: 1px solid $color-gray-2;
 
   color: $color-text;
@@ -53,6 +55,33 @@ input, textarea, select{
 textarea{
 	height: 150px;
 }
+
+select 
+{
+	appearance: none;
+
+	background-image: image-url('selectArr.svg');
+	background-repeat: no-repeat;
+	background-position: right 10px top 50%;
+
+	position: relative;
+	overflow: hidden;
+	white-space: nowrap;
+	outline: none;
+    @include rem('padding-right', 30);
+
+    &::-ms-expand { display: none; } /*ie fix*/
+
+    /*firefox fix*/
+    text-indent: 0.01px;
+    text-overflow: '';
+    /*end of firefox fix*/
+}
+
+#{$modernizr-nosvg} select{
+	background-image: image-url('selectArr.png');
+}
+
 
 
 .btn-primary, input[type='submit']{

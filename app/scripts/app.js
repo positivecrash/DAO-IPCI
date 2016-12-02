@@ -151,9 +151,38 @@ jQuery(document).ready(function($){
     /*===  end of Header interactions ===*/
 
 
+    $.fn.maketableresponsive = function (options) {
+
+        var settings = $.extend({
+            dataname: 'data-th'
+        }, options);
+
+
+        return this.each(function () {
+            var $table = $(this);
+            var i = 1;
+            
+            $table.find('th').each(function(){
+                $table.data('thContent'+i, $(this).html());
+                i++;
+            });
+
+            for( t=1; t < (i+1); t++ ){
+                $table.find('tbody td:nth-child(' + t + ')').each(function(){
+                    $(this).attr(settings.dataname, $table.data('thContent'+t));
+                });
+            }
+            
+        });
+    };
+
 
 
     /*===  SOME RANDOM THIGS ===*/
+
+    if($('.inside table').length > 0){
+        $('.inside table').maketableresponsive();
+    }
 
 
     /*--- Disable hover on touchscreens (works not for all screens) ---*/

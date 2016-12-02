@@ -35,11 +35,11 @@
   background-color: rgb(255, 103, 74);
   font-size: 16px;
 
-  h1{
+  h2{
     margin-bottom: 30px;
   }
 
-  &, h1{
+  &, h2{
     color: #fff;
   }
 }
@@ -209,6 +209,13 @@ table{
       border-width: 0 0 1px;
       color: $color-table-text;
       border-color: $color-table-border;
+
+      &:before {
+          content: attr(data-th)": ";
+          font-weight: bold;
+          display: none;
+          @include rem('margin-right', 20);
+      }
     }
 
     tr{
@@ -220,6 +227,26 @@ table{
 
       &:nth-child(2n){
         background-color: $color-table-back-oddtr;
+      }
+    }
+  }
+
+  @include mobile(){
+    thead{
+      display: none;
+    }
+
+    td{
+      display: block;
+    }
+
+    tbody td{
+      &:first-child{
+        background-color: $color-table-head-back;
+      }
+      
+      &:before{
+        display: inline-block;
       }
     }
   }

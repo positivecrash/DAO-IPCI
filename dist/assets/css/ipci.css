@@ -146,12 +146,24 @@ header[role=banner], .screen {
   background-image: url("../i/sprite.png");
 }
 
+.sprite-selectArr {
+  display: inline-block;
+  width: 9.3px;
+  height: 17.9px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -944px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-selectArr {
+  background-image: url("../i/sprite.png");
+}
+
 .sprite-systemOne {
   display: inline-block;
   width: 179.5px;
   height: 141.531px;
   background-image: url("../i/sprite.svg");
-  background-position: 0px -944px;
+  background-position: 0px -962px;
   background-repeat: no-repeat;
 }
 .no-svg .sprite-systemOne {
@@ -163,7 +175,7 @@ header[role=banner], .screen {
   width: 179.5px;
   height: 141.531px;
   background-image: url("../i/sprite.svg");
-  background-position: 0px -1086px;
+  background-position: 0px -1104px;
   background-repeat: no-repeat;
 }
 .no-svg .sprite-systemThree {
@@ -175,7 +187,7 @@ header[role=banner], .screen {
   width: 192px;
   height: 190px;
   background-image: url("../i/sprite.svg");
-  background-position: 0px -1228px;
+  background-position: 0px -1246px;
   background-repeat: no-repeat;
 }
 .no-svg .sprite-systemTwo {
@@ -234,27 +246,27 @@ header[role=banner], .screen {
 
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Regular.eot?1480599651');
-  src: url('../fonts/Scada-Regular.eot?&1480599651#iefix') format('embedded-opentype'), url('../fonts/Scada-Regular.woff?1480599651') format('woff'), url('../fonts/Scada-Regular.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Regular.eot?1480698811');
+  src: url('../fonts/Scada-Regular.eot?&1480698811#iefix') format('embedded-opentype'), url('../fonts/Scada-Regular.woff?1480698811') format('woff'), url('../fonts/Scada-Regular.ttf?1415701385') format('truetype');
   font-weight: normal;
 }
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Bold.eot?1480599651');
-  src: url('../fonts/Scada-Bold.eot?&1480599651#iefix') format('embedded-opentype'), url('../fonts/Scada-Bold.woff?1480599651') format('woff'), url('../fonts/Scada-Bold.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Bold.eot?1480698811');
+  src: url('../fonts/Scada-Bold.eot?&1480698811#iefix') format('embedded-opentype'), url('../fonts/Scada-Bold.woff?1480698811') format('woff'), url('../fonts/Scada-Bold.ttf?1415701385') format('truetype');
   font-weight: bold;
 }
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Italic.eot?1480599651');
-  src: url('../fonts/Scada-Italic.eot?&1480599651#iefix') format('embedded-opentype'), url('../fonts/Scada-Italic.woff?1480599651') format('woff'), url('../fonts/Scada-Italic.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Italic.eot?1480698811');
+  src: url('../fonts/Scada-Italic.eot?&1480698811#iefix') format('embedded-opentype'), url('../fonts/Scada-Italic.woff?1480698811') format('woff'), url('../fonts/Scada-Italic.ttf?1415701385') format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: "Roboto Slab";
-  src: url('../fonts/RobotoSlab-Bold.eot?1480599651');
-  src: url('../fonts/RobotoSlab-Bold.eot?&1480599651#iefix') format('embedded-opentype'), url('../fonts/RobotoSlab-Bold.woff?1480599651') format('woff'), url('../fonts/RobotoSlab-Bold.ttf?1373969180') format('truetype');
+  src: url('../fonts/RobotoSlab-Bold.eot?1480698811');
+  src: url('../fonts/RobotoSlab-Bold.eot?&1480698811#iefix') format('embedded-opentype'), url('../fonts/RobotoSlab-Bold.woff?1480698811') format('woff'), url('../fonts/RobotoSlab-Bold.ttf?1373969180') format('truetype');
   font-weight: bold;
 }
 body {
@@ -1029,6 +1041,33 @@ textarea {
   height: 150px;
 }
 
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url('../i/selectArr.svg?1480668524');
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  outline: none;
+  padding-right: 30px;
+  padding-right: 1.875rem;
+  /*ie fix*/
+  /*firefox fix*/
+  text-indent: 0.01px;
+  text-overflow: '';
+  /*end of firefox fix*/
+}
+select::-ms-expand {
+  display: none;
+}
+
+.no-svg select {
+  background-image: url('../i/selectArr.png?1480669460');
+}
+
 .btn-primary, input[type='submit'] {
   background-color: #1FC384;
   color: #fff;
@@ -1358,6 +1397,7 @@ header a.header-more {
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 10;
   height: 52px;
   background-color: #B7674A;
   box-shadow: inset #763F2B 0 4px 25px;
@@ -2023,7 +2063,7 @@ header a.header-more {
   #scrn-5 .sprite-daoOperator {
     width: 260px;
     height: 188.5px;
-    background-size: 260px 709px;
+    background-size: 260px 718px;
     background-position: 0px -243.5px;
   }
 }
@@ -2056,10 +2096,10 @@ header a.header-more {
   background-color: #ff674a;
   font-size: 16px;
 }
-#oldiebrowser h1 {
+#oldiebrowser h2 {
   margin-bottom: 30px;
 }
-#oldiebrowser, #oldiebrowser h1 {
+#oldiebrowser, #oldiebrowser h2 {
   color: #fff;
 }
 
@@ -2236,6 +2276,13 @@ table tbody td {
   color: #414141;
   border-color: #93A5D6;
 }
+table tbody td:before {
+  content: attr(data-th) ": ";
+  font-weight: bold;
+  display: none;
+  margin-right: 20px;
+  margin-right: 1.25rem;
+}
 table tbody tr {
   background-color: #fbfbfd;
 }
@@ -2244,6 +2291,20 @@ table tbody tr:hover td {
 }
 table tbody tr:nth-child(2n) {
   background-color: #fbfbfd;
+}
+@media screen and (max-width: 680px) {
+  table thead {
+    display: none;
+  }
+  table td {
+    display: block;
+  }
+  table tbody td:first-child {
+    background-color: #d6dcef;
+  }
+  table tbody td:before {
+    display: inline-block;
+  }
 }
 
 /*--- FANCYBOX ---*/
