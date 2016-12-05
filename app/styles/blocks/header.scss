@@ -76,6 +76,15 @@ header[role=banner]{
   }
 }
 
+.notFound{
+  header[role=banner] .header_back{
+    background-image: image_url('bannerBack404.svg');
+  }
+}
+
+
+
+
 #header-top{
 	
 	@include rem('padding', $padding-side/2, $padding-side);

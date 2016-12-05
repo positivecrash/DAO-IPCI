@@ -122,15 +122,39 @@ header[role=banner], .screen {
   background-image: url("../i/sprite.png");
 }
 
+.sprite-daoCodeTwoEn {
+  display: inline-block;
+  width: 462.2px;
+  height: 255.6px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -487px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-daoCodeTwoEn {
+  background-image: url("../i/sprite.png");
+}
+
 .sprite-daoOperator {
   display: inline-block;
   width: 520px;
   height: 377px;
   background-image: url("../i/sprite.svg");
-  background-position: 0px -487px;
+  background-position: 0px -743px;
   background-repeat: no-repeat;
 }
 .no-svg .sprite-daoOperator {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-daoOperatorEn {
+  display: inline-block;
+  width: 520px;
+  height: 377px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -1120px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-daoOperatorEn {
   background-image: url("../i/sprite.png");
 }
 
@@ -139,22 +163,10 @@ header[role=banner], .screen {
   width: 58.495px;
   height: 79.493px;
   background-image: url("../i/sprite.svg");
-  background-position: 0px -864px;
+  background-position: 0px -1497px;
   background-repeat: no-repeat;
 }
 .no-svg .sprite-doc {
-  background-image: url("../i/sprite.png");
-}
-
-.sprite-selectArr {
-  display: inline-block;
-  width: 9.3px;
-  height: 17.9px;
-  background-image: url("../i/sprite.svg");
-  background-position: 0px -944px;
-  background-repeat: no-repeat;
-}
-.no-svg .sprite-selectArr {
   background-image: url("../i/sprite.png");
 }
 
@@ -163,7 +175,7 @@ header[role=banner], .screen {
   width: 179.5px;
   height: 141.531px;
   background-image: url("../i/sprite.svg");
-  background-position: 0px -962px;
+  background-position: 0px -1577px;
   background-repeat: no-repeat;
 }
 .no-svg .sprite-systemOne {
@@ -175,7 +187,7 @@ header[role=banner], .screen {
   width: 179.5px;
   height: 141.531px;
   background-image: url("../i/sprite.svg");
-  background-position: 0px -1104px;
+  background-position: 0px -1719px;
   background-repeat: no-repeat;
 }
 .no-svg .sprite-systemThree {
@@ -187,7 +199,7 @@ header[role=banner], .screen {
   width: 192px;
   height: 190px;
   background-image: url("../i/sprite.svg");
-  background-position: 0px -1246px;
+  background-position: 0px -1861px;
   background-repeat: no-repeat;
 }
 .no-svg .sprite-systemTwo {
@@ -246,27 +258,27 @@ header[role=banner], .screen {
 
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Regular.eot?1480698811');
-  src: url('../fonts/Scada-Regular.eot?&1480698811#iefix') format('embedded-opentype'), url('../fonts/Scada-Regular.woff?1480698811') format('woff'), url('../fonts/Scada-Regular.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Regular.eot?1480928964');
+  src: url('../fonts/Scada-Regular.eot?&1480928964#iefix') format('embedded-opentype'), url('../fonts/Scada-Regular.woff?1480928964') format('woff'), url('../fonts/Scada-Regular.ttf?1415701385') format('truetype');
   font-weight: normal;
 }
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Bold.eot?1480698811');
-  src: url('../fonts/Scada-Bold.eot?&1480698811#iefix') format('embedded-opentype'), url('../fonts/Scada-Bold.woff?1480698811') format('woff'), url('../fonts/Scada-Bold.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Bold.eot?1480928964');
+  src: url('../fonts/Scada-Bold.eot?&1480928964#iefix') format('embedded-opentype'), url('../fonts/Scada-Bold.woff?1480928964') format('woff'), url('../fonts/Scada-Bold.ttf?1415701385') format('truetype');
   font-weight: bold;
 }
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Italic.eot?1480698811');
-  src: url('../fonts/Scada-Italic.eot?&1480698811#iefix') format('embedded-opentype'), url('../fonts/Scada-Italic.woff?1480698811') format('woff'), url('../fonts/Scada-Italic.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Italic.eot?1480928964');
+  src: url('../fonts/Scada-Italic.eot?&1480928964#iefix') format('embedded-opentype'), url('../fonts/Scada-Italic.woff?1480928964') format('woff'), url('../fonts/Scada-Italic.ttf?1415701385') format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: "Roboto Slab";
-  src: url('../fonts/RobotoSlab-Bold.eot?1480698811');
-  src: url('../fonts/RobotoSlab-Bold.eot?&1480698811#iefix') format('embedded-opentype'), url('../fonts/RobotoSlab-Bold.woff?1480698811') format('woff'), url('../fonts/RobotoSlab-Bold.ttf?1373969180') format('truetype');
+  src: url('../fonts/RobotoSlab-Bold.eot?1480928964');
+  src: url('../fonts/RobotoSlab-Bold.eot?&1480928964#iefix') format('embedded-opentype'), url('../fonts/RobotoSlab-Bold.woff?1480928964') format('woff'), url('../fonts/RobotoSlab-Bold.ttf?1373969180') format('truetype');
   font-weight: bold;
 }
 body {
@@ -612,7 +624,7 @@ blockquote {
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
   z-index: 8040;
-  color: #95989A;
+  color: #fff;
   font-size: 24px;
 }
 
@@ -632,7 +644,7 @@ blockquote {
   margin-top: -18px;
   cursor: pointer;
   z-index: 8040;
-  visibility: hidden;
+  font-size: 36px;
 }
 
 .fancybox-prev span {
@@ -643,10 +655,6 @@ blockquote {
 .fancybox-next span {
   right: 10px;
   background-position: 0 -72px;
-}
-
-.fancybox-nav:hover span {
-  visibility: visible;
 }
 
 .fancybox-tmp {
@@ -913,10 +921,10 @@ blockquote {
   -webkit-animation: fadeIn .4s ease-in-out forwards, TopUp .4s ease-in-out forwards;
           animation: fadeIn .4s ease-in-out forwards, TopUp .4s ease-in-out forwards;
 }
-.cssanimations #scrn-2 .climateInfo, .cssanimations #scrn-5 .sprite-daoOperator {
+.cssanimations #scrn-2 .climateInfo, .cssanimations #scrn-5 .sprite-daoOperator, .cssanimations #scrn-5 .sprite-daoOperatorEn {
   opacity: 0;
 }
-.cssanimations #scrn-2 .climateInfo.revealed, .cssanimations #scrn-5 .sprite-daoOperator.revealed {
+.cssanimations #scrn-2 .climateInfo.revealed, .cssanimations #scrn-5 .sprite-daoOperator.revealed, .cssanimations #scrn-5 .sprite-daoOperatorEn.revealed {
   -webkit-animation: fadeIn .4s ease-in-out forwards, BotUp .4s ease-in-out forwards;
           animation: fadeIn .4s ease-in-out forwards, BotUp .4s ease-in-out forwards;
 }
@@ -967,14 +975,14 @@ blockquote {
   -webkit-animation: 0.2s scaleIn 0.7s cubic-bezier(0.1, -1.5, 0.1, 2.5) forwards;
           animation: 0.2s scaleIn 0.7s cubic-bezier(0.1, -1.5, 0.1, 2.5) forwards;
 }
-.cssanimations #scrn-6 .sprite-daoCodeTwo {
+.cssanimations #scrn-6 .sprite-daoCodeTwo, .cssanimations #scrn-6 .sprite-daoCodeTwoEn {
   opacity: 0;
   top: 257px;
   left: -74px;
   -webkit-transform-origin: left top;
           transform-origin: left top;
 }
-.cssanimations #scrn-6 .sprite-daoCodeTwo.revealed {
+.cssanimations #scrn-6 .sprite-daoCodeTwo.revealed, .cssanimations #scrn-6 .sprite-daoCodeTwoEn.revealed {
   -webkit-animation: fadeIn .2s linear forwards, daoCodeAppear .3s linear forwards;
           animation: fadeIn .2s linear forwards, daoCodeAppear .3s linear forwards;
 }
@@ -1074,7 +1082,7 @@ select::-ms-expand {
   text-align: center;
   border: 0;
   cursor: pointer;
-  box-shadow: 0 3px 0 #E6E6E6;
+  box-shadow: 0 3px 1px rgba(65, 65, 65, 0.15);
 }
 .btn-primary:hover, input[type='submit']:hover {
   color: #fff;
@@ -1215,6 +1223,10 @@ header[role=banner].screen .header_back {
 }
 header[role=banner].screen.scaled .header_back {
   background-size: 100%;
+}
+
+.notFound header[role=banner] .header_back {
+  background-image: url('../i/bannerBack404.svg?1480932038');
 }
 
 #header-top {
@@ -1773,6 +1785,12 @@ header a.header-more {
   -webkit-transition: .4s all linear;
           transition: .4s all linear;
 }
+#daoscheme img {
+  -webkit-transition: .4s -webkit-transform linear;
+          transition: .4s transform linear;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
 #daoscheme #e3 {
   top: 35px;
   left: 386px;
@@ -1792,12 +1810,6 @@ header a.header-more {
 #daoscheme #e7 {
   top: 102px;
   left: -203px;
-}
-#daoscheme img {
-  -webkit-transition: .4s -webkit-transform linear;
-          transition: .4s transform linear;
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
 }
 #daoscheme.m0 img {
   -webkit-transform: rotate(4deg);
@@ -2050,7 +2062,7 @@ header a.header-more {
   padding-right: 3.125rem;
 }
 
-#scrn-5 .sprite-daoOperator {
+#scrn-5 .sprite-daoOperator, #scrn-5 .sprite-daoOperatorEn {
   box-shadow: 1px 1px 3px rgba(178, 181, 183, 0.5);
   margin-bottom: 30px;
   margin-bottom: 1.875rem;
@@ -2063,8 +2075,14 @@ header a.header-more {
   #scrn-5 .sprite-daoOperator {
     width: 260px;
     height: 188.5px;
-    background-size: 260px 718px;
-    background-position: 0px -243.5px;
+    background-size: 260px 1025.5px;
+    background-position: 0px -371.5px;
+  }
+  #scrn-5 .sprite-daoOperatorEn {
+    width: 260px;
+    height: 188.5px;
+    background-size: 260px 1025.5px;
+    background-position: 0px -560px;
   }
 }
 
@@ -2077,15 +2095,86 @@ header a.header-more {
   box-sizing: border-box;
   position: relative;
 }
-#scrn-6 .sprite-daoCodeTwo {
+#scrn-6 .sprite-daoCodeOne {
+  box-shadow: 4px -4px 4px -4px rgba(178, 181, 183, 0.5);
+}
+#scrn-6 .sprite-daoCodeTwo, #scrn-6 .sprite-daoCodeTwoEn {
   position: absolute;
   top: 157px;
   left: -24px;
+  box-shadow: 5px 10px 10px -10px rgba(178, 181, 183, 0.5);
 }
 @media screen and (max-width: 1024px) {
+  #scrn-6 {
+    overflow: hidden;
+  }
   #scrn-6 aside {
     height: 406px;
   }
+}
+
+.lg-eng #daoscheme #e5 {
+  left: 188px;
+}
+.lg-eng #daoscheme #e6 {
+  left: -85px;
+}
+.lg-eng #daoscheme #e7 {
+  left: -76px;
+}
+.lg-eng #daoscheme.m0 #e5 {
+  left: 188px;
+}
+.lg-eng #daoscheme.m0 #e6 {
+  left: -85px;
+}
+.lg-eng #daoscheme.m0 #e7 {
+  left: -76px;
+}
+.lg-eng #daoscheme.m1 #e5 {
+  left: 132px;
+}
+.lg-eng #daoscheme.m1 #e6 {
+  left: -92px;
+}
+.lg-eng #daoscheme.m1 #e7 {
+  left: -60px;
+}
+.lg-eng #daoscheme.m2 #e5 {
+  left: 112px;
+}
+.lg-eng #daoscheme.m2 #e6 {
+  left: -92px;
+}
+.lg-eng #daoscheme.m2 #e7 {
+  left: -46px;
+}
+.lg-eng #daoscheme.m3 #e5 {
+  left: 75px;
+}
+.lg-eng #daoscheme.m3 #e6 {
+  left: -90px;
+}
+.lg-eng #daoscheme.m3 #e7 {
+  left: -16px;
+}
+.lg-eng #daoscheme.m4 #e5 {
+  left: 44px;
+}
+.lg-eng #daoscheme.m4 #e6 {
+  left: -78px;
+}
+.lg-eng #daoscheme.m4 #e7 {
+  left: 14px;
+}
+.lg-eng #daoscheme.m5 #e5 {
+  left: -28px;
+}
+.lg-eng #daoscheme.m5 #e6 {
+  left: -30px;
+}
+.lg-eng #daoscheme.m5 #e7 {
+  left: 106px;
 }
 
 /*======== MAIN SCSS VARIABLES & MIXINS & EXTENDS =========*/
@@ -2547,7 +2636,7 @@ table tbody tr:nth-child(2n) {
   width: 58.495px;
   height: 79.493px;
   background-image: url("../i/sprite.svg");
-  background-position: 0px -864px;
+  background-position: 0px -1497px;
   background-repeat: no-repeat;
   position: absolute;
   top: 20px;

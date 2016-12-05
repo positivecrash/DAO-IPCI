@@ -276,18 +276,17 @@
     transition: .4s all linear;
   }
 
-  #e3{ top: 35px; left: 386px; }
-  #e4{ top: 313px; left: 449px; }
-  #e5{ top: 470px; left: 95px; }
-  #e6{ top: 278px; left: -96px; }
-  #e7{ top: 102px; left: -203px; }
-
   img{
     // transform: rotate(-10deg);
     transition: .4s transform linear;
     transform-origin: center center; 
   }
 
+  #e3{ top: 35px; left: 386px; }
+  #e4{ top: 313px; left: 449px; }
+  #e5{ top: 470px; left: 95px; }
+  #e6{ top: 278px; left: -96px; }
+  #e7{ top: 102px; left: -203px; }
   
   &.m0{
     img { transform: rotate(4deg); }
@@ -404,7 +403,7 @@
 }
 
 #scrn-5{
-  .sprite-daoOperator { 
+  .sprite-daoOperator, .sprite-daoOperatorEn { 
     box-shadow: 1px 1px 3px rgba(#B2B5B7, .5);
     @include rem('margin-bottom', $vertical-rythm);
   }
@@ -417,6 +416,10 @@
   {
     .sprite-daoOperator{
       @include sprite-background-recalc('sprite.png', 'daoOperator', 50);
+    }
+
+    .sprite-daoOperatorEn{
+      @include sprite-background-recalc('sprite.png', 'daoOperatorEn', 50);
     }
   }
 }
@@ -432,15 +435,68 @@
     position: relative;
   }
 
-  .sprite-daoCodeTwo {
+  .sprite-daoCodeOne {
+    box-shadow: 4px -4px 4px -4px rgba(#B2B5B7, .5);
+  }
+
+  .sprite-daoCodeTwo, .sprite-daoCodeTwoEn {
     position: absolute;
     top: 157px;
     left: -24px;
+    box-shadow: 5px 10px 10px -10px rgba(#B2B5B7, .5);
   }
 
   @include max_desktop_s(){
+    overflow: hidden;
+
     aside{
       height: 406px;
+    }
+  }
+}
+
+
+.lg-eng{
+  #daoscheme{
+    #e5{ left: 188px; }
+    #e6{ left: -85px; }
+    #e7{ left: -76px; }
+    
+    &.m0{
+      #e5{ left: 188px; }
+      #e6{ left: -85px; }
+      #e7{ left: -76px; }
+    }
+
+    &.m1{
+      // #e5{ top: 464px; left: 132px; }
+      #e5{ left: 132px; }
+      #e6{ left: -92px; }
+      #e7{ left: -60px; }
+    }
+
+    &.m2{
+      #e5{ left: 112px; }
+      #e6{ left: -92px; }
+      #e7{ left: -46px; }
+    }
+
+    &.m3{
+      #e5{ left: 75px; }
+      #e6{ left: -90px; }
+      #e7{ left: -16px; }
+    }
+
+    &.m4{
+      #e5{ left: 44px; }
+      #e6{ left: -78px; }
+      #e7{ left: 14px; }
+    }
+
+    &.m5{
+      #e5{ left: -28px; }
+      #e6{ left: -30px; }
+      #e7{ left: 106px; }
     }
   }
 }

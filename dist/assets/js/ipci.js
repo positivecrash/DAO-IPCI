@@ -4959,8 +4959,14 @@ jQuery(document).ready(function($){
     if($('#scrn-5 .sprite-daoOperator').length > 0)
         reveal('#scrn-5 .sprite-daoOperator');
 
+    if($('#scrn-5 .sprite-daoOperatorEn').length > 0)
+        reveal('#scrn-5 .sprite-daoOperatorEn');
+
     if($('#scrn-6 .sprite-daoCodeTwo').length > 0)
         reveal('#scrn-6 .sprite-daoCodeTwo');
+
+    if($('#scrn-6 .sprite-daoCodeTwoEn').length > 0)
+        reveal('#scrn-6 .sprite-daoCodeTwoEn');
 
 
     
@@ -5012,14 +5018,24 @@ jQuery(document).ready(function($){
             width:  '95%',
             minHeight:  '85%',
             maxWidth: 1200,
-			tpl: {
-				closeBtn : '<a title="Закрыть" class="fancybox-item fbx-close" href="javascript:;">Закрыть окно</a>',
-				next     : '<a title="Следующий" class="fancybox-nav fancybox-next" href="javascript:;"><span class="icon icon-arrDarkRight"></span></a>',
-				prev     : '<a title="Предыдущий" class="fancybox-nav fancybox-prev" href="javascript:;"><span class="icon icon-arrDarkLeft"></span></a>'
-			}
-		}
+            tpl: {
+                closeBtn : '<a class="fancybox-item fbx-close" href="javascript:;">Close</a>',
+                next     : '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><span class="i-arrowRight"></span></a>',
+                prev     : '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><span class="i-arrowLeft"></span></a>'
+            }
+		};
 
-		$('.fancybox').fancybox(fancyBoxDefaults);
+        $('.fancybox').fancybox(fancyBoxDefaults);
+
+        $(".fancyboxRU").fancybox(
+            $.extend({}, fancyBoxDefaults, {
+                tpl: {
+                    closeBtn : '<a class="fancybox-item fbx-close" href="javascript:;">Закрыть окно</a>',
+                    next     : '<a title="Следующий" class="fancybox-nav fancybox-next" href="javascript:;"><span class="i-arrowRight"></span></a>',
+                    prev     : '<a title="Предыдущий" class="fancybox-nav fancybox-prev" href="javascript:;"><span class=""i-arrowLeft"></span></a>'
+                }
+            })
+        );
 	}
 
 	/*===  end of FANCYBOX ===*/

@@ -103,7 +103,7 @@ $CanvasGrowDuration: 0.5s;
     }
   }
 
-  #scrn-2 .climateInfo, #scrn-5 .sprite-daoOperator{
+  #scrn-2 .climateInfo, #scrn-5 .sprite-daoOperator, #scrn-5 .sprite-daoOperatorEn{
 
     opacity: 0;
 
@@ -134,14 +134,16 @@ $CanvasGrowDuration: 0.5s;
   }
 
 
-  #scrn-6 .sprite-daoCodeTwo{
-    opacity: 0;
-    top: 257px;
-    left: -74px;
-    transform-origin: left top;
+  #scrn-6{
+    .sprite-daoCodeTwo, .sprite-daoCodeTwoEn{
+      opacity: 0;
+      top: 257px;
+      left: -74px;
+      transform-origin: left top;
 
-    &.revealed{
-      animation: fadeIn .2s linear forwards, daoCodeAppear .3s linear forwards;
+      &.revealed{
+        animation: fadeIn .2s linear forwards, daoCodeAppear .3s linear forwards;
+      }
     }
   }
   

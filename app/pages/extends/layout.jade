@@ -5,16 +5,18 @@ html
 	head
 		meta(http-equiv="Content-Type" content="text/html;charset=UTF-8")
 		meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
-		
-		block head
 
 		if pageTitle
-			title #{pageTitle} | ДАО "Программа интеграции климатических инициатив"
-		else
-			title ДАО "Программа интеграции климатических инициатив"
+			if (lang == 'en')
+				title #{pageTitle} | DAO «Integrated Program for Climate Initiatives»
+			else
+				title #{pageTitle} | ДАО "Программа интеграции климатических инициатив"
 
-		if scripts
-			#{scripts}
+		else
+			if (lang == 'en')
+				title DAO «Integrated Program for Climate Initiatives»
+			else
+				title ДАО "Программа интеграции климатических инициатив"
 
 
 		
@@ -29,7 +31,7 @@ html
 		link(rel="shortcut icon" href="favicon.ico" type="image/x-icon")
 		link(rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png")
 		link(rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png")
-	body
+	body(class=bodyclass)
 		block header
 		include  ../includes/header.jade
 		
@@ -39,4 +41,5 @@ html
 		else
 			block content
 
-		include ../includes/footer.jade
+		if (!nofooter)
+			include ../includes/footer.jade

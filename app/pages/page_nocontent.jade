@@ -1,0 +1,19 @@
+extends extends/layout.jade
+include includes/mixins.jade
+
+block html
+	- var pageTitle = 'Текстовая страница'
+
+block header
+	- var text = 'Текстовая страница'
+
+
+block content
+	.breadcrumbs
+		a(href="#") Главная
+		| /
+		span Текстовая страница
+
+	main(role="main")
+		.inside.setw
+			p.t-center Эта страница пока не заполнена

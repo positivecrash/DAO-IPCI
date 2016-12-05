@@ -1,13 +1,14 @@
 $icons: (
-    sprite: (width: 520px, height: 1436px, pngPath: '../i/sprite.png', svgPath: '../i/sprite.svg'),
+    sprite: (width: 520px, height: 2051px, pngPath: '../i/sprite.png', svgPath: '../i/sprite.svg'),
     daoCodeOne: (width: 417.6px, height: 231px, backgroundX: 0px, backgroundY: 0px),
     daoCodeTwo: (width: 462.2px, height: 255.6px, backgroundX: 0px, backgroundY: -231px),
-    daoOperator: (width: 520px, height: 377px, backgroundX: 0px, backgroundY: -487px),
-    doc: (width: 58.495px, height: 79.493px, backgroundX: 0px, backgroundY: -864px),
-    selectArr: (width: 9.3px, height: 17.9px, backgroundX: 0px, backgroundY: -944px),
-    systemOne: (width: 179.5px, height: 141.531px, backgroundX: 0px, backgroundY: -962px),
-    systemThree: (width: 179.5px, height: 141.531px, backgroundX: 0px, backgroundY: -1104px),
-    systemTwo: (width: 192px, height: 190px, backgroundX: 0px, backgroundY: -1246px),
+    daoCodeTwoEn: (width: 462.2px, height: 255.6px, backgroundX: 0px, backgroundY: -487px),
+    daoOperator: (width: 520px, height: 377px, backgroundX: 0px, backgroundY: -743px),
+    daoOperatorEn: (width: 520px, height: 377px, backgroundX: 0px, backgroundY: -1120px),
+    doc: (width: 58.495px, height: 79.493px, backgroundX: 0px, backgroundY: -1497px),
+    systemOne: (width: 179.5px, height: 141.531px, backgroundX: 0px, backgroundY: -1577px),
+    systemThree: (width: 179.5px, height: 141.531px, backgroundX: 0px, backgroundY: -1719px),
+    systemTwo: (width: 192px, height: 190px, backgroundX: 0px, backgroundY: -1861px),
 );
 
 $sprite: map-get($icons, sprite);
@@ -32,14 +33,17 @@ $sprite: map-get($icons, sprite);
 .sprite-daoCodeTwo{
 	@include get-sprite(daoCodeTwo);
 }
+.sprite-daoCodeTwoEn{
+	@include get-sprite(daoCodeTwoEn);
+}
 .sprite-daoOperator{
 	@include get-sprite(daoOperator);
 }
+.sprite-daoOperatorEn{
+	@include get-sprite(daoOperatorEn);
+}
 .sprite-doc{
 	@include get-sprite(doc);
-}
-.sprite-selectArr{
-	@include get-sprite(selectArr);
 }
 .sprite-systemOne{
 	@include get-sprite(systemOne);

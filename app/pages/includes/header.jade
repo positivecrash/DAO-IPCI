@@ -3,16 +3,31 @@ include mixins.jade
 header(role="banner", class=type)
 
 	#header-top
-		a.l-noline.q-min_tablet(href="index.html") ДАО «Программа интеграции климатических инициатив»
-		a.l-noline.q-mobile(href="index.html") ДАО «ПИКИ»
+		if (lang == 'en')
+			a.l-noline.q-min_tablet(href="index_eng.html") DAO «Integrated Program for Climate Initiatives»
+			a.l-noline.q-mobile(href="index_eng.html") DAO «IPCI»
+		else
+			a.l-noline.q-min_tablet(href="index.html") ДАО «Программа интеграции климатических инициатив»
+			a.l-noline.q-mobile(href="index.html") ДАО «ПИКИ»
+
 		.b-inline
 			.dropdown.dropdown-select_light(tabindex="1")
-				a(href="javascript:;").dropdown__toggle 
-					| Русский
-					span.i-arrow
-				.dropdown__content.nav-links
-					a.active(href="#") Русский
-					a(href="#") English
+				if (lang == 'en')
+					a(href="javascript:;").dropdown__toggle 
+						| English
+						span.i-arrow
+					.dropdown__content.nav-links
+						a.active(href="index_eng.html") English
+						a(href="index.html") Русский
+				else
+					a(href="javascript:;").dropdown__toggle 
+						| Русский
+						span.i-arrow
+					.dropdown__content.nav-links
+						a.active(href="index.html") Русский
+						a(href="index_eng.html") English
+
+
 
 			.dropdown.dropdown-menu(tabindex="1")
 				a(href="javascript:;", tabindex="1").dropdown__toggle.hamburger
@@ -20,23 +35,45 @@ header(role="banner", class=type)
 					span.line
 					span.line
 				.dropdown__content
-					.nav-links.section
-						a(href="about.html") О программе
-						a(href="news.html") Новости и статьи
-						a(href="docs.html") Документы
-						a(href="press.html") Пресса о нас
-						a(href="contacts.html") Контакты
+					if (lang == 'en')
+						.nav-links.section
+							a(href="about.html") About
+							a(href="news.html") News and articles
+							a(href="docs.html") Documents
+							a(href="press.html") Press
+							a(href="contacts.html") Contacts
 
-					.nav-links.section
-						a(href="contacts.html#contact-form") Консультация специалиста
-						a(href="#") Попробовать DAO IPCI
-						a(href="#") Репозиторий на GitHub
+						.nav-links.section
+							a(href="contacts.html#contact-form") Our expert consultation
+							a(href="#") Try DAO IPCI
+							a(href="#") Repository GitHub
+
+					else
+						.nav-links.section
+							a(href="about.html") О программе
+							a(href="news.html") Новости и статьи
+							a(href="docs.html") Документы
+							a(href="press.html") Пресса о нас
+							a(href="contacts.html") Контакты
+
+						.nav-links.section
+							a(href="contacts.html#contact-form") Консультация специалиста
+							a(href="#") Попробовать DAO IPCI
+							a(href="#") Репозиторий на GitHub
+
 
 	.setw
 		h1 #{text}
 		if (type == 'screen')
-			.t-center.q-min_tablet
-				a.header-more(href="#{more}") Подробнее
+			if (!moretext)
+				.t-center.q-min_tablet
+					if (lang == 'en')
+						a.header-more(href="#{more}") More
+					else
+						a.header-more(href="#{more}") Подробнее
+			else
+				.t-center
+					a.btn-primary(href="#{more}") #{moretext}
 
 	if (canvas == 'true')
 		script(src='assets/js/canvas.min.js?v=1')

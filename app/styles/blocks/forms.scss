@@ -92,7 +92,7 @@ select
 	border: 0;
 	cursor: pointer;
 
-	box-shadow: 0 3px 0 #E6E6E6;
+	box-shadow: 0 3px 1px rgba($color-gray-1, .15);
 
 
 	&:hover{

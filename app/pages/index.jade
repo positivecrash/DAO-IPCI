@@ -1,8 +1,6 @@
 extends extends/layout.jade
 include includes/mixins.jade
 
-//- block html
-//- 	- var pagetype = 'inside'
 
 block header
 	- var type = 'screen'
@@ -22,35 +20,35 @@ block content
 				p Десятки разрозненных  платформ: реестров, систем слежения, бирж, платформ аукционирования
 
 		.climateInfo
-			a(href="#fb-climate1").cell.fancybox
+			a(href="#fb-climate1").cell.fancyboxRU
 				span.i-arrowBig.up
 				.climateInfo-content
 					p Выброс CO2
 					p
 						span.t-big 404.93
 						| ppm
-			a(href="#fb-climate2").cell.fancybox
+			a(href="#fb-climate2").cell.fancyboxRU
 				span.i-arrowBig.up
 				.climateInfo-content
 					p Глобальная температура
 					p
 						span.t-big 1.06
 						| °C с 1880 года
-			a(href="#fb-climate3").cell.fancybox
+			a(href="#fb-climate3").cell.fancyboxRU
 				span.i-arrowBig
 				.climateInfo-content
 					p Арктический лед
 					p
 						span.t-big 13.3
 						| % / десятилетие
-			a(href="#fb-climate4").cell.fancybox
+			a(href="#fb-climate4").cell.fancyboxRU
 				span.i-arrowBig
 				.climateInfo-content
 					p Ледяная поверхность
 					p
 						span.t-big 281.0
 						| Гт / год
-			a(href="#fb-climate5").cell.fancybox
+			a(href="#fb-climate5").cell.fancyboxRU
 				span.i-arrowBig.up
 				.climateInfo-content
 					p Уровень моря
@@ -60,6 +58,8 @@ block content
 
 		#fb-climate1.fbx-w
 			h2 Выброс углекислого газа
+				.t-small.t-gray Источник: 
+					a(href="http://climate.nasa.gov", target="_blank") NASA
 			.b-climateData.cells
 				.cell
 					h3
@@ -79,6 +79,8 @@ block content
 
 		#fb-climate2.fbx-w
 			h2 Глобальная температура
+				.t-small.t-gray Источник: 
+						a(href="http://climate.nasa.gov", target="_blank") NASA
 			.b-climateData.cells
 				.cell
 					h3 Уровень температуры Мирового океана 1880-2015
@@ -93,6 +95,8 @@ block content
 
 		#fb-climate3.fbx-w
 			h2 Арктический лед
+				.t-small.t-gray Источник: 
+					a(href="http://climate.nasa.gov", target="_blank") NASA
 			.b-climateData.cells
 				.cell
 					h3 Средний уровень по сентябрю 1979-2016
@@ -107,6 +111,8 @@ block content
 
 		#fb-climate4.fbx-w
 			h2 Ледяная поверхность
+				.t-small.t-gray Источник: 
+					a(href="http://climate.nasa.gov", target="_blank") NASA
 			.b-climateData.cells
 				.cell
 					h3 Изменение морского льда в Антарктике с 2002
@@ -115,10 +121,12 @@ block content
 
 				.cell
 					h3 Изменение морского льда в Гренландии с 2002
-					img.d-ib(alt="Изменения на карте 1884-2015", src="assets/i/climateinfo/NASA_GI.png")
+					img.d-ib(alt="Изменение морского льда в Гренландии с 2002", src="assets/i/climateinfo/NASA_GI.png")
 
 		#fb-climate5.fbx-w
 			h2 Уровень моря
+				.t-small.t-gray Источник: 
+					a(href="http://climate.nasa.gov", target="_blank") NASA
 			.b-climateData.cells
 				.cell
 					h3 Данные с Земли 1870-2000

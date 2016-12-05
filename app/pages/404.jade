@@ -1,0 +1,15 @@
+extends extends/layout.jade
+include includes/mixins.jade
+
+
+block html
+	- var pageTitle = 'Страница не найдена'
+	- var nofooter = true
+	- var bodyclass = 'notFound'
+
+block header
+	- var type = 'screen'
+	- var canvas = 'true'
+	- var text = 'Страница не найдена, ошибка 404'
+	- var more = 'index.html'
+	- var moretext = 'На главную'
