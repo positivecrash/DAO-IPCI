@@ -1,5 +1,3 @@
-include mixins.jade
-
 header(role="banner", class=type)
 
 	#header-top
@@ -87,4 +85,7 @@ header(role="banner", class=type)
 
 
 
-+OldBrowserMsg()
+if (lang == 'en')
+	//[if lte IE 9]><div id="oldiebrowser"><h2>Dear user, you are using an old version of browser</h2><p>For more pleasant experience with this website, please, open this webpage in one of modern browsers (e.g., newest versions of Microsoft Edge, Google Chrome, Mozilla Firefox, Safari, Opera).</p></div><![endif]
+else
+	//[if lte IE 9]><div id="oldiebrowser"><h2>Уважаемый пользователь, вы используете сильно устаревшую версию браузера</h2><p>Для полнценной и более приятной работы с нашим сайтом, пожалуйста, обновите свой браузер до новой версии. Или скачайте новую версию браузера другой компании из официальных источников (например, Microsoft Edge, Google Chrome, Yandex браузер, Mozilla Firefox, Safari, Opera).</p></div><![endif]

@@ -587,6 +587,11 @@ table{
     .b-inline { float: right; }
   }
 
+  .dropdown__toggle{
+    position: relative; /*for IE <= 10*/
+    z-index: 11; /*for IE <= 10*/
+  }
+
   .cells{
     @extend %floating-fix;
 
