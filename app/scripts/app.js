@@ -201,6 +201,21 @@ jQuery(document).ready(function($){
     }
 
 
+    /*--- Dropdowns for old browsers ---*/
+    if (!Modernizr.csspointerevents) {
+      $('.dropdown .dropdown__toggle').on('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+      });
+
+      $('.dropdown:focus .dropdown__toggle').on('click', function(e){
+        $('.dropdown__toggle').focus();
+      });
+    }
+
+
+
+
     /*--- Disable hover on touchscreens (works not for all screens) ---*/
     if (Modernizr.touchevents) {
       $('body *').unbind('mouseenter mouseleave');

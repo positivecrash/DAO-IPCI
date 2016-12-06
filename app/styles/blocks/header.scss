@@ -47,6 +47,7 @@ header[role=banner]{
   & > .setw{
     @include rem('padding-top', $vertical-rythm*3);
     @include rem('padding-bottom', $vertical-rythm*2);
+    position: relative;
     z-index: 1;
   }
 
