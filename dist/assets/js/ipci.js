@@ -2942,7 +2942,7 @@ catch(e){
 }));
 /*!
  * modernizr v3.3.1
- * Build https://modernizr.com/download?-cssanimations-csspointerevents-flexbox-svg-touchevents-setclasses-shiv-dontmin
+ * Build https://modernizr.com/download?-flexbox-flexboxlegacy-svg-touchevents-setclasses-shiv-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -4209,26 +4209,6 @@ This test will also return `true` for Firefox 4 Multitouch support.
   
 /*!
 {
-  "name": "CSS Animations",
-  "property": "cssanimations",
-  "caniuse": "css-animation",
-  "polyfills": ["transformie", "csssandpaper"],
-  "tags": ["css"],
-  "warnings": ["Android < 4 will pass this test, but can only animate a single property at a time"],
-  "notes": [{
-    "name" : "Article: 'Dispelling the Android CSS animation myths'",
-    "href": "https://goo.gl/OGw5Gm"
-  }]
-}
-!*/
-/* DOC
-Detects whether or not elements can be animated using CSS
-*/
-
-  Modernizr.addTest('cssanimations', testAllProps('animationName', 'a', true));
-
-/*!
-{
   "name": "Flexbox",
   "property": "flexbox",
   "caniuse": "flexbox",
@@ -4250,36 +4230,18 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
 
 /*!
 {
-  "name": "CSS Pointer Events",
-  "caniuse": "pointer-events",
-  "property": "csspointerevents",
-  "authors": ["ausi"],
+  "name": "Flexbox (legacy)",
+  "property": "flexboxlegacy",
   "tags": ["css"],
-  "builderAliases": ["css_pointerevents"],
-  "notes": [
-    {
-      "name": "MDN Docs",
-      "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events"
-    },{
-      "name": "Test Project Page",
-      "href": "https://ausi.github.com/Feature-detection-technique-for-pointer-events/"
-    },{
-      "name": "Test Project Wiki",
-      "href": "https://github.com/ausi/Feature-detection-technique-for-pointer-events/wiki"
-    },
-    {
-      "name": "Related Github Issue",
-      "href": "https://github.com/Modernizr/Modernizr/issues/80"
-    }
-  ]
+  "polyfills": ["flexie"],
+  "notes": [{
+    "name": "The _old_ flexbox",
+    "href": "https://www.w3.org/TR/2009/WD-css3-flexbox-20090723/"
+  }]
 }
 !*/
 
-  Modernizr.addTest('csspointerevents', function() {
-    var style = createElement('a').style;
-    style.cssText = 'pointer-events:auto';
-    return style.pointerEvents === 'auto';
-  });
+  Modernizr.addTest('flexboxlegacy', testAllProps('boxDirection', 'reverse', true));
 
 
   // Run each test
