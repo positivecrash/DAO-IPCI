@@ -581,7 +581,7 @@ table{
   }
 
   #header-top{
-    @extend %floating-fix;
+    @extend %clearfix;
 
     .l-noline { float: left; }
     .b-inline { float: right; }

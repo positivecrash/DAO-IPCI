@@ -46,10 +46,16 @@ input, select {
   padding-right: 2.5rem;
 }
 
-main[role="main"] > .inside, .widget-post, .no-flexbox.no-flexboxtweener #header-top, .no-flexbox.no-flexboxtweener .cells {
+main[role="main"] > .inside, .widget-post, .no-flexbox.no-flexboxtweener .cells {
   /*fix floating problems*/
   overflow: hidden;
   *zoom: 1;
+}
+
+.no-flexbox.no-flexboxtweener #header-top:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .l-noline, .fbx-close, input, textarea, select, .btn-primary, input[type='submit'], .btn-lined, .nav-links a, .dropdown-select_light .dropdown__toggle, header a.header-more, .climateInfo .cell, .paging a, .tags a, .widget, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, .l-noline:hover, .fbx-close:hover, input:hover, textarea:hover, select:hover, .btn-primary:hover, .btn-lined:hover, .nav-links a:hover, .dropdown-select_light .dropdown__toggle:hover, header a.header-more:hover, .climateInfo .cell:hover, .paging a:hover, .tags a:hover, .widget:hover, h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus, .l-noline:focus, .fbx-close:focus, input:focus, textarea:focus, select:focus, .btn-primary:focus, .btn-lined:focus, .nav-links a:focus, .dropdown-select_light .dropdown__toggle:focus, header a.header-more:focus, .climateInfo .cell:focus, .paging a:focus, .tags a:focus, .widget:focus, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited, .l-noline:visited, .fbx-close:visited, input:visited, textarea:visited, select:visited, .btn-primary:visited, .btn-lined:visited, .nav-links a:visited, .dropdown-select_light .dropdown__toggle:visited, header a.header-more:visited, .climateInfo .cell:visited, .paging a:visited, .tags a:visited, .widget:visited {
