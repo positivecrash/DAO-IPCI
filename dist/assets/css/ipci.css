@@ -1311,9 +1311,9 @@ header[role=banner].screen.scaled .header_back {
   /*for WebKit*/
   white-space: nowrap;
   position: relative;
-  /*mostly for IE <= 10*/
-  z-index: 10;
-  /*mostly for IE <= 10*/
+  /*for IE <= 10*/
+  z-index: 11;
+  /*for IE <= 10*/
 }
 
 /* CSS select */

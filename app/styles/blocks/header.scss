@@ -180,8 +180,8 @@ header[role=banner]{
   pointer-events: none;  /*for WebKit*/
   white-space: nowrap;
 
-  position: relative; /*mostly for IE <= 10*/
-  z-index: 10; /*mostly for IE <= 10*/
+  position: relative; /*for IE <= 10*/
+  z-index: 11; /*for IE <= 10*/
 }
 
 
