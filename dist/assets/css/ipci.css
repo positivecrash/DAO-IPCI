@@ -46,7 +46,7 @@ input, select {
   padding-right: 2.5rem;
 }
 
-main[role="main"] > .inside, .widget-post {
+main[role="main"] > .inside, .widget-post, .no-flexbox.no-flexboxtweener #header-top, .no-flexbox.no-flexboxtweener .cells {
   /*fix floating problems*/
   overflow: hidden;
   *zoom: 1;
@@ -1452,7 +1452,6 @@ header a.header-more {
   color: #fff;
 }
 
-/*======== RESPONSIVE QUERIES =========*/
 /*======== FOOTER VARIABLES & MIXINS & EXTENDS =========*/
 /*======== FOOTER BASIC =========*/
 .b-promo {
@@ -2727,3 +2726,19 @@ table tbody tr:nth-child(2n) {
   }
 }
 /*======== end of RESPONSIVE =========*/
+/*======== FOR OLD BROWSERS =========*/
+/* for browser, when there is no flexbox support like IE 9*/
+.no-flexbox.no-flexboxtweener .dropdown {
+  display: inline-block;
+  vertical-align: middle;
+}
+.no-flexbox.no-flexboxtweener #header-top .l-noline {
+  float: left;
+}
+.no-flexbox.no-flexboxtweener #header-top .b-inline {
+  float: right;
+}
+.no-flexbox.no-flexboxtweener .cells .cell {
+  float: left;
+  margin-right: 3%;
+}

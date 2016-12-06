@@ -569,3 +569,30 @@ table{
   .q-max_d_m { display: none; }
 }
 /*======== end of RESPONSIVE =========*/
+
+
+/*======== FOR OLD BROWSERS =========*/
+
+/* for browser, when there is no flexbox support like IE 9*/
+#{$modernizr-noflexbox}#{$modernizr-noflexboxtweener}{
+  .dropdown{
+    display: inline-block; 
+    vertical-align: middle;
+  }
+
+  #header-top{
+    @extend %floating-fix;
+
+    .l-noline { float: left; }
+    .b-inline { float: right; }
+  }
+
+  .cells{
+    @extend %floating-fix;
+
+    .cell{
+      float: left;
+      margin-right: 3%;
+    }
+  }
+}
