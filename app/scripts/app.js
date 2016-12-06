@@ -203,13 +203,10 @@ jQuery(document).ready(function($){
 
     /*--- Dropdowns for old browsers ---*/
     if (!Modernizr.csspointerevents) {
-      $('.dropdown .dropdown__toggle').on('click', function(e){
+      $('.dropdown:not(:focus)').children('.dropdown__toggle').on('click', function(e){
+        console.log('click');
         e.preventDefault();
         e.stopPropagation();
-      });
-
-      $('.dropdown:focus .dropdown__toggle').on('click', function(e){
-        $('.dropdown__toggle').focus();
       });
     }
 
