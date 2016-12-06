@@ -2746,5 +2746,7 @@ table tbody tr:nth-child(2n) {
 }
 .no-flexbox.no-flexboxtweener .cells .cell {
   float: left;
+}
+.no-flexbox.no-flexboxtweener #scrn-3 .cell {
   margin-right: 3%;
 }
