@@ -1284,8 +1284,7 @@ header[role=banner].screen.scaled .header_back {
   pointer-events: auto;
   /*Close while clicking*/
 }
-.dropdown:focus .dropdown__content, .dropdown:focus .dropdown__content.show {
-  /*.show class for js, IE <= 10*/
+.dropdown:focus .dropdown__content {
   opacity: 1;
   visibility: visible;
 }
@@ -1299,6 +1298,11 @@ header[role=banner].screen.scaled .header_back {
   top: 50px;
   top: 3.125rem;
   z-index: 10;
+}
+.dropdown__content.show {
+  /*.show class for js, IE <= 10*/
+  opacity: 1;
+  visibility: visible;
 }
 
 .dropdown__toggle {

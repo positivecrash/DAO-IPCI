@@ -152,7 +152,7 @@ header[role=banner]{
       pointer-events: auto;  /*Close while clicking*/
     }
 
-    .dropdown__content, .dropdown__content.show{ /*.show class for js, IE <= 10*/
+    .dropdown__content{
       opacity: 1;
       visibility: visible;
     }
@@ -168,6 +168,11 @@ header[role=banner]{
   position: absolute;
   @include rem('top', 50);
   z-index: 10;
+
+  &.show{ /*.show class for js, IE <= 10*/
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .dropdown__toggle{
