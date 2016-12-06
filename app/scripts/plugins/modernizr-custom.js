@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.3.1
- * Build https://modernizr.com/download?-flexbox-flexboxlegacy-svg-touchevents-setclasses-shiv-dontmin
+ * Build https://modernizr.com/download?-flexbox-flexboxtweener-svg-touchevents-setclasses-shiv-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -1288,18 +1288,19 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
 
 /*!
 {
-  "name": "Flexbox (legacy)",
-  "property": "flexboxlegacy",
+  "name": "Flexbox (tweener)",
+  "property": "flexboxtweener",
   "tags": ["css"],
   "polyfills": ["flexie"],
   "notes": [{
-    "name": "The _old_ flexbox",
-    "href": "https://www.w3.org/TR/2009/WD-css3-flexbox-20090723/"
-  }]
+    "name": "The _inbetween_ flexbox",
+    "href": "https://www.w3.org/TR/2011/WD-css3-flexbox-20111129/"
+  }],
+  "warnings": ["This represents an old syntax, not the latest standard syntax."]
 }
 !*/
 
-  Modernizr.addTest('flexboxlegacy', testAllProps('boxDirection', 'reverse', true));
+  Modernizr.addTest('flexboxtweener', testAllProps('flexAlign', 'end', true));
 
 
   // Run each test
