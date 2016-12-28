@@ -2942,7 +2942,7 @@ catch(e){
 }));
 /*!
  * modernizr v3.3.1
- * Build https://modernizr.com/download?-flexbox-flexboxtweener-svg-touchevents-setclasses-shiv-dontmin
+ * Build https://modernizr.com/download?-cssanimations-flexbox-flexboxtweener-svg-touchevents-setclasses-shiv-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -4207,6 +4207,26 @@ This test will also return `true` for Firefox 4 Multitouch support.
   }
   ModernizrProto.testAllProps = testAllProps;
   
+/*!
+{
+  "name": "CSS Animations",
+  "property": "cssanimations",
+  "caniuse": "css-animation",
+  "polyfills": ["transformie", "csssandpaper"],
+  "tags": ["css"],
+  "warnings": ["Android < 4 will pass this test, but can only animate a single property at a time"],
+  "notes": [{
+    "name" : "Article: 'Dispelling the Android CSS animation myths'",
+    "href": "https://goo.gl/OGw5Gm"
+  }]
+}
+!*/
+/* DOC
+Detects whether or not elements can be animated using CSS
+*/
+
+  Modernizr.addTest('cssanimations', testAllProps('animationName', 'a', true));
+
 /*!
 {
   "name": "Flexbox",
