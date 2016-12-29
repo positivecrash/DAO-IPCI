@@ -61,14 +61,15 @@ header(role="banner", class=type)
 
 
 	.setw
+		#header-title DAO IPCI
 		h1 #{text}
 		if (type == 'screen')
 			if (!moretext)
-				.t-center.q-min_tablet
+				.t-center
 					if (lang == 'en')
-						a.header-more(href="#{more}") More
+						a.header-more(href="#{more}", target="_blank") White Paper
 					else
-						a.header-more(href="#{more}") Подробнее
+						a.header-more(href="#{more}", target="_blank") White Paper
 			else
 				.t-center
 					a.btn-primary(href="#{more}") #{moretext}

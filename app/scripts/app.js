@@ -139,11 +139,11 @@ jQuery(document).ready(function($){
 
     /*===  Header interactions ===*/
 
-    $('.header-more').on('click', function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        $('html, body').animate({scrollTop: $('header').outerHeight() }, 1000);
-    });
+    // $('.header-more').on('click', function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     $('html, body').animate({scrollTop: $('header').outerHeight() }, 1000);
+    // });
 
 
     /*---  Fix navigation on top ---*/

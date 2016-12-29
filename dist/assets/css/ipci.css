@@ -264,27 +264,27 @@ header[role=banner], .screen {
 
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Regular.eot?1482734899');
-  src: url('../fonts/Scada-Regular.eot?&1482734899#iefix') format('embedded-opentype'), url('../fonts/Scada-Regular.woff?1482734899') format('woff'), url('../fonts/Scada-Regular.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Regular.eot?1483001515');
+  src: url('../fonts/Scada-Regular.eot?&1483001515#iefix') format('embedded-opentype'), url('../fonts/Scada-Regular.woff?1483001515') format('woff'), url('../fonts/Scada-Regular.ttf?1415701385') format('truetype');
   font-weight: normal;
 }
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Bold.eot?1482734899');
-  src: url('../fonts/Scada-Bold.eot?&1482734899#iefix') format('embedded-opentype'), url('../fonts/Scada-Bold.woff?1482734899') format('woff'), url('../fonts/Scada-Bold.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Bold.eot?1483001515');
+  src: url('../fonts/Scada-Bold.eot?&1483001515#iefix') format('embedded-opentype'), url('../fonts/Scada-Bold.woff?1483001515') format('woff'), url('../fonts/Scada-Bold.ttf?1415701385') format('truetype');
   font-weight: bold;
 }
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Italic.eot?1482734899');
-  src: url('../fonts/Scada-Italic.eot?&1482734899#iefix') format('embedded-opentype'), url('../fonts/Scada-Italic.woff?1482734899') format('woff'), url('../fonts/Scada-Italic.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Italic.eot?1483001515');
+  src: url('../fonts/Scada-Italic.eot?&1483001515#iefix') format('embedded-opentype'), url('../fonts/Scada-Italic.woff?1483001515') format('woff'), url('../fonts/Scada-Italic.ttf?1415701385') format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: "Roboto Slab";
-  src: url('../fonts/RobotoSlab-Bold.eot?1482734899');
-  src: url('../fonts/RobotoSlab-Bold.eot?&1482734899#iefix') format('embedded-opentype'), url('../fonts/RobotoSlab-Bold.woff?1482734899') format('woff'), url('../fonts/RobotoSlab-Bold.ttf?1373969180') format('truetype');
+  src: url('../fonts/RobotoSlab-Bold.eot?1483001515');
+  src: url('../fonts/RobotoSlab-Bold.eot?&1483001515#iefix') format('embedded-opentype'), url('../fonts/RobotoSlab-Bold.woff?1483001515') format('woff'), url('../fonts/RobotoSlab-Bold.ttf?1373969180') format('truetype');
   font-weight: bold;
 }
 body {
@@ -1206,12 +1206,13 @@ header[role=banner].scaled .header_back {
   background-size: 100%;
 }
 header[role=banner] > .setw {
-  padding-top: 90px;
-  padding-top: 5.625rem;
+  padding-top: 30px;
+  padding-top: 1.875rem;
   padding-bottom: 60px;
   padding-bottom: 3.75rem;
   position: relative;
   z-index: 1;
+  text-shadow: 0 1px 0 #023C80;
 }
 header[role=banner], header[role=banner] a {
   color: #fff;
@@ -1219,6 +1220,8 @@ header[role=banner], header[role=banner] a {
 header[role=banner] h1 {
   color: #fff;
   text-align: center;
+  margin-top: 0;
+  color: #D0DDFF;
 }
 header[role=banner]:not(.screen) h1 {
   margin-bottom: 0;
@@ -1404,6 +1407,17 @@ header[role=banner].screen.scaled .header_back {
   .dropdown-menu .dropdown__content {
     width: 320px;
   }
+}
+
+#header-title {
+  text-align: center;
+  font-size: 86px;
+  font-size: 5.375rem;
+  line-height: 1;
+  font-family: "Roboto Slab", serif;
+  font-weight: bold;
+  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
 }
 
 /*link "more", used when fullscreen header mode*/

@@ -45,10 +45,11 @@ header[role=banner]{
  
 
   & > .setw{
-    @include rem('padding-top', $vertical-rythm*3);
+    @include rem('padding-top', $vertical-rythm);
     @include rem('padding-bottom', $vertical-rythm*2);
     position: relative;
     z-index: 1;
+    text-shadow: 0 1px 0 #023C80;
   }
 
 	&, a {
@@ -58,6 +59,8 @@ header[role=banner]{
   h1{
     color: #fff;
     text-align: center;
+    margin-top: 0;
+    color: #D0DDFF;
   }
 
   &:not(.screen) h1{
@@ -281,6 +284,14 @@ header[role=banner]{
 }
 
 
+
+#header-title{
+  text-align: center;
+  @include font-size(86, 1);
+  font-family: $font-family-second;
+  font-weight: bold;
+  @include rem('margin-bottom', $vertical-rythm * 0.5);
+}
 
 
 /*link "more", used when fullscreen header mode*/
