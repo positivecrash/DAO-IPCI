@@ -1206,8 +1206,8 @@ header[role=banner].scaled .header_back {
   background-size: 100%;
 }
 header[role=banner] > .setw {
-  padding-top: 30px;
-  padding-top: 1.875rem;
+  padding-top: 90px;
+  padding-top: 5.625rem;
   padding-bottom: 60px;
   padding-bottom: 3.75rem;
   position: relative;
@@ -1220,8 +1220,6 @@ header[role=banner], header[role=banner] a {
 header[role=banner] h1 {
   color: #fff;
   text-align: center;
-  margin-top: 0;
-  color: #D0DDFF;
 }
 header[role=banner]:not(.screen) h1 {
   margin-bottom: 0;
@@ -1233,6 +1231,14 @@ header[role=banner].screen .header_back {
 }
 header[role=banner].screen.scaled .header_back {
   background-size: 100%;
+}
+header[role=banner].screen > .setw {
+  padding-top: 30px;
+  padding-top: 1.875rem;
+}
+header[role=banner].screen h1 {
+  margin-top: 0;
+  color: #D0DDFF;
 }
 
 .notFound header[role=banner] .header_back {
@@ -2654,6 +2660,7 @@ table tbody tr:nth-child(2n) {
 .widget-doc {
   padding-left: 98.495px;
   position: relative;
+  min-height: 79.493px;
 }
 .widget-doc:before {
   content: "";

@@ -509,6 +509,7 @@ table{
   $doc: map-get($icons, doc);
   padding-left: map-get($doc, width) + 40;
   position: relative;
+  min-height: map-get($doc, height);
 
   &:before{
     content:"";
