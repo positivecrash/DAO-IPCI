@@ -264,27 +264,27 @@ header[role=banner], .screen {
 
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Regular.eot?1483001515');
-  src: url('../fonts/Scada-Regular.eot?&1483001515#iefix') format('embedded-opentype'), url('../fonts/Scada-Regular.woff?1483001515') format('woff'), url('../fonts/Scada-Regular.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Regular.eot?1485493866');
+  src: url('../fonts/Scada-Regular.eot?&1485493866#iefix') format('embedded-opentype'), url('../fonts/Scada-Regular.woff?1485493866') format('woff'), url('../fonts/Scada-Regular.ttf?1415701385') format('truetype');
   font-weight: normal;
 }
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Bold.eot?1483001515');
-  src: url('../fonts/Scada-Bold.eot?&1483001515#iefix') format('embedded-opentype'), url('../fonts/Scada-Bold.woff?1483001515') format('woff'), url('../fonts/Scada-Bold.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Bold.eot?1485493866');
+  src: url('../fonts/Scada-Bold.eot?&1485493866#iefix') format('embedded-opentype'), url('../fonts/Scada-Bold.woff?1485493866') format('woff'), url('../fonts/Scada-Bold.ttf?1415701385') format('truetype');
   font-weight: bold;
 }
 @font-face {
   font-family: "Scada";
-  src: url('../fonts/Scada-Italic.eot?1483001515');
-  src: url('../fonts/Scada-Italic.eot?&1483001515#iefix') format('embedded-opentype'), url('../fonts/Scada-Italic.woff?1483001515') format('woff'), url('../fonts/Scada-Italic.ttf?1415701385') format('truetype');
+  src: url('../fonts/Scada-Italic.eot?1485493866');
+  src: url('../fonts/Scada-Italic.eot?&1485493866#iefix') format('embedded-opentype'), url('../fonts/Scada-Italic.woff?1485493866') format('woff'), url('../fonts/Scada-Italic.ttf?1415701385') format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: "Roboto Slab";
-  src: url('../fonts/RobotoSlab-Bold.eot?1483001515');
-  src: url('../fonts/RobotoSlab-Bold.eot?&1483001515#iefix') format('embedded-opentype'), url('../fonts/RobotoSlab-Bold.woff?1483001515') format('woff'), url('../fonts/RobotoSlab-Bold.ttf?1373969180') format('truetype');
+  src: url('../fonts/RobotoSlab-Bold.eot?1485493866');
+  src: url('../fonts/RobotoSlab-Bold.eot?&1485493866#iefix') format('embedded-opentype'), url('../fonts/RobotoSlab-Bold.woff?1485493866') format('woff'), url('../fonts/RobotoSlab-Bold.ttf?1373969180') format('truetype');
   font-weight: bold;
 }
 body {
@@ -1295,11 +1295,7 @@ header[role=banner].screen h1 {
 .dropdown {
   position: relative;
 }
-.dropdown:focus .dropdown__toggle {
-  pointer-events: auto;
-  /*Close while clicking*/
-}
-.dropdown:focus .dropdown__content {
+.dropdown.show .dropdown__content {
   opacity: 1;
   visibility: visible;
 }
@@ -1314,16 +1310,9 @@ header[role=banner].screen h1 {
   top: 3.125rem;
   z-index: 10;
 }
-.dropdown__content.show {
-  /*.show class for js, IE <= 10*/
-  opacity: 1;
-  visibility: visible;
-}
 
 .dropdown__toggle {
   display: block;
-  pointer-events: none;
-  /*for WebKit*/
   white-space: nowrap;
 }
 
@@ -1344,12 +1333,12 @@ header[role=banner].screen h1 {
   -webkit-transition: .2s all ease-in-out;
           transition: .2s all ease-in-out;
 }
-.dropdown-select_light:focus .dropdown__toggle {
+.dropdown-select_light.show .dropdown__toggle {
   background-color: #0C284A;
   border-color: #FFA62C;
   color: #FFA62C;
 }
-.dropdown-select_light:focus .dropdown__toggle .i-arrow {
+.dropdown-select_light.show .dropdown__toggle .i-arrow {
   -webkit-transform: scaleY(-1) scale(0.75);
           transform: scaleY(-1) scale(0.75);
 }
@@ -1376,23 +1365,23 @@ header[role=banner].screen h1 {
           transition: all .3s ease-in-out;
 }
 
-.dropdown-menu:focus .hamburger {
+.dropdown-menu.show .hamburger {
   position: relative;
   z-index: 20;
   -webkit-transform: scale(0.75);
           transform: scale(0.75);
 }
-.dropdown-menu:focus .hamburger .line {
+.dropdown-menu.show .hamburger .line {
   background-color: #FFA62C;
 }
-.dropdown-menu:focus .hamburger .line:nth-child(2) {
+.dropdown-menu.show .hamburger .line:nth-child(2) {
   opacity: 0;
 }
-.dropdown-menu:focus .hamburger .line:nth-child(1) {
+.dropdown-menu.show .hamburger .line:nth-child(1) {
   -webkit-transform: translateY(11px) rotate(45deg);
           transform: translateY(11px) rotate(45deg);
 }
-.dropdown-menu:focus .hamburger .line:nth-child(3) {
+.dropdown-menu.show .hamburger .line:nth-child(3) {
   -webkit-transform: translateY(-11px) rotate(-45deg);
           transform: translateY(-11px) rotate(-45deg);
 }
@@ -1401,6 +1390,7 @@ header[role=banner].screen h1 {
   top: 0;
   right: 0;
   bottom: 0;
+  z-index: 10;
   box-sizing: border-box;
   padding: 80px 40px 40px;
   padding: 5rem 2.5rem 2.5rem;

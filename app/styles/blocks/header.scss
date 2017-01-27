@@ -157,17 +157,13 @@ header[role=banner]{
 .dropdown{
   position: relative;
 
-  &:focus {
-    .dropdown__toggle{
-      pointer-events: auto;  /*Close while clicking*/
-    }
-
+  &.show{
     .dropdown__content{
       opacity: 1;
       visibility: visible;
     }
-
   }
+
 }
 
 .dropdown__content {
@@ -178,16 +174,10 @@ header[role=banner]{
   position: absolute;
   @include rem('top', 50);
   z-index: 10;
-
-  &.show{ /*.show class for js, IE <= 10*/
-    opacity: 1;
-    visibility: visible;
-  }
 }
 
 .dropdown__toggle{
   display: block;
-  pointer-events: none;  /*for WebKit*/
   white-space: nowrap;
 }
 
@@ -211,7 +201,7 @@ header[role=banner]{
     }
   }
 
-  &:focus .dropdown__toggle{
+  &.show .dropdown__toggle{
     background-color: $color-blue-3;
     border-color: $color-orange;
     color: $color-orange;
@@ -246,7 +236,7 @@ header[role=banner]{
 }
 
 .dropdown-menu{
-  &:focus .hamburger{
+  &.show .hamburger{
     position: relative;
     z-index: 20;
 
@@ -276,6 +266,7 @@ header[role=banner]{
     top: 0;
     right: 0;
     bottom: 0;
+    z-index: 10;
 
     box-sizing: border-box;
     @include rem('padding', $padding-side*2, $padding-side, $padding-side);

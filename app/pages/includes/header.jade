@@ -14,7 +14,7 @@ header(role="banner", class=type)
 					a(href="javascript:;").dropdown__toggle 
 						| English
 						span.i-arrow
-					.dropdown__content.nav-links
+					.dropdown__content.nav-links(tabindex="1")
 						a.active(href="index_eng.html") English
 						a(href="index.html") Русский
 				else
@@ -27,12 +27,12 @@ header(role="banner", class=type)
 
 
 
-			.dropdown.dropdown-menu(tabindex="1")
-				a(href="javascript:;", tabindex="1").dropdown__toggle.hamburger
+			.dropdown.dropdown-menu(tabindex="0")
+				a(href="javascript:;").dropdown__toggle.hamburger
 					span.line
 					span.line
 					span.line
-				.dropdown__content
+				.dropdown__content(tabindex="1")
 					if (lang == 'en')
 						.nav-links.section
 							a(href="about.html") About

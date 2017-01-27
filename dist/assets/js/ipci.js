@@ -5085,16 +5085,37 @@ jQuery(document).ready(function($){
 
 
     if($('.dropdown').length > 0){
-        if(detectIE() < 11){
-            $('.dropdown__toggle').on('click', function(e){
-                e.preventDefault();
-                e.stopPropagation();
+       
+        $('.dropdown__toggle').on('click', function(e){
+            e.preventDefault();
+            e.stopPropagation();
 
-                $(this).next().toggleClass('show');
+            var $ddwrap = $(this).parent('.dropdown');
+
+            $ddwrap.toggleClass('show');
+
+
+            $d.on('click', function(e){
+                if ( ($(e.target).closest($ddwrap.children('.dropdown__content')).length) ) return;
+                $ddwrap.removeClass('show');
+                e.stopPropagation();
             });
-        }
+
+        });
+
     }
 
+     // $('.dropdown').on('focus blur', function(e){
+     //    if( e.type == 'blur' ){
+     //        // console.log('e.type: ' + e.type);
+     //        $(this).removeClass('show');
+     //    }
+
+     //    if( e.type == 'focus' ){
+     //        // console.log('e.type: ' + e.type);
+     //        $(this).addClass('show');
+     //    }
+     // });
 
 
     /*--- Disable hover on touchscreens (works not for all screens) ---*/
