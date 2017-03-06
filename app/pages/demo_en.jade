@@ -1,0 +1,411 @@
+extends extends/layout.jade
+
+
+block html
+	- var pageTitle = 'Demo of CO2 reduction'
+	- var bodyclass = 'page-back'
+	- var nofooter = true
+
+block header
+	- var text = 'Demo of CO2 reduction'
+
+
+mixin demomsg()
+	.demo-msg Calculation with your data will be available in the near future. Please stay tuned.
+
+
+block content
+
+	main(role="main")
+		.setw
+
+
+			#demo-slider.d-t.demo-en
+				.d-t_cell
+					a(href="javascript:;")#demo-slider_arr_l.slider-arrow(data-slidenum="4", data-direct="prev")
+
+
+				.d-t_cell
+
+					.demo-slide(data-slide="1")
+
+						.demo-mes.d-t
+							.d-t_cell DEMO
+							.d-t_cell 
+								b Step 1, Calculator.
+								| The user can enter the details of his flight. The carbon footprint will be automatically calculated.
+						
+						.ipci-calc.demo-slider_border
+							.demo-body
+								.ipci-calc-left
+									.sprite-demo-footprints
+									div.ipci-calc-left_item CO
+										sub 2
+
+									a.ipci-calc-left_item.active(href="javascript:;")
+										.sprite-demo-plane
+										span 2,89
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-car
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-bus
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-house
+
+								.ipci-calc-right
+									.ipci-calc-right_steps
+										a(href="#").active
+											span.mobile 1
+											span.wide Calculator
+										a(href="#")
+											span.mobile 2
+											span.wide Pick CO2 offsets
+										a(href="#")
+											span.mobile 3
+											span.wide Certificate
+										a(href="#")
+											span.mobile 4
+											span.wide Payment (14,46 $)
+									
+									.ipci-calc-right_form
+										.d-t
+											.d-t_cell
+												label Trip:
+											.d-t_cell
+												.requiered.inp-block
+													select
+														option Round Trip
+														option One Way
+											.d-t_cell
+
+										.d-t
+											.d-t_cell
+												label Cabin Class:
+											.d-t_cell
+												.requiered.inp-block
+													select
+														option Economy
+														option Premium
+											.d-t_cell
+
+										.d-t
+											.d-t_cell
+												label From:
+											.d-t_cell
+												.requiered.inp-block
+													input(type="text", value="Moscow", placeholder="City / Airport")
+											.d-t_cell
+
+
+										.d-t
+											.d-t_cell
+												label Transit:
+											.d-t_cell
+												.inp-block
+													input(type="text", value="", placeholder="City / Airport")
+											.d-t_cell
+												a(href="#").btn-lined.small.green +
+
+										.d-t
+											.d-t_cell
+												label To:
+											.d-t_cell
+												.requiered.inp-block
+													input(type="text", value="New York", placeholder="City / Airport")
+											.d-t_cell
+
+										.d-t
+											.d-t_cell
+												label Booking Code (PNR) or Ticket Number:
+											.d-t_cell
+												.inp-block
+													input(type="text", value="GHTXDF")
+											.d-t_cell
+										.d-t
+											.d-t_cell
+											.d-t_cell
+												a(href="#").ipci-calc-add-i.btn-lined.green.inp-block + Add another flight
+											.d-t_cell
+
+										hr/
+										.d-t
+											.d-t_cell Carbon dioxide equivalent (CDE):
+											.d-t_cell.t-right 2,89 Tons
+										.d-t
+											.d-t_cell Compensation cost:
+											.d-t_cell.t-right 14,46 $
+
+										.ipci-calc-btn.t-right
+											input(type="submit", value="Compensate")
+
+							+demomsg()
+
+					.demo-slide(data-slide="2", style="display: none")
+						.demo-mes.d-t
+							.d-t_cell DEMO
+							.d-t_cell 
+								b Step 2, Pick CO2 offsets. 
+								| The user can choose offsets and project for reducing his carbon footprint. DAO IPCI platform based on Blockchain technology, so you can choose various options for the repayment of international programs and types of projects.
+
+
+						.ipci-calc.demo-slider_border
+							.demo-body
+								.ipci-calc-left
+									.sprite-demo-footprints
+									div.ipci-calc-left_item CO
+										sub 2
+
+									a.ipci-calc-left_item.active(href="javascript:;")
+										.sprite-demo-plane
+										span 2,89
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-car
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-bus
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-house
+
+								.ipci-calc-right
+									.ipci-calc-right_steps
+										a(href="#").active
+											span.mobile 1
+											span.wide Calculator
+										a(href="#").active
+											span.mobile 2
+											span.wide Pick CO2 offsets
+										a(href="#")
+											span.mobile 3
+											span.wide Certificate
+										a(href="#")
+											span.mobile 4
+											span.wide Payment (14,46 $)
+									
+									.ipci-calc-right_form
+
+										.d-t
+											.d-t_cell
+												label Offsets:
+											.d-t_cell
+												.requiered.inp-block
+													select
+														option Verified Carbon Standard
+														option(selected) Integrated Program for Climate Initiatives
+														option Gold Standard
+														option Clean Development Mechanism
+
+										.d-t
+											.d-t_cell.valign-top
+												label Project:
+											.d-t_cell.valign-top
+												p
+													input.valign-mid(type="radio", name="project", checked)
+													label.valign-mid.m-l-5 Reducing emissions from the burning of fossil fuels
+												p
+													input.valign-mid(type="radio", name="project")
+													label.valign-mid.m-l-5 The increase in absorption by forests
+												p
+													input.valign-mid(type="radio", name="project")
+													label.valign-mid.m-l-5 Reducing emissions from waste (reduction of methane emission)
+												p
+													input.valign-mid(type="radio", name="project")
+													label.valign-mid.m-l-5 Renewable energy
+												p
+													input.valign-mid(type="radio", name="project")
+													label.valign-mid.m-l-5 Reducing high potential greenhouse gas emissions
+
+										.ipci-calc-btn.t-right
+											input(type="submit", value="Next")
+
+
+							+demomsg()
+
+
+					.demo-slide(data-slide="3", style="display: none")
+						.demo-mes.d-t
+							.d-t_cell DEMO
+							.d-t_cell 
+								b Step 3, Certificate. 
+								| The user can generate a certificate for personal use or for the company report.
+
+
+
+						.ipci-calc.demo-slider_border
+							.demo-body
+								.ipci-calc-left
+									.sprite-demo-footprints
+									div.ipci-calc-left_item CO
+										sub 2
+
+									a.ipci-calc-left_item.active(href="javascript:;")
+										.sprite-demo-plane
+										span 2,89
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-car
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-bus
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-house
+
+								.ipci-calc-right
+									.ipci-calc-right_steps
+										a(href="#").active
+											span.mobile 1
+											span.wide Calculator
+										a(href="#").active
+											span.mobile 2
+											span.wide Pick CO2 offsets
+										a(href="#").active
+											span.mobile 3
+											span.wide Certificate
+										a(href="#")
+											span.mobile 4
+											span.wide Payment (14,46 $)
+									
+									.ipci-calc-right_form
+
+										#ipci-cals-cert
+											h4 Certificate for 2,89 Tons CO
+												sub 2
+
+											.ipci-calc-cert_info
+												p.t-small You are going to compensate your carbon footprint buying the "Integrated Program for Climate Initiatives" for the project "Reducing emissions from the burning of fossil fuels" 4.03.2017
+
+											p.t-center.t-small For you will be generated certificate with a unique transaction number for identifying your carbon footprint reducing.
+											.d-t
+												.d-t_cell
+													label Your name:
+												.d-t_cell
+													.requiered.inp-block
+														input(type="text", value="John Black", placeholder="")
+												.d-t_cell
+
+											.d-t
+												.d-t_cell
+													label Company:
+												.d-t_cell
+													.inp-block
+														input(type="text", value="LLC Company", placeholder="Name of the company")
+												.d-t_cell
+
+											.d-t
+												.d-t_cell
+													label Email for receiving your certificate:
+												.d-t_cell
+													.requiered.inp-block
+														input(type="email", value="black@companywebsite.com")
+												.d-t_cell
+
+										.ipci-calc-btn.t-right
+											input(type="submit", value="Next")
+
+							+demomsg()
+
+					.demo-slide(data-slide="4", style="display: none")
+						.demo-mes.d-t
+							.d-t_cell DEMO
+							.d-t_cell 
+								b Step 4, Payment. 
+								| After the payment user will receive an electronic certificate with a unique transaction number for verification.
+
+						.ipci-calc.demo-slider_border
+							.demo-body
+								.ipci-calc-left
+									.sprite-demo-footprints
+									div.ipci-calc-left_item CO
+										sub 2
+
+									a.ipci-calc-left_item.active(href="javascript:;")
+										.sprite-demo-plane
+										span 2,89
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-car
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-bus
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-house
+
+								.ipci-calc-right
+									.ipci-calc-right_steps
+										a(href="#").active
+											span.mobile 1
+											span.wide Calculator
+										a(href="#").active
+											span.mobile 2
+											span.wide Pick CO2 offsets
+										a(href="#").active
+											span.mobile 3
+											span.wide Certificate
+										a(href="#").active
+											span.mobile 4
+											span.wide Payment (14,46 $)
+									
+									.ipci-calc-right_form
+
+										.d-t.ipci-calc-table_info
+											.d-t_cell
+												p.t-small.t-gray Carbon footprint:
+												p 2,89 Tons CO
+													sub 2
+
+											.d-t_cell
+												p.t-small.t-gray Method of compensation:
+												p Integrated Program for Climate Initiatives
+												p Reducing emissions from the burning of fossil fuels
+
+											.d-t_cell
+												p.t-small.t-gray Price:
+												p.nowrap 14,46 $
+
+										hr/
+
+										.d-t
+											.d-t_cell
+												label Method of payment:
+											.d-t_cell
+												.requiered.inp-block
+													select
+														option Credit card
+														option PayPal
+
+										.d-t
+											.d-t_cell
+												label Cardholder Name:
+											.d-t_cell
+												.requiered.inp-block
+													input(type="text", value="", placeholder="Cardholder Name")
+
+										.d-t
+											.d-t_cell
+												label Card Number:
+											.d-t_cell
+												.requiered.inp-block
+													input(type="text", value="")
+
+										.d-t
+											.d-t_cell
+												label  Card Expiration:
+											.d-t_cell
+												.requiered
+													select
+														option 02
+														option 02
+
+													select
+														option 2025
+														option 2025
+
+										.d-t
+											.d-t_cell
+												label CVC:
+											.d-t_cell
+												.requiered
+													input.small(type="text", value="")
+
+
+										.ipci-calc-btn.t-right
+											input(type="submit", value="Pay")
+
+							+demomsg()
+
+				.d-t_cell
+					a(href="javascript:;")#demo-slider_arr_r.slider-arrow(data-slidenum="2", data-direct="next")

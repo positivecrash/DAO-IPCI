@@ -35,11 +35,7 @@ html
 		block header
 		include  ../includes/header.jade
 		
-		if (pagetype == 'inside')
-				main(role="main")
-					block content
-		else
-			block content
+		block content
 
 		if (!nofooter)
 			include ../includes/footer.jade

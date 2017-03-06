@@ -23,35 +23,35 @@ block content
 				p Dozens of platforms: registries, tracking services systems, exchanges, auctioning platforms
 
 		.climateInfo
-			a(href="#fb-climate1").cell.fancybox
+			a(data-fancybox data-type="ajax" data-src="ajax-climateChange1-en.html" href="javascript:;").cell
 				span.i-arrowBig.up
 				.climateInfo-content
 					p Carbon Dioxide
 					p
 						span.t-big 404.93
 						| ppm
-			a(href="#fb-climate2").cell.fancybox
+			a(data-fancybox data-type="ajax" data-src="ajax-climateChange2-en.html" href="javascript:;").cell
 				span.i-arrowBig.up
 				.climateInfo-content
 					p Global Temperature
 					p
 						span.t-big 1.7
 						| °F since 1880
-			a(href="#fb-climate3").cell.fancybox
+			a(data-fancybox data-type="ajax" data-src="ajax-climateChange3-en.html" href="javascript:;").cell.fancybox
 				span.i-arrowBig
 				.climateInfo-content
 					p Arctic Sea Ice
 					p
 						span.t-big 13.3
 						| percent per decade
-			a(href="#fb-climate4").cell.fancybox
+			a(data-fancybox data-type="ajax" data-src="ajax-climateChange4-en.html" href="javascript:;").cell.fancybox
 				span.i-arrowBig
 				.climateInfo-content
 					p Land Ice
 					p
 						span.t-big 281.0
 						|  Gigatonnes per year
-			a(href="#fb-climate5").cell.fancybox
+			a(data-fancybox data-type="ajax" data-src="ajax-climateChange5-en.html" href="javascript:;").cell.fancybox
 				span.i-arrowBig.up
 				.climateInfo-content
 					p Sea Level
@@ -59,81 +59,81 @@ block content
 						span.t-big 3.4
 						| millimeters per year
 
-		#fb-climate1.fbx-w
-			h2 Carbon Dioxide
-				.t-small.t-gray Data source: 
-					a(href="http://climate.nasa.gov", target="_blank") NASA
-			.b-climateData.cells
-				.cell
-					h3 Direct measurements: 2005-2016
-					img.d-ib(alt="Direct measurements of Carbon Dioxide 2005-2016", src="assets/i/climateinfo/CO2.png")
-					p Carbon dioxide (CO2) is an important heat-trapping (greenhouse) gas, which is released through human activities such as deforestation and burning fossil fuels, as well as natural processes such as respiration and volcanic eruptions. The chart above shows CO2 levels in recent years, with average seasonal cycle removed.
+		//- #fb-climate1.fbx-w
+		//- 	h2 Carbon Dioxide
+		//- 		.t-small.t-gray Data source: 
+		//- 			a(href="http://climate.nasa.gov", target="_blank") NASA
+		//- 	.b-climateData.cells
+		//- 		.cell
+		//- 			h3 Direct measurements: 2005-2016
+		//- 			img.d-ib(alt="Direct measurements of Carbon Dioxide 2005-2016", src="assets/i/climateinfo/CO2.png")
+		//- 			p Carbon dioxide (CO2) is an important heat-trapping (greenhouse) gas, which is released through human activities such as deforestation and burning fossil fuels, as well as natural processes such as respiration and volcanic eruptions. The chart above shows CO2 levels in recent years, with average seasonal cycle removed.
 
-				.cell
-					h3 Time series: 2002-2014
-					img.d-ib(alt="Time series of Carbon Dioxide 2002-2014", src="assets/i/climateinfo/NASA_CO2.gif")
-					p The time series shows global distribution and variation of the concentration of mid-tropospheric carbon dioxide in parts per million (ppm). The overall color of the map shifts toward the red with advancing time due to the annual increase of CO2.
+		//- 		.cell
+		//- 			h3 Time series: 2002-2014
+		//- 			img.d-ib(alt="Time series of Carbon Dioxide 2002-2014", src="assets/i/climateinfo/NASA_CO2.gif")
+		//- 			p The time series shows global distribution and variation of the concentration of mid-tropospheric carbon dioxide in parts per million (ppm). The overall color of the map shifts toward the red with advancing time due to the annual increase of CO2.
 
-		#fb-climate2.fbx-w
-			h2 Global Temperature
-				.t-small.t-gray Data source: 
-					a(href="http://climate.nasa.gov", target="_blank") NASA
-			.b-climateData.cells
-				.cell
-					h3 Global land-ocean temperature index 1880-2015
-					img.d-ib(alt="Global land-ocean temperature index 1880-2015", src="assets/i/climateinfo/GlobalTemp.png")
-					p This graph illustrates the change in global surface temperature relative to 1951-1980 average temperatures. The 10 warmest years in the 134-year record all have occurred since 2000, with the exception of 1998. The year 2015 ranks as the warmest on record. (Source: NASA/GISS). This research is broadly consistent with similar constructions prepared by the Climatic Research Unit and the National Oceanic and Atmospheric Administration.
+		//- #fb-climate2.fbx-w
+		//- 	h2 Global Temperature
+		//- 		.t-small.t-gray Data source: 
+		//- 			a(href="http://climate.nasa.gov", target="_blank") NASA
+		//- 	.b-climateData.cells
+		//- 		.cell
+		//- 			h3 Global land-ocean temperature index 1880-2015
+		//- 			img.d-ib(alt="Global land-ocean temperature index 1880-2015", src="assets/i/climateinfo/GlobalTemp.png")
+		//- 			p This graph illustrates the change in global surface temperature relative to 1951-1980 average temperatures. The 10 warmest years in the 134-year record all have occurred since 2000, with the exception of 1998. The year 2015 ranks as the warmest on record. (Source: NASA/GISS). This research is broadly consistent with similar constructions prepared by the Climatic Research Unit and the National Oceanic and Atmospheric Administration.
 
-				.cell
-					h3 Time series: 1885-2015
-					img.d-ib(alt="Time series of Global Temperature 1885-2015", src="assets/i/climateinfo/NASA_GT.gif")
-					p The time series above shows the five-year average variation of global surface temperatures from 1885 to 2015. Dark blue indicates areas cooler than average. Dark red indicates areas warmer than average.
-
-
-		#fb-climate3.fbx-w
-			h2 Arctic Sea Ice
-				.t-small.t-gray Data source: 
-					a(href="http://climate.nasa.gov", target="_blank") NASA
-			.b-climateData.cells
-				.cell
-					h3 Average September extent 1979-2016
-					img.d-ib(alt="Average September extent 1979-2016", src="assets/i/climateinfo/NASA_AS.png")
-					p Arctic sea ice reaches its minimum each September. September Arctic sea ice is now declining at a rate of 13.3 percent per decade, relative to the 1981 to 2010 average. The graph above shows the average monthly Arctic sea ice extent in September since 1979, derived from satellite observations. The 2012 extent is the lowest in the satellite record.
-
-				.cell
-					h3 Time series: 1979-2015
-					img.d-ib(alt="Time series of Arctic Sea Ice 1979-2015", src="assets/i/climateinfo/NASA_AS.gif")
-					p The time series above shows the annual Arctic sea ice minimum since 1979, based on satellite observations. The 2012 sea ice extent is the lowest in the satellite record.
+		//- 		.cell
+		//- 			h3 Time series: 1885-2015
+		//- 			img.d-ib(alt="Time series of Global Temperature 1885-2015", src="assets/i/climateinfo/NASA_GT.gif")
+		//- 			p The time series above shows the five-year average variation of global surface temperatures from 1885 to 2015. Dark blue indicates areas cooler than average. Dark red indicates areas warmer than average.
 
 
-		#fb-climate4.fbx-w
-			h2 Land Ice
-				.t-small.t-gray Data source: 
-						a(href="http://climate.nasa.gov", target="_blank") NASA
-			.b-climateData.cells
-				.cell
-					h3 Antarctica mass variation since 2002
-					img.d-ib(alt="Antarctica mass variation since 2002", src="assets/i/climateinfo/NASA_AI.png")
-					p Data from NASA's GRACE satellites show that the land ice sheets in both Antarctica and Greenland are losing mass. The continent of Antarctica (left chart) has been losing about 134 gigatonnes of ice per year since 2002, while the Greenland ice sheet (right) has been losing an estimated 287 gigatonnes per year. (Source: GRACE satellite data)
+		//- #fb-climate3.fbx-w
+		//- 	h2 Arctic Sea Ice
+		//- 		.t-small.t-gray Data source: 
+		//- 			a(href="http://climate.nasa.gov", target="_blank") NASA
+		//- 	.b-climateData.cells
+		//- 		.cell
+		//- 			h3 Average September extent 1979-2016
+		//- 			img.d-ib(alt="Average September extent 1979-2016", src="assets/i/climateinfo/NASA_AS.png")
+		//- 			p Arctic sea ice reaches its minimum each September. September Arctic sea ice is now declining at a rate of 13.3 percent per decade, relative to the 1981 to 2010 average. The graph above shows the average monthly Arctic sea ice extent in September since 1979, derived from satellite observations. The 2012 extent is the lowest in the satellite record.
 
-				.cell
-					h3 Greenland mass variation since 2002
-					img.d-ib(alt="Antarctica mass variation since 2002", src="assets/i/climateinfo/NASA_GI.png")
+		//- 		.cell
+		//- 			h3 Time series: 1979-2015
+		//- 			img.d-ib(alt="Time series of Arctic Sea Ice 1979-2015", src="assets/i/climateinfo/NASA_AS.gif")
+		//- 			p The time series above shows the annual Arctic sea ice minimum since 1979, based on satellite observations. The 2012 sea ice extent is the lowest in the satellite record.
 
-		#fb-climate5.fbx-w
-			h2 Sea Level
-				.t-small.t-gray Data source: 
-					a(href="http://climate.nasa.gov", target="_blank") NASA
-			.b-climateData.cells
-				.cell
-					h3 Ground data: 1870-2000
-					img.d-ib(alt="Ground data 1870-2000", src="assets/i/climateinfo/seaLevel_left.gif")
-					p Sea level rise is caused primarily by two factors related to global warming: the added water from melting land ice and the expansion of sea water as it warms. The above chart, derived from coastal tide gauge data, shows how much sea level changed from about 1870 to 2000.
 
-				.cell
-					h3 Satellite data: 1993-2016
-					img.d-ib(alt="Satellite data 1993-2016", src="assets/i/climateinfo/seaLevel_sat.png")
-					p This chart tracks the change in sea level since 1993 as observed by satellites.
+		//- #fb-climate4.fbx-w
+		//- 	h2 Land Ice
+		//- 		.t-small.t-gray Data source: 
+		//- 				a(href="http://climate.nasa.gov", target="_blank") NASA
+		//- 	.b-climateData.cells
+		//- 		.cell
+		//- 			h3 Antarctica mass variation since 2002
+		//- 			img.d-ib(alt="Antarctica mass variation since 2002", src="assets/i/climateinfo/NASA_AI.png")
+		//- 			p Data from NASA's GRACE satellites show that the land ice sheets in both Antarctica and Greenland are losing mass. The continent of Antarctica (left chart) has been losing about 134 gigatonnes of ice per year since 2002, while the Greenland ice sheet (right) has been losing an estimated 287 gigatonnes per year. (Source: GRACE satellite data)
+
+		//- 		.cell
+		//- 			h3 Greenland mass variation since 2002
+		//- 			img.d-ib(alt="Antarctica mass variation since 2002", src="assets/i/climateinfo/NASA_GI.png")
+
+		//- #fb-climate5.fbx-w
+		//- 	h2 Sea Level
+		//- 		.t-small.t-gray Data source: 
+		//- 			a(href="http://climate.nasa.gov", target="_blank") NASA
+		//- 	.b-climateData.cells
+		//- 		.cell
+		//- 			h3 Ground data: 1870-2000
+		//- 			img.d-ib(alt="Ground data 1870-2000", src="assets/i/climateinfo/seaLevel_left.gif")
+		//- 			p Sea level rise is caused primarily by two factors related to global warming: the added water from melting land ice and the expansion of sea water as it warms. The above chart, derived from coastal tide gauge data, shows how much sea level changed from about 1870 to 2000.
+
+		//- 		.cell
+		//- 			h3 Satellite data: 1993-2016
+		//- 			img.d-ib(alt="Satellite data 1993-2016", src="assets/i/climateinfo/seaLevel_sat.png")
+		//- 			p This chart tracks the change in sea level since 1993 as observed by satellites.
 
 
 	#scrn-3.screen

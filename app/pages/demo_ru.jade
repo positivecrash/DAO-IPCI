@@ -1,0 +1,412 @@
+extends extends/layout.jade
+
+
+block html
+	- var pageTitle = 'Демо погашения выбросов CO2'
+	- var bodyclass = 'page-back'
+	- var nofooter = true
+
+block header
+	- var text = 'Демо погашения выбросов CO2'
+
+
+mixin demomsg()
+	.demo-msg Расчет с вашими данными будет доступен в ближайшее время. Пожалуйста, следите за обновлениями.
+
+
+block content
+
+	main(role="main")
+		.setw
+
+
+			#demo-slider.d-t
+				.d-t_cell
+					a(href="javascript:;")#demo-slider_arr_l.slider-arrow(data-slidenum="4", data-direct="prev")
+
+
+				.d-t_cell
+
+					.demo-slide(data-slide="1")
+
+						.demo-mes.d-t
+							.d-t_cell DEMO
+							.d-t_cell 
+								b Шаг 1, Калькулятор. 
+								| Пользователь может ввести данные своего авиаперелёта. Будет произведён автоматический рассчёт углеродного следа.
+						
+						.ipci-calc.demo-slider_border
+							.demo-body
+								.ipci-calc-left
+									.sprite-demo-footprints
+									div.ipci-calc-left_item CO
+										sub 2
+
+									a.ipci-calc-left_item.active(href="javascript:;")
+										.sprite-demo-plane
+										span 2,89
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-car
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-bus
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-house
+
+								.ipci-calc-right
+									.ipci-calc-right_steps
+										a(href="#").active
+											span.mobile 1
+											span.wide Калькулятор
+										a(href="#")
+											span.mobile 2
+											span.wide Выбор CO2 единиц
+										a(href="#")
+											span.mobile 3
+											span.wide Сертификат
+										a(href="#")
+											span.mobile 4
+											span.wide Оплата (868,06 руб.)
+									
+									.ipci-calc-right_form
+										.d-t
+											.d-t_cell
+												label Перелет:
+											.d-t_cell
+												.requiered.inp-block
+													select
+														option Туда-обратно
+														option В одну сторону
+											.d-t_cell
+
+										.d-t
+											.d-t_cell
+												label Вид билета:
+											.d-t_cell
+												.requiered.inp-block
+													select
+														option Эконом
+														option Бизнес
+											.d-t_cell
+
+										.d-t
+											.d-t_cell
+												label Откуда:
+											.d-t_cell
+												.requiered.inp-block
+													input(type="text", value="Москва", placeholder="Город / аэропорт")
+											.d-t_cell
+
+
+										.d-t
+											.d-t_cell
+												label Промежуточный пункт:
+											.d-t_cell
+												.inp-block
+													input(type="text", value="", placeholder="Город / аэропорт")
+											.d-t_cell
+												a(href="#").btn-lined.small.green +
+
+										.d-t
+											.d-t_cell
+												label Куда:
+											.d-t_cell
+												.requiered.inp-block
+													input(type="text", value="Нью-Йорк", placeholder="Город / аэропорт")
+											.d-t_cell
+
+										.d-t
+											.d-t_cell
+												label Код бронирования (PNR) или номер билета:
+											.d-t_cell
+												.inp-block
+													input(type="text", value="GHTXDF")
+											.d-t_cell
+										.d-t
+											.d-t_cell
+											.d-t_cell
+												a(href="#").ipci-calc-add-i.btn-lined.green.inp-block + Добавить перелет
+											.d-t_cell
+
+										hr/
+										.d-t
+											.d-t_cell Масса СО2, эквивалентная выбросам:
+											.d-t_cell.t-right 2,89 тонны
+										.d-t
+											.d-t_cell Стоимость компенсации:
+											.d-t_cell.t-right 868,06 руб.
+
+										.ipci-calc-btn.t-right
+											input(type="submit", value="Компенсировать")
+
+							+demomsg()
+
+					.demo-slide(data-slide="2", style="display: none")
+						.demo-mes.d-t
+							.d-t_cell DEMO
+							.d-t_cell 
+								b Шаг 2, Выбор CO2 единиц. 
+								| Пользователю будут предложены варианты погашения углеродного следа. Благодаря использованию технологии блокчейн на платформе DAO IPCI есть возможность выбрать варианты погашения различных международных программ и видов проектов.
+
+
+						.ipci-calc.demo-slider_border
+							.demo-body
+								.ipci-calc-left
+									.sprite-demo-footprints
+									div.ipci-calc-left_item CO
+										sub 2
+
+									a.ipci-calc-left_item.active(href="javascript:;")
+										.sprite-demo-plane
+										span 2,89
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-car
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-bus
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-house
+
+								.ipci-calc-right
+									.ipci-calc-right_steps
+										a(href="#").active
+											span.mobile 1
+											span.wide Калькулятор
+										a(href="#").active
+											span.mobile 2
+											span.wide Выбор CO2 единиц
+										a(href="#")
+											span.mobile 3
+											span.wide Сертификат
+										a(href="#")
+											span.mobile 4
+											span.wide Оплата (868,06 руб.)
+									
+									.ipci-calc-right_form
+
+										.d-t
+											.d-t_cell
+												label Вид единиц:
+											.d-t_cell
+												.requiered.inp-block
+													select
+														option Verified Carbon Standard
+														option(selected) Integrated Program for Climate Initiatives
+														option Gold Standard
+														option Clean Development Mechanism
+
+										.d-t
+											.d-t_cell.valign-top
+												label Проект для финансирования:
+											.d-t_cell.valign-top
+												p
+													input.valign-mid(type="radio", name="project", checked)
+													label.valign-mid.m-l-5 Сокращение выбросов от сжигания ископаемого топлива
+												p
+													input.valign-mid(type="radio", name="project")
+													label.valign-mid.m-l-5 Увеличение абсорбции лесами
+												p
+													input.valign-mid(type="radio", name="project")
+													label.valign-mid.m-l-5 Сокращение выбросов от отходов (сокращение выбросов метана)
+												p
+													input.valign-mid(type="radio", name="project")
+													label.valign-mid.m-l-5 Возобновляемая энергетика
+												p
+													input.valign-mid(type="radio", name="project")
+													label.valign-mid.m-l-5 Сокращение выбросов высокопотенциальных парниковых газов
+
+										.ipci-calc-btn.t-right
+											input(type="submit", value="Далее")
+
+
+							+demomsg()
+
+
+					.demo-slide(data-slide="3", style="display: none")
+						.demo-mes.d-t
+							.d-t_cell DEMO
+							.d-t_cell 
+								b Шаг 3, Сертификат. 
+								| Пользователь может сформировать сертификат как для личного использования, так и для отчета в компании.
+
+
+
+						.ipci-calc.demo-slider_border
+							.demo-body
+								.ipci-calc-left
+									.sprite-demo-footprints
+									div.ipci-calc-left_item CO
+										sub 2
+
+									a.ipci-calc-left_item.active(href="javascript:;")
+										.sprite-demo-plane
+										span 2,89
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-car
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-bus
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-house
+
+								.ipci-calc-right
+									.ipci-calc-right_steps
+										a(href="#").active
+											span.mobile 1
+											span.wide Калькулятор
+										a(href="#").active
+											span.mobile 2
+											span.wide Выбор CO2 единиц
+										a(href="#").active
+											span.mobile 3
+											span.wide Сертификат
+										a(href="#")
+											span.mobile 4
+											span.wide Оплата (868,06 руб.)
+									
+									.ipci-calc-right_form
+
+										#ipci-cals-cert
+											h4 Сертификат на компенсацию 2890 кг CO
+												sub 2
+
+											.ipci-calc-cert_info
+												p.t-small Компенсация CO2 следа производится путем покупки углеродных единиц "Integrated Program for Climate Initiatives" для проекта "Сокращение выбросов от сжигания ископаемого топлива" 4.03.2017
+
+											p.t-center.t-small Для вас будет сформирован сертификат с уникальным номером транзакции, свидетельстующий о погашении вами углеродного следа.
+											.d-t
+												.d-t_cell
+													label Имя получателя:
+												.d-t_cell
+													.requiered.inp-block
+														input(type="text", value="Дмитрий Донской", placeholder="")
+												.d-t_cell
+
+											.d-t
+												.d-t_cell
+													label Компания:
+												.d-t_cell
+													.inp-block
+														input(type="text", value="ООО 'Грузоперевозки'", placeholder="Название организации")
+												.d-t_cell
+
+											.d-t
+												.d-t_cell
+													label Email, на который отправить сертификат:
+												.d-t_cell
+													.requiered.inp-block
+														input(type="email", value="donskoy@gruzoprevozki.com")
+												.d-t_cell
+
+										.ipci-calc-btn.t-right
+											input(type="submit", value="Далее")
+
+							+demomsg()
+
+					.demo-slide(data-slide="4", style="display: none")
+						.demo-mes.d-t
+							.d-t_cell DEMO
+							.d-t_cell 
+								b Шаг 4, Оплата. 
+								| После оплаты пользователь получит электронный сертификат с уникальный номером транзакции, по которому любом посетитель сайта сможет проверить соотвествие данных в электронном сертификате и данных записанных в блокчейн.
+
+						.ipci-calc.demo-slider_border
+							.demo-body
+								.ipci-calc-left
+									.sprite-demo-footprints
+									div.ipci-calc-left_item CO
+										sub 2
+
+									a.ipci-calc-left_item.active(href="javascript:;")
+										.sprite-demo-plane
+										span 2,89
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-car
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-bus
+
+									a.ipci-calc-left_item(href="javascript:;"): .sprite-demo-house
+
+								.ipci-calc-right
+									.ipci-calc-right_steps
+										a(href="#").active
+											span.mobile 1
+											span.wide Калькулятор
+										a(href="#").active
+											span.mobile 2
+											span.wide Выбор CO2 единиц
+										a(href="#").active
+											span.mobile 3
+											span.wide Сертификат
+										a(href="#").active
+											span.mobile 4
+											span.wide Оплата (868,06 руб.)
+									
+									.ipci-calc-right_form
+
+										.d-t.ipci-calc-table_info
+											.d-t_cell
+												p.t-small.t-gray Углеродный след:
+												p 2890 кг CO
+													sub 2
+
+											.d-t_cell
+												p.t-small.t-gray Способ погашения:
+												p Integrated Program for Climate Initiatives
+												p Сокращение выбросов от сжигания ископаемого топлива
+
+											.d-t_cell
+												p.t-small.t-gray Стоимость:
+												p.nowrap 868,06 руб.
+
+										hr/
+
+										.d-t
+											.d-t_cell
+												label Способ оплаты:
+											.d-t_cell
+												.requiered.inp-block
+													select
+														option Банковской картой
+														option QIWI
+														option Яндекс.деньги
+
+										.d-t
+											.d-t_cell
+												label Держатель карты:
+											.d-t_cell
+												.requiered.inp-block
+													input(type="text", value="", placeholder="IVAN IVANOV")
+
+										.d-t
+											.d-t_cell
+												label Номер карты:
+											.d-t_cell
+												.requiered.inp-block
+													input(type="text", value="")
+
+										.d-t
+											.d-t_cell
+												label  Срок действия:
+											.d-t_cell
+												.requiered
+													select
+														option 02
+														option 02
+
+													select
+														option 2025
+														option 2025
+
+										.d-t
+											.d-t_cell
+												label CVC:
+											.d-t_cell
+												.requiered
+													input.small(type="text", value="")
+
+
+										.ipci-calc-btn.t-right
+											input(type="submit", value="Оплатить")
+
+							+demomsg()
+
+				.d-t_cell
+					a(href="javascript:;")#demo-slider_arr_r.slider-arrow(data-slidenum="2", data-direct="next")

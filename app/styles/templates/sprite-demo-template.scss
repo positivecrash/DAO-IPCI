@@ -1,0 +1,27 @@
+$iconsDemo: (
+    spriteDemo: (width: {{spriteWidth}}px, height: {{spriteHeight}}px, pngPath: '../i/sprite_demo.png', svgPath: '../i/sprite_demo.svg'),
+{{#shapes}}     
+    {{base}}: (width: {{width.inner}}px, height: {{height.inner}}px, backgroundX: {{position.absolute.x}}px, backgroundY: {{position.absolute.y}}px),
+{{/shapes}});
+
+$spriteDemo: map-get($iconsDemo, spriteDemo);
+
+
+@mixin get-sprite-demo($spritename){
+    $spritename: map-get($iconsDemo, $spritename);
+    
+    display: inline-block;
+    width: map-get($spritename, width);
+    height: map-get($spritename, height);
+    background-image: url(map-get($spriteDemo, svgPath));
+    background-position: map-get($spritename, backgroundX) map-get($spritename, backgroundY);
+    background-repeat: no-repeat;
+
+    #{$modernizr-nosvg} & { background-image: url(map-get($spriteDemo, pngPath)); }
+}
+
+{{#shapes}}
+.sprite-demo-{{base}}{
+	@include get-sprite-demo('{{base}}');
+}
+{{/shapes}}

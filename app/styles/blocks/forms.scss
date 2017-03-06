@@ -19,15 +19,19 @@ $color-inp-back: #fff;
 
 
   &::placeholder {
-    color: $color-gray-2;
+    color: rgba($color-gray-2, .6);
   }
 
   &:focus{
   	border-color: $color-gray-1;
 
-  	&::placeholder {
-	    color: $color-gray-2;
-	  }
+  	// &::placeholder {
+	  //   color: $color-gray-2;
+	  // }
+  }
+
+  &.small{
+  	@include rem('max-width', 100);
   }
   
 }
@@ -145,7 +149,7 @@ select
 	}
 }
 
-label.requiered{
+.requiered{
 	white-space: nowrap;
 
 	&:after{
@@ -159,19 +163,29 @@ label.requiered{
 		vertical-align: -webkit-baseline-middle;
 	}
 
-	input{
+	input, textarea, select{
 		border-color: $color-brick;
 
 		&::placeholder {
-		    color: $color-brick;
+		    color: rgba($color-brick, .6);
 	  	}
 
 	  	&:focus{
 	  		border-color: $color-brick-2;
+	  		// &::placeholder{
+	  		// 	color: $color-brick;
+	  		// }
 	  	}
+	}
+
+	select{
+		background-image: image-url('selectArrAct.svg');
 	}
 }
 
+#{$modernizr-nosvg} .requiered select{
+	background-image: image-url('selectArrAct.png');
+}
 
 .btn-lined{
 	@extend %form_el_base;
@@ -179,4 +193,19 @@ label.requiered{
 	border: 1px solid $color-blue;
 	color: $color-blue;
 	text-align: center;
+
+	&.small{
+	  	@include font-size(16, 1);
+		@include rem('padding', 10, 12, 8);
+	}
+
+	&.green{
+		border-color: $color-green;
+		color: $color-green;
+
+		&:hover{
+			border-color: $color-brick;
+			color: $color-brick;
+		}
+	}
 }

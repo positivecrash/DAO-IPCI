@@ -1,3 +1,11 @@
+@mixin mobile_s
+{
+	@media screen and (max-width: #{$point-mobile-s}) 
+	{
+		@content;
+	}
+}
+
 @mixin mobile
 {
 	@media screen and (max-width: #{$point-mobile}) 

@@ -1,0 +1,40 @@
+$iconsDemo: (
+    spriteDemo: (width: 36.1px, height: 110px, pngPath: '../i/sprite_demo.png', svgPath: '../i/sprite_demo.svg'),
+    bus: (width: 28.9px, height: 15.1px, backgroundX: 0px, backgroundY: 0px),
+    car: (width: 29px, height: 13.3px, backgroundX: 0px, backgroundY: -16px),
+    footprints: (width: 36.1px, height: 36.2px, backgroundX: 0px, backgroundY: -30px),
+    house: (width: 22.1px, height: 19.6px, backgroundX: 0px, backgroundY: -67px),
+    plane: (width: 22.9px, height: 22.3px, backgroundX: 0px, backgroundY: -87px),
+);
+
+$spriteDemo: map-get($iconsDemo, spriteDemo);
+
+
+@mixin get-sprite-demo($spritename){
+    $spritename: map-get($iconsDemo, $spritename);
+    
+    display: inline-block;
+    width: map-get($spritename, width);
+    height: map-get($spritename, height);
+    background-image: url(map-get($spriteDemo, svgPath));
+    background-position: map-get($spritename, backgroundX) map-get($spritename, backgroundY);
+    background-repeat: no-repeat;
+
+    #{$modernizr-nosvg} & { background-image: url(map-get($spriteDemo, pngPath)); }
+}
+
+.sprite-demo-bus{
+	@include get-sprite-demo('bus');
+}
+.sprite-demo-car{
+	@include get-sprite-demo('car');
+}
+.sprite-demo-footprints{
+	@include get-sprite-demo('footprints');
+}
+.sprite-demo-house{
+	@include get-sprite-demo('house');
+}
+.sprite-demo-plane{
+	@include get-sprite-demo('plane');
+}

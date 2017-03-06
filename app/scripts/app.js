@@ -10,10 +10,10 @@ jQuery(document).ready(function($){
 
 
     /*===  HEADER BACKGROUND SCALE ===*/
-    var prev = 0;
-    var timer_h = true;
 
     function header_back_scale(){
+        var prev = 0;
+        var timer_h = true;
 
         if(timer_h == true){
            var scrollTop = $w.scrollTop();
@@ -28,6 +28,43 @@ jQuery(document).ready(function($){
 
     if($('header[role="banner"]').length > 0){
         $w.bind('scroll', header_back_scale);
+    }
+
+
+    function cur_screen(screen){
+        $(screen).one('inview', function(event, isInView){
+            if (isInView){
+                return $(this);
+            }
+        });
+    }
+
+
+    function slide_screen(){
+        var prev = 0;
+        var timer_h = true;
+
+        if(timer_h == true){
+            var scrollTop = $w.scrollTop();
+
+            var $obj = cur_screen('.screen');
+            console.log($obj.attr('class'));
+
+            if(scrollTop > prev){
+
+                $('html, body').animate({scrollTop: $o.next('.screen').offset().top }, 1000);
+            }
+
+            prev = scrollTop;
+        }
+
+        timer_h = false;
+        setTimeout(function(){timer_h = true}, 20);
+    }
+
+
+    if($('header[role="banner"]').hasClass('screen')){
+        $w.bind('scroll', slide_screen);
     }
 
     /*===  END HEADER BACKGROUND SCALE ===*/
@@ -104,46 +141,102 @@ jQuery(document).ready(function($){
 
 
 	/*===  FANCYBOX ===*/
-	if (typeof ($.fn.fancybox) != 'undefined') {
-		var fancyBoxDefaults = {
-            padding: 0,
-			margin: 10,
-            autoSize : false,
-            width:  '95%',
-            minHeight:  '85%',
-            maxWidth: 1200,
-            tpl: {
-                closeBtn : '<a class="fancybox-item fbx-close" href="javascript:;">Close</a>',
-                next     : '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><span class="i-arrowRight"></span></a>',
-                prev     : '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><span class="i-arrowLeft"></span></a>'
-            }
-		};
-
-        $('.fancybox').fancybox(fancyBoxDefaults);
-
-        $(".fancyboxRU").fancybox(
-            $.extend({}, fancyBoxDefaults, {
-                tpl: {
-                    closeBtn : '<a class="fancybox-item fbx-close" href="javascript:;">Закрыть окно</a>',
-                    next     : '<a title="Следующий" class="fancybox-nav fancybox-next" href="javascript:;"><span class="i-arrowRight"></span></a>',
-                    prev     : '<a title="Предыдущий" class="fancybox-nav fancybox-prev" href="javascript:;"><span class=""i-arrowLeft"></span></a>'
-                }
-            })
-        );
-	}
+	
+    if (typeof ($.fn.fancybox) != 'undefined') {
+        $("[data-fancybox]").fancybox({
+            margin : [40, 40]
+        });
+    }
 
 	/*===  end of FANCYBOX ===*/
+
+    /*===  TMP FOR DEMO ===*/
+
+
+    if($('.slider-arrow').length > 0){
+
+        $('.slider-arrow').on('click', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+
+            var slide = $(this).data('slidenum');
+            var direct = $(this).data('direct');
+
+
+
+
+            $('.demo-slide').each(function(){
+                var $o = $(this);
+
+                $o.find('.ipci-calc').removeClass('clicked');
+
+                if ($o.data('slide') != slide)
+                    $o.fadeOut('slow');
+                else
+                    $o.fadeIn('slow');
+
+            });
+
+
+            var leftSlide = $('#demo-slider_arr_l').data('slidenum');
+            var rightSlide = $('#demo-slider_arr_r').data('slidenum');
+
+            if ( direct == 'prev' ){
+
+
+                if ( leftSlide > 1 )
+                    $('#demo-slider_arr_l').data('slidenum', leftSlide - 1);
+                if ( leftSlide == 1 )
+                    $('#demo-slider_arr_l').data('slidenum', 4);
+
+                if ( rightSlide > 1 )
+                    $('#demo-slider_arr_r').data('slidenum', rightSlide - 1);
+                if ( rightSlide == 1 )
+                    $('#demo-slider_arr_r').data('slidenum', 4);
+            }
+
+
+            if ( direct == 'next' ){
+
+  
+                if ( rightSlide < 4 )
+                    $('#demo-slider_arr_r').data('slidenum', rightSlide + 1);
+                if ( rightSlide == 4 )
+                    $('#demo-slider_arr_r').data('slidenum', 1);
+
+                 if ( leftSlide < 4 )
+                    $('#demo-slider_arr_l').data('slidenum', leftSlide + 1);
+                if ( leftSlide == 4 )
+                    $('#demo-slider_arr_l').data('slidenum', 1);
+            }
+
+            
+        });
+    }
+
+    if( $('.ipci-calc').length > 0){
+
+         $('.ipci-calc').on('click', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+
+            if ( !$('.ipci-calc').hasClass('clicked') ){
+                var offset = $(this).parent('.demo-slide').offset();
+                $('.demo-msg').css({'left': e.pageX - offset.left, 'top': e.pageY - offset.top});
+            }
+
+            $('.ipci-calc').toggleClass('clicked');
+        });
+
+    }
+
+
+    /*===  end of TMP FOR DEMO ===*/
 
 
 
 
     /*===  Header interactions ===*/
-
-    // $('.header-more').on('click', function(e){
-    //     e.preventDefault();
-    //     e.stopPropagation();
-    //     $('html, body').animate({scrollTop: $('header').outerHeight() }, 1000);
-    // });
 
 
     /*---  Fix navigation on top ---*/
@@ -255,19 +348,6 @@ jQuery(document).ready(function($){
         });
 
     }
-
-     // $('.dropdown').on('focus blur', function(e){
-     //    if( e.type == 'blur' ){
-     //        // console.log('e.type: ' + e.type);
-     //        $(this).removeClass('show');
-     //    }
-
-     //    if( e.type == 'focus' ){
-     //        // console.log('e.type: ' + e.type);
-     //        $(this).addClass('show');
-     //    }
-     // });
-
 
     /*--- Disable hover on touchscreens (works not for all screens) ---*/
     if (Modernizr.touchevents) {

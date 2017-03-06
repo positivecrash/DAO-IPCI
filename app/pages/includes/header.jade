@@ -61,7 +61,8 @@ header(role="banner", class=type)
 
 
 	.setw
-		#header-title DAO IPCI
+		if (type == 'screen')
+			#header-title DAO IPCI
 		h1 #{text}
 		if (type == 'screen')
 			if (!moretext)

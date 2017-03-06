@@ -90,7 +90,7 @@ gulp.task('iconfont', function(){
 //svg and png sprites
 gulp.task('svgSprite', function () {
 
-  gulp.src('app/spritesrc/basic/*.svg')
+  var basic = gulp.src('app/spritesrc/basic/*.svg')
     .pipe(svgo()())
     .pipe(svgSprite({
         "mode": {
@@ -113,17 +113,44 @@ gulp.task('svgSprite', function () {
     }))
     .pipe(gulp.dest('dist/assets/i'));
 
-  // return merge(basic);
+  var demo = gulp.src('app/spritesrc/demo/*.svg')
+    .pipe(svgo()())
+    .pipe(svgSprite({
+        "mode": {
+            "css": {
+                "spacing": {
+                    "padding": 2
+                },
+                "dest": "./",
+                "layout": "vertical",
+                "sprite": "sprite_demo.svg",
+                "bust": false,
+                "render": {
+                    "scss": {
+                        "dest": "../../../app/styles/utilities/spriteDemo.scss",
+                        "template": "app/styles/templates/sprite-demo-template.scss"
+                    }
+                }
+            }
+        }
+    }))
+    .pipe(gulp.dest('dist/assets/i'));
+
+  return merge(basic, demo);
 
 });
 
 
 gulp.task('pngSprite', ['svgSprite'], function() {
-  gulp.src('dist/assets/i/sprite.svg')
+  var basic = gulp.src('dist/assets/i/sprite.svg')
     .pipe(svg2png())
     .pipe(gulp.dest('dist/assets/i'));
 
-  // return merge(basic);
+  var demo = gulp.src('dist/assets/i/sprite_demo.svg')
+    .pipe(svg2png())
+    .pipe(gulp.dest('dist/assets/i'));
+
+  return merge(basic, demo);
 });
 
 gulp.task('sprite', ['pngSprite']);
@@ -155,7 +182,7 @@ gulp.task('live', function() {
 	gulp.watch('app/pages/**/*.jade', ['templates']);
 
 	//svg and png sprites
-  gulp.watch(['app/spritesrc/basic/*.svg'], ['sprite']);
+  gulp.watch(['app/spritesrc/basic/*.svg', 'app/spritesrc/demo/*.svg'], ['sprite']);
 
   //watch font icon files
   gulp.watch('app/fonticons/*.svg', ['iconfont']);

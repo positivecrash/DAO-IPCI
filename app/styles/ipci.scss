@@ -8,6 +8,7 @@
 @import "utilities/mixins";
 
 @import "utilities/sprite";
+@import "utilities/spriteDemo";
 @import "utilities/icons";
 
 @import "utilities/text";
@@ -19,6 +20,7 @@
 @import "blocks/footer";
 
 @import "blocks/index";
+@import "blocks/demo";
 
 
 /*======== MAIN SCSS VARIABLES & MIXINS & EXTENDS =========*/
@@ -100,6 +102,9 @@ html, body{
 .d-ib{ display: inline-block; }
 img.d-ib{ max-width: 100%; @include rem('margin-bottom', $vertical-rythm); }
 
+.valign-top { vertical-align: top; }
+.valign-mid { vertical-align: middle; }
+
 
 
 .cells{
@@ -159,6 +164,7 @@ img.d-ib{ max-width: 100%; @include rem('margin-bottom', $vertical-rythm); }
 
 /*------- BASIC STYLES - margins --------*/
 .m-t-x2 { @include rem('margin-top', $vertical-rythm*2); }
+.m-l-5 { @include rem('margin-left', 5); }
 
 
 /*======== END BASIC STYLES =========*/
@@ -533,6 +539,48 @@ table{
   }
 }
 /*======== end of DOCS and PRESS =========*/
+
+
+/*======== PAGE WITH BACKGROUND =========*/
+.page-back{
+  background-image: image_url('bannerBack.svg');
+  // background-size: 110%;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+
+  &:after{
+    content:"";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 20%;
+
+    @include background-image(linear-gradient(top, $color-blue-2, rgba($color-blue-2, 0) ));
+    background-image: -ms-linear-gradient(top, $color-blue-2, rgba($color-blue-2, 0) );
+  }
+
+  main[role="main"]{
+    background-color: transparent;
+    @include rem('padding-bottom', $vertical-rythm*2);
+    z-index: 2;
+  }
+
+  .header_back{
+    display: none;
+  }
+
+  header[role=banner]{
+    background-color: transparent;
+
+    & > .setw{
+      @include rem('padding-top', $vertical-rythm*3.5);
+      @include rem('padding-bottom', $vertical-rythm*2.5);
+    }
+  }
+}
+/*======== end of PAGE WITH BACKGROUND =========*/
 
 
 

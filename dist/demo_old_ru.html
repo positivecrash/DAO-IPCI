@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Демо погашения выбросов CO2 | ДАО "Программа интеграции климатических инициатив"</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="assets/css/ipci.min.css?v=1" rel="stylesheet" media="all">
+    <script src="assets/js/jquery-1.9.1.min.js"></script>
+    <script src="assets/js/ipci.min.js?v=1"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+  </head>
+  <body>
+    <header role="banner">
+      <div id="header-top"><a href="index.html" class="l-noline q-min_tablet">ДАО «Программа интеграции климатических инициатив»</a><a href="index.html" class="l-noline q-mobile">ДАО «ПИКИ»</a>
+        <div class="b-inline">
+          <div tabindex="1" class="dropdown dropdown-select_light"><a href="javascript:;" class="dropdown__toggle">
+               
+              Русский<span class="i-arrow"></span></a>
+            <div class="dropdown__content nav-links"><a href="index.html" class="active">Русский</a><a href="index_eng.html">English</a></div>
+          </div>
+          <div tabindex="0" class="dropdown dropdown-menu"><a href="javascript:;" class="dropdown__toggle hamburger"><span class="line"></span><span class="line"></span><span class="line"></span></a>
+            <div tabindex="1" class="dropdown__content">
+              <div class="nav-links section"><a href="about.html">О программе</a><a href="news.html">Новости и статьи</a><a href="docs.html">Документы</a><a href="press.html">Пресса о нас</a><a href="contacts.html">Контакты</a></div>
+              <div class="nav-links section"><a href="contacts.html#contact-form">Консультация специалиста</a><a href="#">Попробовать DAO IPCI</a><a href="#">Репозиторий на GitHub</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="setw">
+        <h1>Демо погашения выбросов CO2</h1>
+      </div>
+      <div class="header_back"></div>
+    </header>
+    <!--[if lte IE 9]><div id="oldiebrowser"><h2>Уважаемый пользователь, вы используете сильно устаревшую версию браузера</h2><p>Для полнценной и более приятной работы с нашим сайтом, пожалуйста, обновите свой браузер до новой версии. Или скачайте новую версию браузера другой компании из официальных источников (например, Microsoft Edge, Google Chrome, Yandex браузер, Mozilla Firefox, Safari, Opera).</p></div><![endif]-->
+    <div class="breadcrumbs"><a href="#">Главная</a>/<span>Демо погашения выбросов CO<sub>2</sub></span></div>
+    <main role="main">
+      <div class="inside setw">
+        <p>Ниже вы можете видеть пример интерфейсов, которые позволят расчитывать и погашать вашим клиентам углеродный след. Интерфейсы могут быть встроены на любой сайт.</p>
+        <p>Форма показана в качестве примера. Расчет с вашими данными будет доступен в ближайшее время. <a href="#">Следить за новостями</a></p>
+        <div id="demo-slider" class="d-t">
+          <div class="d-t_cell"><a href="javascript:;" id="demo-slider_arr_l" data-slidenum="4" data-direct="prev" class="slider-arrow"><span class="arrow"></span></a></div>
+          <div id="demo-slider_border" class="d-t_cell">
+            <div data-slide="1" style="display: none" class="demo-slide">
+              <div class="ipci-calc">
+                <div>
+                  <div class="ipci-calc-left">
+                    <div class="sprite-demo-footprints"></div>
+                    <div class="ipci-calc-left_item">CO<sub>2</sub></div><a href="javascript:;" class="ipci-calc-left_item active">
+                      <div class="sprite-demo-plane"></div><span>2,89</span></a><a href="javascript:;" class="ipci-calc-left_item">
+                      <div class="sprite-demo-car"></div></a><a href="javascript:;" class="ipci-calc-left_item">
+                      <div class="sprite-demo-bus"></div></a><a href="javascript:;" class="ipci-calc-left_item">
+                      <div class="sprite-demo-house"></div></a>
+                  </div>
+                  <div class="ipci-calc-right">
+                    <div class="ipci-calc-right_steps"><a href="#" class="active"><span class="mobile">1</span><span class="wide">Калькулятор</span></a><a href="#"><span class="mobile">2</span><span class="wide">Выбор CO2 единиц</span></a><a href="#"><span class="mobile">3</span><span class="wide">Сертификат</span></a><a href="#"><span class="mobile">4</span><span class="wide">Оплата (868,06 руб.)</span></a></div>
+                    <div class="ipci-calc-right_form">
+                      <div class="d-t">
+                        <div class="d-t_cell">
+                          <label>Перелет:</label>
+                        </div>
+                        <div class="d-t_cell">
+                          <div class="requiered inp-block">
+                            <select>
+                              <option>Туда-обратно</option>
+                              <option>В одну сторону</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="d-t_cell"></div>
+                      </div>
+                      <div class="d-t">
+                        <div class="d-t_cell">
+                          <label>Вид билета:</label>
+                        </div>
+                        <div class="d-t_cell">
+                          <div class="requiered inp-block">
+                            <select>
+                              <option>Эконом</option>
+                              <option>Бизнес</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="d-t_cell"></div>
+                      </div>
+                      <div class="d-t">
+                        <div class="d-t_cell">
+                          <label>Откуда:</label>
+                        </div>
+                        <div class="d-t_cell">
+                          <div class="requiered inp-block">
+                            <input type="text" value="Москва" placeholder="Город / аэропорт">
+                          </div>
+                        </div>
+                        <div class="d-t_cell"></div>
+                      </div>
+                      <div class="d-t">
+                        <div class="d-t_cell">
+                          <label>Промежуточный пункт:</label>
+                        </div>
+                        <div class="d-t_cell">
+                          <div class="inp-block">
+                            <input type="text" value="" placeholder="Город / аэропорт">
+                          </div>
+                        </div>
+                        <div class="d-t_cell"><a href="#" class="btn-lined small green">+</a></div>
+                      </div>
+                      <div class="d-t">
+                        <div class="d-t_cell">
+                          <label>Куда:</label>
+                        </div>
+                        <div class="d-t_cell">
+                          <div class="requiered inp-block">
+                            <input type="text" value="Нью-Йорк" placeholder="Город / аэропорт">
+                          </div>
+                        </div>
+                        <div class="d-t_cell"></div>
+                      </div>
+                      <div class="d-t">
+                        <div class="d-t_cell">
+                          <label>Код бронирования (PNR) или номер билета:</label>
+                        </div>
+                        <div class="d-t_cell">
+                          <div class="inp-block">
+                            <input type="text" value="">
+                          </div>
+                        </div>
+                        <div class="d-t_cell"></div>
+                      </div>
+                      <div class="d-t">
+                        <div class="d-t_cell"></div>
+                        <div class="d-t_cell"><a href="#" class="ipci-calc-add-i btn-lined green inp-block">+ Добавить перелет</a></div>
+                        <div class="d-t_cell"></div>
+                      </div>
+                      <hr>
+                      <div class="d-t">
+                        <div class="d-t_cell">Масса СО2, эквивалентная выбросам:</div>
+                        <div class="d-t_cell t-right">2,89 тонны</div>
+                      </div>
+                      <div class="d-t">
+                        <div class="d-t_cell">Стоимость компенсации:</div>
+                        <div class="d-t_cell t-right">868,06 руб.</div>
+                      </div>
+                      <div class="ipci-calc-btn t-right">
+                        <input type="submit" value="Компенсировать">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div data-slide="2" style="display: none" class="demo-slide">
+              <div class="ipci-calc">
+                <div>
+                  <div class="ipci-calc-left">
+                    <div class="sprite-demo-footprints"></div>
+                    <div class="ipci-calc-left_item">CO<sub>2</sub></div><a href="javascript:;" class="ipci-calc-left_item active">
+                      <div class="sprite-demo-plane"></div><span>2,89</span></a><a href="javascript:;" class="ipci-calc-left_item">
+                      <div class="sprite-demo-car"></div></a><a href="javascript:;" class="ipci-calc-left_item">
+                      <div class="sprite-demo-bus"></div></a><a href="javascript:;" class="ipci-calc-left_item">
+                      <div class="sprite-demo-house"></div></a>
+                  </div>
+                  <div class="ipci-calc-right">
+                    <div class="ipci-calc-right_steps"><a href="#" class="active"><span class="mobile">1</span><span class="wide">Калькулятор</span></a><a href="#" class="active"><span class="mobile">2</span><span class="wide">Выбор CO2 единиц</span></a><a href="#"><span class="mobile">3</span><span class="wide">Сертификат</span></a><a href="#"><span class="mobile">4</span><span class="wide">Оплата (868,06 руб.)</span></a></div>
+                    <div class="ipci-calc-right_form">
+                      <div class="d-t">
+                        <div class="d-t_cell">
+                          <label>Вид единиц:</label>
+                        </div>
+                        <div class="d-t_cell">
+                          <div class="requiered inp-block">
+                            <select>
+                              <option>Verified Carbon Standard</option>
+                              <option>Integrated Program for Climate Initiatives</option>
+                              <option>Gold Standard</option>
+                              <option>Clean Development Mechanism</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-t">
+                        <div class="d-t_cell valign-top">
+                          <label>Проект для финансирования:</label>
+                        </div>
+                        <div class="d-t_cell valign-top">
+                          <p>
+                            <input type="radio" name="project" checked class="valign-mid">
+                            <label class="valign-mid m-l-5">Сокращение выбросов от сжигания ископаемого топлива</label>
+                          </p>
+                          <p>
+                            <input type="radio" name="project" class="valign-mid">
+                            <label class="valign-mid m-l-5">Увеличение абсорбции лесами</label>
+                          </p>
+                          <p>
+                            <input type="radio" name="project" class="valign-mid">
+                            <label class="valign-mid m-l-5">Сокращение выбросов от отходов (сокращение выбросов метана)</label>
+                          </p>
+                          <p>
+                            <input type="radio" name="project" class="valign-mid">
+                            <label class="valign-mid m-l-5">Возобновляемая энергетика</label>
+                          </p>
+                          <p>
+                            <input type="radio" name="project" class="valign-mid">
+                            <label class="valign-mid m-l-5">Сокращение выбросов высокопотенциальных парниковых газов</label>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="ipci-calc-btn t-right">
+                        <input type="submit" value="Далее">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div data-slide="3" class="demo-slide">
+              <div class="ipci-calc">
+                <div>
+                  <div class="ipci-calc-left">
+                    <div class="sprite-demo-footprints"></div>
+                    <div class="ipci-calc-left_item">CO<sub>2</sub></div><a href="javascript:;" class="ipci-calc-left_item active">
+                      <div class="sprite-demo-plane"></div><span>2,89</span></a><a href="javascript:;" class="ipci-calc-left_item">
+                      <div class="sprite-demo-car"></div></a><a href="javascript:;" class="ipci-calc-left_item">
+                      <div class="sprite-demo-bus"></div></a><a href="javascript:;" class="ipci-calc-left_item">
+                      <div class="sprite-demo-house"></div></a>
+                  </div>
+                  <div class="ipci-calc-right">
+                    <div class="ipci-calc-right_steps"><a href="#" class="active"><span class="mobile">1</span><span class="wide">Калькулятор</span></a><a href="#" class="active"><span class="mobile">2</span><span class="wide">Выбор CO2 единиц</span></a><a href="#" class="active"><span class="mobile">3</span><span class="wide">Сертификат</span></a><a href="#"><span class="mobile">4</span><span class="wide">Оплата (868,06 руб.)</span></a></div>
+                    <div class="ipci-calc-right_form">
+                      <div id="ipci-cals-cert">
+                        <h4>Сертификат на компенсацию 2890 кг CO<sub>2</sub></h4>
+                        <div class="ipci-calc-cert_info">
+                          <p class="t-small">Компенсация CO2 следа производится путем покупки углеродных единиц "Integrated Program for Climate Initiatives" для проекта "Сокращение выбросов от сжигания ископаемого топлива" 4.03.2017</p>
+                        </div>
+                        <p class="t-center t-small">Для вас будет сформирован сертификат с уникальным номером транзакции, свидетельстующий о погашении вами углеродного следа.</p>
+                        <div class="d-t">
+                          <div class="d-t_cell">
+                            <label>Имя получателя:</label>
+                          </div>
+                          <div class="d-t_cell">
+                            <div class="requiered inp-block">
+                              <input type="text" value="Дмитрий Донской" placeholder="">
+                            </div>
+                          </div>
+                          <div class="d-t_cell"></div>
+                        </div>
+                        <div class="d-t">
+                          <div class="d-t_cell">
+                            <label>Компания:</label>
+                          </div>
+                          <div class="d-t_cell">
+                            <div class="inp-block">
+                              <input type="text" value="ООО 'Грузоперевозки'" placeholder="Название организации">
+                            </div>
+                          </div>
+                          <div class="d-t_cell"></div>
+                        </div>
+                      </div>
+                      <div class="ipci-calc-btn t-right">
+                        <input type="submit" value="Далее">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div data-slide="4" style="display: none" class="demo-slide">test 4</div>
+          </div>
+          <div class="d-t_cell"><a href="javascript:;" id="demo-slider_arr_r" data-slidenum="2" data-direct="next" class="slider-arrow"><span class="arrow"></span></a></div>
+        </div>
+      </div>
+    </main>
+    <!--FOOTER-->
+    <footer role="contentinfo">
+      <div class="b-promo">
+        <div class="setw">
+          <h2>DAO IPCI – бесплатное программное обеспечение с открытым кодом</h2>
+          <div class="cells">
+            <div class="cell">
+              <div class="t-center">
+                <div class="i-consult"></div>
+              </div><a href="contacts.html#contact-form" class="btn-lined">Консультация специалиста</a>
+            </div>
+            <div class="cell">
+              <div class="t-center">
+                <div class="i-app"></div>
+              </div><a href="#" target="_blank" class="btn-lined">Скачать DAO IPCI</a>
+            </div>
+            <div class="cell">
+              <div class="t-center">
+                <div class="i-git"></div>
+              </div><a href="#" target="_blank" class="btn-lined">Репозиторий на GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-light">
+        <div class="setw">
+          <div class="cells">
+            <div class="cell">@2016, DAO IPCI</div>
+            <div class="cell">В партнерстве с <a href="http://www.carbonregistry.ru" target="_blank">Углеродным реестром</a> на основе <a href="http://www.carbonregistry.ru/program" target="_blank">Программы интеграции климатических инициатив</a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

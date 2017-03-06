@@ -101,7 +101,7 @@ hr{
   border: 0;
   background-color: $color-brick;
   height: 2px;
-  @include rem('margin', $vertical-rythm*2, 0);
+  @include rem('margin', $vertical-rythm, 0);
 }
 
 blockquote, p, li, ul, ol {
