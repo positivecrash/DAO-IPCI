@@ -6961,41 +6961,41 @@ jQuery(document).ready(function($){
     }
 
 
-    function cur_screen(screen){
-        $(screen).one('inview', function(event, isInView){
-            if (isInView){
-                return $(this);
-            }
-        });
-    }
+    // function cur_screen(screen){
+    //     $(screen).one('inview', function(event, isInView){
+    //         if (isInView){
+    //             return $(this);
+    //         }
+    //     });
+    // }
 
 
-    function slide_screen(){
-        var prev = 0;
-        var timer_h = true;
+    // function slide_screen(){
+    //     var prev = 0;
+    //     var timer_h = true;
 
-        if(timer_h == true){
-            var scrollTop = $w.scrollTop();
+    //     if(timer_h == true){
+    //         var scrollTop = $w.scrollTop();
 
-            var $obj = cur_screen('.screen');
-            console.log($obj.attr('class'));
+    //         var $obj = cur_screen('.screen');
+    //         console.log( cur_screen('.screen') );
 
-            if(scrollTop > prev){
+    //         // if(scrollTop > prev){
 
-                $('html, body').animate({scrollTop: $o.next('.screen').offset().top }, 1000);
-            }
+    //         //     $('html, body').animate({scrollTop: $obj.next('.screen').offset().top }, 1000);
+    //         // }
 
-            prev = scrollTop;
-        }
+    //         prev = scrollTop;
+    //     }
 
-        timer_h = false;
-        setTimeout(function(){timer_h = true}, 20);
-    }
+    //     timer_h = false;
+    //     setTimeout(function(){timer_h = true}, 20);
+    // }
 
 
-    if($('header[role="banner"]').hasClass('screen')){
-        $w.bind('scroll', slide_screen);
-    }
+    // if($('header[role="banner"]').hasClass('screen')){
+    //     $w.bind('scroll', slide_screen);
+    // }
 
     /*===  END HEADER BACKGROUND SCALE ===*/
 
