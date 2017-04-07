@@ -285,7 +285,7 @@ header[role=banner], .screen {
   src: url("../fonts/CustomIcons.eot");
   src: url("../fonts/CustomIcons.eot?#iefix") format("eot"), url("../fonts/CustomIcons.woff") format("woff"), url("../fonts/CustomIcons.ttf") format("truetype"), url("../fonts/CustomIcons.svg#CustomIcons") format("svg");
 }
-.i-app, .i-arrow, .i-arrowBig, .i-arrowLeft, .i-arrowRight, .i-away, .i-git, .i-mail, .l-away {
+.i-app:before, .i-arrow:before, .i-arrowBig:before, .i-arrowLeft:before, .i-arrowRight:before, .i-away:before, .i-git:before, .i-mail:before, .l-away:after, .dropdown__content .nav-links a[target="_blank"]:after {
   font-family: "CustomIcons";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1851,6 +1851,16 @@ header[role=banner].screen h1 {
   top: 50px;
   top: 3.125rem;
   z-index: 10;
+}
+.dropdown__content .nav-links a[target="_blank"] {
+  font-size: "PT Sans", Arial, Tahoma, Verdana, sans-serif;
+}
+.dropdown__content .nav-links a[target="_blank"]:after {
+  content: "";
+}
+.dropdown__content .nav-links a[target="_blank"]:after {
+  margin-left: 5px;
+  font-size: 12px;
 }
 
 .dropdown__toggle {

@@ -180,6 +180,16 @@ header[role=banner]{
   position: absolute;
   @include rem('top', 50);
   z-index: 10;
+
+  .nav-links a[target="_blank"]{
+    font-size: $font-family-base;
+    @include icon(away, after);
+
+    &:after{
+      margin-left: 5px;
+      font-size: 12px;
+    }
+  }
 }
 
 .dropdown__toggle{
