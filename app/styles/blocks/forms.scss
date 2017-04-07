@@ -4,7 +4,7 @@ $color-inp-back: #fff;
 %form_el_base{
   box-sizing: border-box;
   font-family: $font-family-base;
-  @include font-size(20, 1);
+  @include font-size($font-base-size, 1);
   @include rem('padding', 14, 20, 12);
 
   border-radius: 4px;
@@ -161,6 +161,7 @@ select
 		display: inline-block;
 		vertical-align: middle;
 		vertical-align: -webkit-baseline-middle;
+	    margin-left: 4px;
 	}
 
 	input, textarea, select{
@@ -172,9 +173,6 @@ select
 
 	  	&:focus{
 	  		border-color: $color-brick-2;
-	  		// &::placeholder{
-	  		// 	color: $color-brick;
-	  		// }
 	  	}
 	}
 

@@ -2,7 +2,6 @@
 	border-top: 2px solid $color-brick;
 	margin-right: 0;
 	margin-left: 0;
-	@include rem('margin-bottom', $vertical-rythm * 3);
 
 	h3{
 		color: $color-brick;

@@ -59,7 +59,7 @@ a {
 
 #{headings()} {
   @include rem('margin-bottom', $vertical-rythm * 1.5);
-  @include rem('margin-top', $vertical-rythm * 3);
+  @include rem('margin-top', $vertical-rythm * 2);
 
   font-family: $font-family-second;
   font-weight: 400;
@@ -80,12 +80,13 @@ a {
 
 h1 {
   @include font-size(38, 1.2);
+  @include rem('margin-top', $vertical-rythm * 3);
 
   @include mobile(){
     @include font-size(28, 1.2);
   }
 }
-h2 { @include font-size(32, 1.2); }
+h2 { @include font-size(32, 1.2); @include rem('margin-top', $vertical-rythm * 3); }
 h3 { @include font-size(26, 1.2); }
 h4 { @include font-size(24, 1.2); }
 h5 { @include font-size(20, 1.2); }
@@ -126,7 +127,7 @@ blockquote, ol, ul, table {
 }
 
 li{
-  @include rem('margin-bottom', $vertical-rythm/2);
+  @include rem('margin-bottom', $vertical-rythm);
 }
 
 
