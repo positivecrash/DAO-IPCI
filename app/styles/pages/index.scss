@@ -24,6 +24,7 @@
 
       &, h2, aside { display: block; }
       h2, aside { width: 100%; }
+      h2 { padding-right: 0; }
     }
     h2 { @include rem('margin-bottom', $vertical-rythm); }
   }
@@ -110,7 +111,6 @@
 
   h3{
     text-align: left;
-    // color: $color-brick;
   }
 
   @include max_tablet(){
@@ -135,6 +135,7 @@
 
 
 #scrn-3{
+  text-align: center;
   background-color: $color-gray-5;
   @include font-size(14);
 
@@ -151,16 +152,16 @@
     @include rem('margin-bottom', 30);
   }
 
-  .t-center{
+  .img{
     height: 190px;
     @include rem('margin-bottom', 30);
     @extend %flex_center;
   }
 
   .title{
-    @include font-size(22, 1.2);
+    @include font-size(22, 1);
     font-weight: bold;
-    @include rem('height', 70);
+    @include rem('height', 75);
   }
 
   .cell{
@@ -169,7 +170,7 @@
     border-radius: 4px;
 
     box-sizing: border-box;
-    width: 30%;
+    width: 32%;
     @include rem('padding', 18);
 
     &:last-child{

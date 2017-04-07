@@ -46,10 +46,10 @@
 	@if $filename == away {
 		$char: "\E006";
 	}
-	@if $filename == consult {
+	@if $filename == git {
 		$char: "\E007";
 	}
-	@if $filename == git {
+	@if $filename == mail {
 		$char: "\E008";
 	}
 
@@ -82,9 +82,9 @@
 .i-away {
 	@include icon(away);
 }
-.i-consult {
-	@include icon(consult);
-}
 .i-git {
 	@include icon(git);
+}
+.i-mail {
+	@include icon(mail);
 }

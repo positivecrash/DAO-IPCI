@@ -5,7 +5,8 @@ $point-desktop-s: 1024px;
 $point-desktop-m: 1280px;
 $point-desktop-b: 1620px;
 
-$width-base-max: 1440px;
+$width-base-max: $point-desktop-m;
+// $width-base-max: 1440px;
 // $width-base-min: $point-desktop-s;
 
 $padding-side: 40;
@@ -35,6 +36,7 @@ $color-green: #1FC384;
 $color-brick: #B7674A;
 $color-brick-2: #804732;
 $color-brick-3: #693928;
+$color-brick-4: #A05940;
 
 $color-text: $color-gray-1;
 $color-lk: $color-blue;
@@ -58,12 +60,14 @@ $color-table-back-oddtr: $color-table-back-tr;
 
 
 //fonts, types, text
-$font-family-base:  'Scada', 'PT Sans', Arial, Tahoma, Verdana, sans-serif;
+$font-family-base:  'PT Sans', Arial, Tahoma, Verdana, sans-serif;
 $font-family-second: 'Roboto Slab', serif;
+//'Pt Serif', 
+
 
 $scale: 1.5; //для вычисления интерлиньяжа
 $scale-small: 1.2; //например, для вычисления интерлиньяжа заголовков
-$font-base-size: 20;
+$font-base-size: 18;
 $vertical-rythm: $font-base-size * $scale;
 
 

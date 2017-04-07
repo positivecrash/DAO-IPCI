@@ -1,15 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="120px" height="119.9px" viewBox="0 0 120 119.9" style="enable-background:new 0 0 120 119.9;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#0F0C0B;}
-</style>
-<path id="window-with-side-bar-selection" transform="translate(600 4858.778)" class="st0" d="M-489.4-4858.8h-101.2
-	c-5.2,0-9.4,4.2-9.4,9.4v101.1c0,5.2,4.2,9.4,9.4,9.4h101.2c5.2,0,9.4-4.2,9.4-9.4v-101.1C-480-4854.6-484.2-4858.8-489.4-4858.8z
-	 M-495.7-4848.1c2.2,0,4,1.8,4,4c0,2.2-1.8,4-4,4c-2.2,0-4-1.8-4-4S-498-4848.1-495.7-4848.1
-	C-495.7-4848.1-495.7-4848.1-495.7-4848.1z M-510.2-4848.1c2.2,0,4,1.8,4,4c0,2.2-1.8,4-4,4s-4-1.8-4-4c0,0,0,0,0,0
-	C-514.2-4846.3-512.4-4848.1-510.2-4848.1z M-532.7-4749.6h-56.5v-80.4h56.5V-4749.6z M-490.7-4749.6h-37.9v-80.4h37.9
-	L-490.7-4749.6L-490.7-4749.6z M-495-4806.6h-28.7v-17.9h28.7V-4806.6z M-495-4781.7h-28.7v-17.9h28.7V-4781.7z M-495-4756.5h-28.7
-	v-17.9h28.7V-4756.5z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-836 8931 140.283 122.343">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.602;
+      }
+
+      .cls-2 {
+        fill: #93a5d6;
+      }
+    </style>
+  </defs>
+  <g id="ux" class="cls-1" transform="translate(-836 8903.633)">
+    <path id="Path_2055" data-name="Path 2055" class="cls-2" d="M25.8,103.972h77.352a1.8,1.8,0,1,0,0-3.605H25.8a1.8,1.8,0,1,0,0,3.605Z" transform="translate(-16.134 -49.073)"/>
+    <path id="Path_2056" data-name="Path 2056" class="cls-2" d="M25.8,156.972H43.83a1.8,1.8,0,1,0,0-3.605H25.8a1.8,1.8,0,1,0,0,3.605Z" transform="translate(-16.134 -84.702)"/>
+    <path id="Path_2057" data-name="Path 2057" class="cls-2" d="M25.8,209.972h7.211a1.8,1.8,0,1,0,0-3.605H25.8a1.8,1.8,0,1,0,0,3.605Z" transform="translate(-16.134 -120.33)"/>
+    <path id="Path_2058" data-name="Path 2058" class="cls-2" d="M138.48,57.193H108.162V29.17a1.8,1.8,0,0,0-1.8-1.8H1.8A1.8,1.8,0,0,0,0,29.17v88.912a1.8,1.8,0,0,0,1.8,1.8H32.121v28.022a1.8,1.8,0,0,0,1.8,1.8H138.48a1.8,1.8,0,0,0,1.8-1.8V59A1.8,1.8,0,0,0,138.48,57.193Zm-1.8,12.783H35.726V60.8H136.677Zm-32.121-39V40.15H3.605V30.972ZM3.605,116.279V43.755H104.557V57.193H33.924a1.8,1.8,0,0,0-1.8,1.8v.983H9.669a1.8,1.8,0,0,0,0,3.605H32.121V77.351H9.669a1.8,1.8,0,1,0,0,3.605H32.121V94.722H9.669a1.8,1.8,0,1,0,0,3.605H32.121v5.08H9.669a1.8,1.8,0,0,0,0,3.605H32.121v9.266ZM35.726,146.1V73.582H136.677V146.1Z"/>
+    <path id="Path_2059" data-name="Path 2059" class="cls-2" d="M123.8,194.972h46.87a1.8,1.8,0,0,0,0-3.605H123.8a1.8,1.8,0,0,0,0,3.605Z" transform="translate(-82.013 -110.247)"/>
+    <path id="Path_2060" data-name="Path 2060" class="cls-2" d="M123.8,221.472H185.75a1.8,1.8,0,1,0,0-3.605H123.8a1.8,1.8,0,0,0,0,3.605Z" transform="translate(-82.013 -128.061)"/>
+    <path id="Path_2061" data-name="Path 2061" class="cls-2" d="M123.8,247.972h77.352a1.8,1.8,0,1,0,0-3.605H123.8a1.8,1.8,0,0,0,0,3.605Z" transform="translate(-82.013 -145.875)"/>
+    <path id="Path_2062" data-name="Path 2062" class="cls-2" d="M209.677,297.367H123.8a1.8,1.8,0,1,0,0,3.605h85.874a1.8,1.8,0,1,0,0-3.605Z" transform="translate(-82.013 -181.504)"/>
+    <path id="Path_2063" data-name="Path 2063" class="cls-2" d="M123.8,274.472h45.231a1.8,1.8,0,0,0,0-3.605H123.8a1.8,1.8,0,0,0,0,3.605Z" transform="translate(-82.013 -163.69)"/>
+    <path id="Path_2064" data-name="Path 2064" class="cls-2" d="M123.8,327.472h68.175a1.8,1.8,0,0,0,0-3.605H123.8a1.8,1.8,0,0,0,0,3.605Z" transform="translate(-82.013 -199.318)"/>
+    <path id="Path_2065" data-name="Path 2065" class="cls-2" d="M201.155,350.367H123.8a1.8,1.8,0,0,0,0,3.605h77.352a1.8,1.8,0,1,0,0-3.605Z" transform="translate(-82.013 -217.132)"/>
+    <circle id="Ellipse_22" data-name="Ellipse 22" class="cls-2" cx="2.141" cy="2.141" r="2.141" transform="translate(7.856 33.42)"/>
+    <circle id="Ellipse_23" data-name="Ellipse 23" class="cls-2" cx="2.141" cy="2.141" r="2.141" transform="translate(14.689 33.42)"/>
+    <circle id="Ellipse_24" data-name="Ellipse 24" class="cls-2" cx="2.141" cy="2.141" r="2.141" transform="translate(21.521 33.42)"/>
+    <circle id="Ellipse_25" data-name="Ellipse 25" class="cls-2" cx="2.141" cy="2.141" r="2.141" transform="translate(40.733 63.247)"/>
+    <circle id="Ellipse_26" data-name="Ellipse 26" class="cls-2" cx="2.141" cy="2.141" r="2.141" transform="translate(47.566 63.247)"/>
+    <circle id="Ellipse_27" data-name="Ellipse 27" class="cls-2" cx="2.141" cy="2.141" r="2.141" transform="translate(54.399 63.247)"/>
+  </g>
 </svg>

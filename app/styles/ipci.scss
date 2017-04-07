@@ -19,8 +19,12 @@
 @import "blocks/header";
 @import "blocks/footer";
 
-@import "blocks/index";
-@import "blocks/demo";
+@import "pages/index";
+@import "pages/demo";
+@import "pages/team";
+
+
+@import "bootstrap/bootstrap";
 
 
 /*======== MAIN SCSS VARIABLES & MIXINS & EXTENDS =========*/
@@ -112,6 +116,13 @@ img.d-ib{ max-width: 100%; @include rem('margin-bottom', $vertical-rythm); }
   align-items: top;
   align-self: stretch;
 }
+
+
+*[class*= 'col-']{
+  box-sizing: border-box;
+}
+
+
 
 .grid{
   display: flex;

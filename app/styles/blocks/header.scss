@@ -117,8 +117,8 @@ header[role=banner]{
   transition: .2s all linear;
 
   /* align content vertically + structure: logo on left, other on right */
-    @extend %flex_line;
-    align-items: center;
+  @extend %flex_line;
+  align-items: center;
 
 	.b-inline > div{
 		@include rem('margin-left', 35);
@@ -335,6 +335,7 @@ header a.header-more{
   @include rem('padding', 8, $padding-side);
   background-color: $color-brick;
   @include font-size(14, 1.2);
+  text-align: center;
 
   &, a { color: $color-brick-3; }
   a, span {

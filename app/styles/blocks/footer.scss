@@ -31,10 +31,24 @@ footer[role='contentinfo']{
 		}
 	}
 
-	.t-center{
-		@include font-size(100, 1);
+	.i-wrap{
+		text-align: center;
+		@include font-size(95, 1);
 		@include rem('height', 100);
 		@include rem('margin-bottom', $vertical-rythm/2);
+		@extend %flex_center;
+	}
+
+	*[class*='i-']{
+		color: rgba($color-blue-4, .6);
+	}
+
+	.i-app{
+		@include font-size(90, 1);
+	}
+
+	.i-mail{
+		@include font-size(76, 1);
 	}
 
 	@include max_desktop_s(){
@@ -54,7 +68,7 @@ footer[role='contentinfo']{
 }
 
 .footer-light{
-	@include font-size(20, 1.2);
+	@include font-size($font-base-size - 2, 1.2);
 	color: $color-gray-3;
 	@include rem('padding-top', $vertical-rythm/2);
 	@include rem('padding-bottom', $vertical-rythm/2);

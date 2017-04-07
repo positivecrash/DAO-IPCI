@@ -1,7 +1,7 @@
-@include font-face("Scada", font-files("Scada-Regular.woff","Scada-Regular.ttf"), "Scada-Regular.eot", normal);
-@include font-face("Scada", font-files("Scada-Bold.woff","Scada-Bold.ttf"), "Scada-Bold.eot", bold);
-@include font-face("Scada", font-files("Scada-Italic.woff","Scada-Italic.ttf"), "Scada-Italic.eot", normal, italic);
-@include font-face("Roboto Slab", font-files("RobotoSlab-Bold.woff","RobotoSlab-Bold.ttf"), "RobotoSlab-Bold.eot", bold);
+// @include font-face("Scada", font-files("Scada-Regular.woff","Scada-Regular.ttf"), "Scada-Regular.eot", normal);
+// @include font-face("Scada", font-files("Scada-Bold.woff","Scada-Bold.ttf"), "Scada-Bold.eot", bold);
+// @include font-face("Scada", font-files("Scada-Italic.woff","Scada-Italic.ttf"), "Scada-Italic.eot", normal, italic);
+// @include font-face("Roboto Slab", font-files("RobotoSlab-Bold.woff","RobotoSlab-Bold.ttf"), "RobotoSlab-Bold.eot", bold);
 
 
 @mixin font-size($font-size, $line-height: 1.5){
@@ -62,7 +62,7 @@ a {
   @include rem('margin-top', $vertical-rythm * 3);
 
   font-family: $font-family-second;
-  font-weight: bold;
+  font-weight: 400;
   line-height: $scale-small;
   // text-align: center;
 
@@ -104,8 +104,21 @@ hr{
   @include rem('margin', $vertical-rythm, 0);
 }
 
-blockquote, p, li, ul, ol {
+p, li, ul, ol {
   @include rem('margin-bottom', $vertical-rythm);
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+blockquote, ol, ul, table {
+  @include rem('margin-top', $vertical-rythm * 2);
+  @include rem('margin-bottom', $vertical-rythm * 2);
+
+  &:first-child{
+    margin-top: 0;
+  }
 
   &:last-child{
     margin-bottom: 0;
@@ -118,7 +131,8 @@ li{
 
 
 blockquote{
-  font-weight: bold;
+  font-style: italic;
+  @include font-size($font-base-size + 2);
   border-left: 2px solid $color-brick;
   @include rem('padding-left', 20);
 }
