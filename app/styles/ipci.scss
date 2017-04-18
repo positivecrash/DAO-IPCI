@@ -9,6 +9,7 @@
 
 @import "utilities/sprite";
 @import "utilities/spriteDemo";
+@import "utilities/spriteBrowsers";
 @import "utilities/icons";
 
 @import "utilities/text";
@@ -64,6 +65,16 @@ main[role="main"]{
     @include rem('padding-bottom', $vertical-rythm*4);
     @extend %floating-fix;
   }
+}
+
+.ipciback, .header_back{
+  background-color: #002E64;
+  background-image: image_url('bannerBack.svg');
+  // background-size: 100%;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
@@ -524,6 +535,7 @@ table{
     @include rem('margin-top', 15);
   }
 }
+
 
 .widget-doc{
 

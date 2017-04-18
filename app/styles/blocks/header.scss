@@ -1,5 +1,6 @@
 /*======== HEADER VARIABLES & MIXINS & EXTENDS =========*/
 
+
 /*======== HEADER BASIC =========*/
 header[role=banner]{
 
@@ -16,12 +17,8 @@ header[role=banner]{
     bottom: 0;
     z-index: 0;
 
-    background-image: image_url('bannerBack.svg');
-    background-size: 110%;
-    background-position: 50% 50%;
-    background-attachment: fixed;
-
     transition: .4s all ease-in;
+    background-size: 110%;
 
     &.header_back-custom{
 
@@ -82,7 +79,7 @@ header[role=banner]{
 
     h1{
       margin-top: 0;
-      color: #D0DDFF;
+      color: $color-blue-purple;
     }
   }
 }
@@ -92,6 +89,108 @@ header[role=banner]{
     background-image: image_url('bannerBack404.svg');
   }
 }
+
+
+
+//header styles for outdated browsers
+
+#header-simple-content{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    color: #fff;
+    text-align: center;
+
+    h1{
+      color: $color-blue-purple;
+      margin-top: 10px;
+    }
+}
+
+#header-alert{
+    background-color: $color-orange-3;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+
+    padding: 20px 0;
+
+    .btn-lined{
+      color: #fff;
+      border-color: #fff;
+    }
+
+    a.browsers-link:hover{
+      .btn-lined{
+        background-color: #fff;
+        color: $color-orange-3;
+      }
+    }
+}
+
+
+.old-col{
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 320px;
+
+  a, .btn-lined{
+    display: block;
+    
+    &, &:hover, &:focus, &:visited{
+      text-decoration: none;
+    }
+  }
+}
+
+.browsericon{
+  display: none;
+}
+
+@media screen and (min-height: 670px){
+  #header-alert{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 660px){
+  .old-rows{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .old-col{
+    display: table-cell;
+    padding: 0 20px;
+  }
+
+   .browsericon{
+    display: inline-block;
+  }
+
+  a.browsers-link:hover .sprite-browsers-chrome{
+    $chrome-colored: map-get($iconsBrowsers, chrome-colored);
+    @include get-sprite-browsers(chrome-colored);
+  }
+
+  a.browsers-link:hover .sprite-browsers-firefox{
+    $firefox-colored: map-get($iconsBrowsers, firefox-colored);
+    @include get-sprite-browsers(firefox-colored);
+  }
+
+  a.browsers-link:hover .sprite-browsers-opera{
+    $opera-colored: map-get($iconsBrowsers, opera-colored);
+    @include get-sprite-browsers(opera-colored);
+  }
+
+
+}
+//end of header styles for outdated browsers
 
 
 
@@ -309,7 +408,7 @@ header[role=banner]{
 
 
 /*link "more", used when fullscreen header mode*/
-header a.header-more{
+body a.header-l-orange{
 	color: $color-orange;
 	font-weight: bold;
 	text-transform: uppercase;

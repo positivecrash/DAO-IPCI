@@ -136,7 +136,30 @@ gulp.task('svgSprite', function () {
     }))
     .pipe(gulp.dest('dist/assets/i'));
 
-  return merge(basic, demo);
+    var browsers = gulp.src('app/spritesrc/browsers/*.svg')
+    .pipe(svgo()())
+    .pipe(svgSprite({
+        "mode": {
+            "css": {
+                "spacing": {
+                    "padding": 2
+                },
+                "dest": "./",
+                "layout": "vertical",
+                "sprite": "sprite_browsers.svg",
+                "bust": false,
+                "render": {
+                    "scss": {
+                        "dest": "../../../app/styles/utilities/spriteBrowsers.scss",
+                        "template": "app/styles/templates/sprite-browsers-template.scss"
+                    }
+                }
+            }
+        }
+    }))
+    .pipe(gulp.dest('dist/assets/i'));
+
+  return merge(basic, demo, browsers);
 
 });
 
@@ -150,7 +173,11 @@ gulp.task('pngSprite', ['svgSprite'], function() {
     .pipe(svg2png())
     .pipe(gulp.dest('dist/assets/i'));
 
-  return merge(basic, demo);
+  var browsers = gulp.src('dist/assets/i/sprite_browsers.svg')
+    .pipe(svg2png())
+    .pipe(gulp.dest('dist/assets/i'));
+
+  return merge(basic, demo, browsers);
 });
 
 gulp.task('sprite', ['pngSprite']);

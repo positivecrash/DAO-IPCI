@@ -1,0 +1,44 @@
+$iconsBrowsers: (
+    spriteBrowsers: (width: 72.05px, height: 384px, pngPath: '../i/sprite_browsers.png', svgPath: '../i/sprite_browsers.svg'),
+    chrome: (width: 64px, height: 63.995px, backgroundX: 0px, backgroundY: 0px),
+    chrome-colored: (width: 64px, height: 64px, backgroundX: 0px, backgroundY: -64px),
+    firefox: (width: 72.05px, height: 64px, backgroundX: 0px, backgroundY: -128px),
+    firefox-colored: (width: 60.514px, height: 64px, backgroundX: 0px, backgroundY: -192px),
+    opera: (width: 64px, height: 64px, backgroundX: 0px, backgroundY: -256px),
+    opera-colored: (width: 63.632px, height: 64px, backgroundX: 0px, backgroundY: -320px),
+);
+
+$spriteBrowsers: map-get($iconsBrowsers, spriteBrowsers);
+
+
+@mixin get-sprite-browsers($spritename){
+    $spritename: map-get($iconsBrowsers, $spritename);
+    
+    display: inline-block;
+    width: map-get($spritename, width);
+    height: map-get($spritename, height);
+    background-image: url(map-get($spriteBrowsers, svgPath));
+    background-position: map-get($spritename, backgroundX) map-get($spritename, backgroundY);
+    background-repeat: no-repeat;
+
+    #{$modernizr-nosvg} & { background-image: url(map-get($spriteBrowsers, pngPath)); }
+}
+
+.sprite-browsers-chrome{
+	@include get-sprite-browsers('chrome');
+}
+.sprite-browsers-chrome-colored{
+	@include get-sprite-browsers('chrome-colored');
+}
+.sprite-browsers-firefox{
+	@include get-sprite-browsers('firefox');
+}
+.sprite-browsers-firefox-colored{
+	@include get-sprite-browsers('firefox-colored');
+}
+.sprite-browsers-opera{
+	@include get-sprite-browsers('opera');
+}
+.sprite-browsers-opera-colored{
+	@include get-sprite-browsers('opera-colored');
+}

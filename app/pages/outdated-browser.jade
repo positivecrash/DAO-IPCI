@@ -1,0 +1,33 @@
+extends extends/layout_blank.jade
+
+block html
+	- var pageTitle = 'Старый браузер'
+	- var nofooter = true
+	- var bodyclass = 'ipciback'
+
+
+block content
+	#header-simple-content.setw
+		#header-title DAO IPCI
+		h1 Blockchain technology for carbon markets, environmental assets and liabilities 
+		a.header-l-orange(href="#{more}", target="_blank") White Paper 3.1
+
+
+	#header-alert
+		.setw
+			p Your browser is outdated. Please, update your browser to view this website correctly:
+			.old-rows
+				.old-col
+					a.browsers-link(href="#", target="_blank")
+						span.sprite-browsers-chrome.browsericon
+						span.btn-lined GOOGLE CHROME
+				.old-col
+					a.browsers-link(href="#", target="_blank")
+						span.sprite-browsers-firefox.browsericon
+						span.btn-lined MOZILLA FIREFOX
+
+				.old-col
+					a.browsers-link(href="#", target="_blank")
+						span.sprite-browsers-opera.browsericon
+						span.btn-lined OPERA
+
