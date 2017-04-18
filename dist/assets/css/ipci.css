@@ -1854,8 +1854,8 @@ header[role=banner].screen h1 {
 }
 
 #header-simple-content {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 150px;
+  padding-bottom: 150px;
   color: #fff;
   text-align: center;
 }
