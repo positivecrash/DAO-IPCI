@@ -4241,7 +4241,6 @@ main[role="main"] > .inside {
 
 .ipciback, .header_back {
   background-color: #002E64;
-  background-image: url('../i/bannerBack.jpg?1492512903');
   background-image: url('../i/bannerBack.svg?1488729314');
   background-position: 50% 50%;
   background-attachment: fixed;
