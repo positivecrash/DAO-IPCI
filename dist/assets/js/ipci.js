@@ -6471,9 +6471,9 @@ jQuery(document).ready(function($){
 
 
     /*--- Detect IE9 ---*/
-    if (!Modernizr.flexboxtweener){
-        window.location = "http://ipci.io";
-    }
+    // if (!Modernizr.flexboxtweener){
+    //     window.location = "http://ipci.io";
+    // }
     /*===  end of SOME RANDOM THIGS ===*/
 
 });
