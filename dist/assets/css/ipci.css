@@ -4211,19 +4211,6 @@ body a.header-l-orange {
 }
 /*======== MAIN SCSS VARIABLES & MIXINS & EXTENDS =========*/
 /*======== BASIC STYLES =========*/
-#oldiebrowser {
-  padding: 30px;
-  text-align: center;
-  background-color: #ff674a;
-  font-size: 16px;
-}
-#oldiebrowser h2 {
-  margin-bottom: 30px;
-}
-#oldiebrowser, #oldiebrowser h2 {
-  color: #fff;
-}
-
 body {
   background-color: #fff;
 }
@@ -4246,6 +4233,10 @@ main[role="main"] > .inside {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.no-svg .ipciback, .no-svg .header_back {
+  background-image: url('../i/bannerBack.jpg?1492512903');
 }
 
 /*------- BASIC STYLES - blocks display --------*/

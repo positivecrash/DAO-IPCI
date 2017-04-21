@@ -36,20 +36,20 @@
 
 /*======== BASIC STYLES =========*/
 
-#oldiebrowser{
-  padding: 30px;
-  text-align: center;
-  background-color: rgb(255, 103, 74);
-  font-size: 16px;
+// #oldiebrowser{
+//   padding: 30px;
+//   text-align: center;
+//   background-color: rgb(255, 103, 74);
+//   font-size: 16px;
 
-  h2{
-    margin-bottom: 30px;
-  }
+//   h2{
+//     margin-bottom: 30px;
+//   }
 
-  &, h2{
-    color: #fff;
-  }
-}
+//   &, h2{
+//     color: #fff;
+//   }
+// }
 
 body {
   background-color: #fff;
@@ -69,13 +69,18 @@ main[role="main"]{
 
 .ipciback, .header_back{
   background-color: #002E64;
-  // background-image: image_url('bannerBack.jpg');
   background-image: image_url('bannerBack.svg');
   // background-size: 100%;
   background-position: 50% 50%;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#{$modernizr-nosvg}{
+  .ipciback, .header_back{
+    background-image: image_url('bannerBack.jpg');
+  }
 }
 
 
