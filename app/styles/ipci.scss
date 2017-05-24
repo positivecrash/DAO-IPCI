@@ -75,6 +75,10 @@ main[role="main"]{
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @include max_tablet(){
+    background-position: 0 0;
+  }
 }
 
 #{$modernizr-nosvg}{

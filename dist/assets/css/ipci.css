@@ -4234,6 +4234,11 @@ main[role="main"] > .inside {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media screen and (max-width: 780px) {
+  .ipciback, .header_back {
+    background-position: 0 0;
+  }
+}
 
 .no-svg .ipciback, .no-svg .header_back {
   background-image: url('../i/bannerBack.jpg?1492512903');
